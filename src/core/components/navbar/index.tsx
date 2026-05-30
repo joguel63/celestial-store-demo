@@ -100,7 +100,15 @@ export const Navbar = () => {
           >
             {t('navbar.links.supplies')}
           </Link>
-          <Link href="#" underline="none" sx={styles.link}>
+          <Link
+            component={RouterLink}
+            to="/guild"
+            underline="none"
+            sx={{
+              ...styles.link,
+              ...(location.pathname === '/guild' ? styles.activeLink : {}),
+            }}
+          >
             {t('navbar.links.guild')}
           </Link>
         </Box>
