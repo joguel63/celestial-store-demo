@@ -3,6 +3,7 @@ import { MainLayout } from '@/core/layouts/mainLayout'
 import { LandingPage } from '@/modules/landing/pages/landingPage'
 import { StablesPage } from '@/modules/stables/pages/stablesPage'
 import { SuppliesPage } from '@/modules/supplies/pages/suppliesPage'
+import { GuildPage } from '@/modules/guild/pages/guildPage'
 
 export const AppRouter = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ export const AppRouter = () => (
         <Route path="/" element={<LandingPage />} />
         <Route path="/stables" element={<StablesPage />} />
         <Route path="/supplies" element={<SuppliesPage />} />
+        <Route path="/guild" element={<GuildPage />} />
       </Route>
     </Routes>
   </BrowserRouter>
