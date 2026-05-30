@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#343625",
+                    "secondary": "#d6bcf4",
+                    "on-tertiary-container": "#004e48",
+                    "on-surface-variant": "#d0c5af",
+                    "on-surface": "#e4e4cc",
+                    "background": "#131407",
+                    "tertiary-container": "#5bc3b9",
+                    "outline-variant": "#4d4635",
+                    "primary": "#f2ca50",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-secondary-container": "#c4abe1",
+                    "surface-container": "#1f2111",
+                    "inverse-surface": "#e4e4cc",
+                    "surface-tint": "#e9c349",
+                    "tertiary": "#79dfd4",
+                    "surface-container-high": "#2a2b1b",
+                    "inverse-primary": "#735c00",
+                    "on-background": "#e4e4cc",
+                    "outline": "#99907c",
+                    "tertiary-fixed-dim": "#71d7cd",
+                    "on-primary-container": "#554300",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-secondary-fixed-variant": "#523d6c",
+                    "on-primary-fixed-variant": "#574500",
+                    "inverse-on-surface": "#303221",
+                    "on-secondary-fixed": "#25113e",
+                    "on-primary": "#3c2f00",
+                    "on-tertiary-fixed-variant": "#00504a",
+                    "tertiary-fixed": "#8ef4e9",
+                    "surface-dim": "#131407",
+                    "surface-container-low": "#1b1d0e",
+                    "on-secondary": "#3b2754",
+                    "surface-container-lowest": "#0e0f03",
+                    "primary-fixed": "#ffe088",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#241a00",
+                    "surface-bright": "#393a29",
+                    "secondary-fixed-dim": "#d6bcf4",
+                    "surface": "#131407",
+                    "on-tertiary": "#003733",
+                    "on-error": "#690005",
+                    "surface-variant": "#343625",
+                    "primary-container": "#d4af37",
+                    "secondary-fixed": "#eedbff",
+                    "secondary-container": "#523d6c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "label-md": ["Manrope"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131407;
+            color: #e4e4cc;
+            -webkit-font-smoothing: antialiased;
+        }
+        .celestial-glow {
+            box-shadow: 0 0 15px 0 rgba(77, 182, 172, 0.15);
+        }
+        .gold-border-top {
+            border-top: 2px solid #f2ca50;
+        }
+        .vignette-blend {
+            mask-image: radial-gradient(circle, black 60%, transparent 100%);
+        }
+        .arcane-card {
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
+        }
+        .arcane-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -10px rgba(242, 202, 80, 0.2);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-primary/20 shadow-sm h-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex items-center justify-between h-full">
+<a class="text-headline-md font-headline-md font-bold text-primary tracking-tight" href="#">Celestial Menagerie</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md" href="#">Bestiary</a>
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md" href="#">Stables</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md" href="#">Supplies</a>
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md" href="#">Guild</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:text-tertiary transition-colors">search</button>
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Adopt Now</button>
+<button class="md:hidden material-symbols-outlined text-primary">menu</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center py-32 relative" style="background-image: linear-gradient(to bottom, rgba(19, 20, 7, 0.8), rgba(19, 20, 7, 0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLM1_MZ-SCIfgOibdcJuV8h9PlrAVAthXVCBB5hqTM1o1ChnDbxK8eVY6UueMQBMSfkioI4-1RjBtOf5DZWdbR_IxguSSOVTQQFS7DXzBKm4Ae5_Pm6Npo2ItIRRs2b9yfj7SOsoxa38kvkKcqwouDzy0xHZ_taluYHw0chFzrexvTR63jjki6yxR7pHUGEcmBwDXlM1OzX1pi93YdM4lJj1oyduJeWSC4HQ9cQjvYWa-1UqzuDAOqMGAn-bbNsqMADY7p_hw_Qk5h'); background-size: cover; background-position: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center;"><div class="relative z-10 backdrop-blur-sm bg-background/20 py-12 px-6 rounded-xl border border-white/5 inline-block mx-auto max-w-4xl">
+<div class="inline-block px-4 py-1 border border-primary/30 rounded-full mb-6">
+<span class="text-label-md font-label-md text-tertiary uppercase tracking-widest">The Curator's Archive</span>
+</div>
+<h1 class="text-headline-lg-mobile md:text-display-lg font-display-lg text-on-surface mb-6 drop-shadow-lg">Arcane Supplies</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-90 leading-relaxed drop-shadow">
+        Every legend requires precise nourishment and enchanted care. Our curated archive offers the rarest elements gathered from the edges of the known realms to sustain your mythical companions.
+    </p>
+</div></header>
+<!-- Main Content Area -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+<!-- Filters -->
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<button class="px-8 py-3 bg-surface-container border border-primary/20 text-primary font-label-md text-label-md hover:border-primary transition-all">All Collections</button>
+<button class="px-8 py-3 bg-transparent border border-primary/10 text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-all">Nutrition</button>
+<button class="px-8 py-3 bg-transparent border border-primary/10 text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-all">Habitats</button>
+<button class="px-8 py-3 bg-transparent border border-primary/10 text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-all">Enchanted Gear</button>
+<button class="px-8 py-3 bg-transparent border border-primary/10 text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-all">Ritual Tools</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Phoenix Ember-Grain -->
+<div class="arcane-card bg-surface-container gold-border-top p-6 flex flex-col h-full relative overflow-hidden group">
+<div class="aspect-[4/5] mb-6 overflow-hidden bg-surface-container-highest relative">
+<img class="w-full h-full object-cover vignette-blend transition-transform duration-700 group-hover:scale-110" data-alt="Close up high-detail photography of glowing orange volcanic seeds and crystalline grains scattered on a dark obsidian surface. The lighting is dramatic and warm, emphasizing the internal fiery glow of the grains. The style is cinematic and luxurious, reflecting a mystical modernism aesthetic with deep purple shadows and sharp gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFjoYi9HO35x0MGL8sZ_o256SrdwRwyUPeKfeJufz8A2_1yguhk5VOpFFAioWTplSkL-iQBCe_4yhNea1R__VMJVEwKethwlKNYyJYR9l79kCzjggVIWoH0oP3Nr_jKIPn-5sTfMRD5YEXlPg7ia1sH9gGH-dduqBtIcbb7O16hGtNupqyCsBmuKudy8cNBZQB3R-pKULgqhQrp3qt-kS6ALB8u4GJ-Q6Xabb6hgbi7k7GLpet74nPn9hJaUK4sWQ7eghTGekmamfe"/>
+<div class="absolute top-4 right-4">
+<span class="bg-primary/90 text-on-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase">Mythic</span>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Phoenix Ember-Grain</h3>
+<p class="text-on-surface-variant text-body-md font-body-md mb-6 flex-grow">
+                    Harvested from the ash-slopes of Mount Ignis, these grains pulse with eternal heat to maintain the radiant plumage of fire-born avian spirits.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-primary/10">
+<span class="text-headline-sm font-headline-sm text-on-surface">450 <span class="text-label-md text-primary/60">GP</span></span>
+<button class="bg-primary text-on-primary px-8 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+<!-- Card 2: Kraken Salt-Blocks -->
+<div class="arcane-card bg-surface-container gold-border-top p-6 flex flex-col h-full relative overflow-hidden group">
+<div class="aspect-[4/5] mb-6 overflow-hidden bg-surface-container-highest relative">
+<img class="w-full h-full object-cover vignette-blend transition-transform duration-700 group-hover:scale-110" data-alt="A large translucent geometric salt block with swirling teal and deep indigo minerals inside. The block is illuminated from beneath with an ethereal teal glow, casting soft mystical shadows. The scene is set in a dark, high-end laboratory environment with golden linework and a sense of ancient maritime mystery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD-7e6vqQXgLj3Lxifi3j0zDoUZeLgM-eiIxBwCsfV7fqzNsftjOt125MoYxvs3i98ysfAYvEhFYrtxoz-CkgwbLfElPxPfOoq7AhZVVYshRWJmODPb5prsgbniaMdevlSLbxKPQ9G-obOlETyP5icyilNwtnennGsaH-r1pf0QaCf9EKHYQeMR-9fRVyPk7ip2qPWAWuggO1oWmnnpz52fh-GbAhVFNDYcUBZJPA3fDTUk9KNROGIWGRDYLfkrE4eRoP-O6R_D4sD"/>
+<div class="absolute top-4 right-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 text-[10px] font-bold tracking-widest uppercase">Legendary</span>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Kraken Salt-Blocks</h3>
+<p class="text-on-surface-variant text-body-md font-body-md mb-6 flex-grow">
+                    Enriched with abyssal minerals and bioluminescent algae, essential for the structural integrity of oceanic behemoths and leviathans.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-primary/10">
+<span class="text-headline-sm font-headline-sm text-on-surface">320 <span class="text-label-md text-primary/60">GP</span></span>
+<button class="bg-primary text-on-primary px-8 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+<!-- Card 3: Enchanted Grooming Kit -->
+<div class="arcane-card bg-surface-container gold-border-top p-6 flex flex-col h-full relative overflow-hidden group">
+<div class="aspect-[4/5] mb-6 overflow-hidden bg-surface-container-highest relative">
+<img class="w-full h-full object-cover vignette-blend transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious collection of grooming tools including a brush made of silver wood and fine unicorn hair bristles, placed next to a crystal vial of shimmering iridescent oil. The tools are laid out on a dark velvet cloth with intricate gold embroidery. The lighting is soft and focused, creating a sense of precious, ancient craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcxfZSkTu4tc3UckJOG54Sbh4hnytvGQmLoERkOysy_oqJtla6AV7vfMyl0cAqoUaHXWkeBZKH73u5-I6OAh-SNKQmKNiQvLGRA5Xd4Hc8TZK4UopMCsy4BuY20WTlN8x4kNHnJoPOjvidgop6icBZkkltv9KJCP90ntiAK6vo2RbKrdN4N3gT2RZEetK6G88qd7BWDNqhbQ6JeBZGhj35O2Qnj1lVxJQr9kDKlaS2D-1uyV3hd3hh8an65zE0nlVgaJTMH0q34x5K"/>
+<div class="absolute top-4 right-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 text-[10px] font-bold tracking-widest uppercase">Rare</span>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Enchanted Grooming Kit</h3>
+<p class="text-on-surface-variant text-body-md font-body-md mb-6 flex-grow">
+                    A suite of silver-handled brushes and moon-charged oils designed to untangle stardust manes and polish dragon scales without friction.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-primary/10">
+<span class="text-headline-sm font-headline-sm text-on-surface">1,200 <span class="text-label-md text-primary/60">GP</span></span>
+<button class="bg-primary text-on-primary px-8 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+<!-- Card 4: Astral Tether -->
+<div class="arcane-card bg-surface-container gold-border-top p-6 flex flex-col h-full relative overflow-hidden group">
+<div class="aspect-[4/5] mb-6 overflow-hidden bg-surface-container-highest relative">
+<img class="w-full h-full object-cover vignette-blend transition-transform duration-700 group-hover:scale-110" data-alt="A glowing blue ethereal rope coiled neatly on a stone pedestal. The tether emits a faint trail of cosmic dust and starlight particles. Deep midnight background with subtle golden geometric patterns floating in the air. The image captures a sense of high-technology mixed with ancient sorcery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGZD8uTTQkRuaRhjOtO6VSJz7Wg5kcfCUnBGv2p2zohqcw9-bY6TfkkrgGceXte9vWJ5tvDQ0AKmTNQ3ZSK5x2MK2fidfezVkB8ulvhco1yPxSKil3U0aE6b46tQHjNpFOe_WXR8QnamfUtNJIt344oY7xKrHkPsqjZpOxYr4pDi1iVwyAnE9KjXWPWFtyjECsd37-VG0OB9mGkNT61-ma6H3_OVwI-l3A_g52dgwawZTYA48Wl5N9FH6aRA2ZE8CR4bRtFm5Czp6E"/>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Astral Tether</h3>
+<p class="text-on-surface-variant text-body-md font-body-md mb-6 flex-grow">
+                    Woven from gravity-defying silk, this leash allows the handling of ethereal pets while they are phased between dimensions.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-primary/10">
+<span class="text-headline-sm font-headline-sm text-on-surface">650 <span class="text-label-md text-primary/60">GP</span></span>
+<button class="bg-primary text-on-primary px-8 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+<!-- Card 5: Void-Glass Terrarium -->
+<div class="arcane-card bg-surface-container gold-border-top p-6 flex flex-col h-full relative overflow-hidden group">
+<div class="aspect-[4/5] mb-6 overflow-hidden bg-surface-container-highest relative">
+<img class="w-full h-full object-cover vignette-blend transition-transform duration-700 group-hover:scale-110" data-alt="An ornate glass structure with intricate gold filigree corners. Inside the glass is a miniature vortex of swirling purple mist and floating small rocks. The lighting is moody and focused, highlighting the contrast between the dark interior of the glass and the bright gold exterior. Elegant and mystical product presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWLWZdtgTLTFHHFoGzVT3WOxy7xvis1GKDwunhQDISU6S1uwrGynk5mkUa-OK-TId31BEcByArOzQ34H6cwg3IkQcrKD3Op1ML9tI5IXnmxPOdX5Uk0WKVGW5l1zxENSTbb766h9VAu5QW00nZmlwRHfsh6uxVcyRZkFP7vuI0J2Xl5d30dXBZ33dgd_B_QJSyBtLTKiwCLvQwakvBlQoullrWzHyq9eQ0WS9YG7FG7ls-v0PfaS5KawRYvNKpMdE_B19R2Ae21Rzf"/>
+<div class="absolute top-4 right-4">
+<span class="bg-primary/90 text-on-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase">Mythic</span>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Void-Glass Terrarium</h3>
+<p class="text-on-surface-variant text-body-md font-body-md mb-6 flex-grow">
+                    A containment unit forged from solidified darkness, perfect for Shadow-Imps and other entities sensitive to traditional light spectrums.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-primary/10">
+<span class="text-headline-sm font-headline-sm text-on-surface">2,800 <span class="text-label-md text-primary/60">GP</span></span>
+<button class="bg-primary text-on-primary px-8 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+<!-- Card 6: Singing Mana-Flasks -->
+<div class="arcane-card bg-surface-container gold-border-top p-6 flex flex-col h-full relative overflow-hidden group">
+<div class="aspect-[4/5] mb-6 overflow-hidden bg-surface-container-highest relative">
+<img class="w-full h-full object-cover vignette-blend transition-transform duration-700 group-hover:scale-110" data-alt="Row of delicate hand-blown glass bottles filled with glowing teal liquids of different densities. Each bottle has a unique ornate stopper made of bronze and turquoise. The background is a blurred dark library shelf. High-end, boutique magical supply aesthetic with teal luminosity and gold reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwupKHcJNghnE0UIm4VvG4hd9qj4_04WY8Qs_MeQ8YK867CqQC9m4DxmIDkxEy_TQUSUIZ7OUu1OsD9KX66KWF2qA1mRwvO44h7m-U0wFYYNyneI-lWGUWUnuDGOyi4B9iRABMTK67fZMZmGYmrRHozaMdwL8U_27jEv0CbpFtfi7wI7lLvQyQVuqftA_lQCWeHSIUsEuoARI8pF4AD24HzxusCpCx2BhGp3XYelIHTwbv6-XHaJ_IchSqnYk3OFthQZpgeXO8p4iH"/>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Singing Mana-Flasks</h3>
+<p class="text-on-surface-variant text-body-md font-body-md mb-6 flex-grow">
+                    Each bottle hums a specific frequency that calms agitated spirits during travel or medical treatments.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-primary/10">
+<span class="text-headline-sm font-headline-sm text-on-surface">150 <span class="text-label-md text-primary/60">GP</span></span>
+<button class="bg-primary text-on-primary px-8 py-2 font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">Buy</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Arcane Newsletter CTA -->
+<section class="bg-surface-container-high py-20 px-margin-mobile md:px-margin-desktop mb-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-tertiary/10 to-transparent"></div>
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+<div class="md:w-1/2">
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">Registry of the Wise</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Join our guild for early access to rare shipments and exclusive husbandry guides for legendary companions.</p>
+</div>
+<div class="md:w-1/2 flex w-full max-w-md">
+<input class="bg-background border-none flex-grow px-6 py-4 focus:ring-1 focus:ring-tertiary text-on-surface placeholder:text-outline/50" placeholder="Scribe your email..." type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-md text-label-md hover:brightness-110">Enlist</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-surface-dim border-t border-primary/10">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<span class="text-headline-sm font-headline-sm text-primary mb-4 block">Celestial Menagerie</span>
+<p class="text-on-surface-variant text-body-md font-body-md opacity-70">
+                    Curators of the extraordinary. Dedicated to the preservation and care of the world's most legendary spirits.
+                </p>
+</div>
+<div>
+<h4 class="text-primary font-label-md text-label-md mb-6 uppercase tracking-widest">Collections</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant font-medium text-label-md hover:text-tertiary underline decoration-tertiary/30 underline-offset-4" href="#">Stables &amp; Habitats</a></li>
+<li><a class="text-on-surface-variant font-medium text-label-md hover:text-tertiary underline decoration-tertiary/30 underline-offset-4" href="#">Arcane Supplies</a></li>
+<li><a class="text-on-surface-variant font-medium text-label-md hover:text-tertiary underline decoration-tertiary/30 underline-offset-4" href="#">Guild Registry</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-label-md text-label-md mb-6 uppercase tracking-widest">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant font-medium text-label-md hover:text-tertiary underline decoration-tertiary/30 underline-offset-4" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant font-medium text-label-md hover:text-tertiary underline decoration-tertiary/30 underline-offset-4" href="#">Privacy Scrolls</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-label-md text-label-md mb-6 uppercase tracking-widest">Connect</h4>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-tertiary transition-colors">public</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-tertiary transition-colors">auto_awesome</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-tertiary transition-colors">auto_fix_high</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-primary/5 text-center">
+<p class="text-on-surface-variant text-label-md opacity-50">© 1242 Arcane Era. Celestial Menagerie - The Curator's Archive.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Smooth floating effect for cards
+        document.querySelectorAll('.arcane-card').forEach((card, index) => {
+            card.style.animation = `float ${3 + index}s ease-in-out infinite`;
+            card.style.animationDelay = `${index * 0.2}s`;
+        });
+
+        // Simple filter interaction simulation
+        const filterBtns = document.querySelectorAll('button.font-label-md');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-surface-container', 'border-primary', 'text-primary');
+                    b.classList.add('bg-transparent', 'border-primary/10', 'text-on-surface-variant');
+                });
+                this.classList.remove('bg-transparent', 'border-primary/10', 'text-on-surface-variant');
+                this.classList.add('bg-surface-container', 'border-primary', 'text-primary');
+            });
+        });
+    </script>
+</body></html>
