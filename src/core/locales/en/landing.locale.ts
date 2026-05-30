@@ -109,4 +109,73 @@ export const landing = {
     },
     copyright: '© 1242 Arcane Era. Celestial Menagerie - The Curator\'s Archive.',
   },
+  stables: {
+    hero: {
+      title: 'Our Stables and Habitats',
+      description:
+        'Explore the sanctuaries where magic comes to life. Every corner of our collection has been forged to house the unique essence of the most legendary creatures of the realm.',
+    },
+    filters: {
+      all: 'All Realms',
+      air: 'Air Elements',
+      volcanic: 'Volcanic Cores',
+      jungle: 'Ancestral Jungles',
+      abyss: 'Marine Abysses',
+    },
+    habitats: {
+      cumbres: {
+        name: 'Celestial Peaks',
+        habitat: 'Extreme Altitude, Rare Air',
+        description:
+          'Home to Platinum Pegasi and Ice Phoenixes. The currents here flow with pure mana.',
+        dominantLabel: 'Dominant Species:',
+        species: ['Platinum Pegasus', 'Royal Gryphon'],
+        rarity: 'Mythic',
+      },
+      abismos: {
+        name: 'Soul Abysses',
+        habitat: 'Abyssal Pressure, Bioluminescence',
+        description:
+          'Where Coral Hippocampi and Shadow Hydras dwell. The water vibrates with ancient wisdom.',
+        dominantLabel: 'Dominant Species:',
+        species: ['Golden Hippocampus', 'Lesser Leviathan'],
+        rarity: '',
+      },
+      bosque: {
+        name: 'Whispering Forest',
+        habitat: 'High Humidity, Earth Magic',
+        description:
+          'Sanctuary for Silver Unicorns and Fire Kitsunes. The ground sings with every step.',
+        dominantLabel: 'Dominant Species:',
+        species: ['Dawn Unicorn', 'Forest Drake'],
+        rarity: '',
+      },
+      nucleo: {
+        name: 'Golden Magma Core',
+        habitat: 'Extreme Heat, Igneous Essence',
+        description:
+          'An ecosystem designed for Royal Salamanders and Black Blood Dragons. The obsidian walls maintain the heat needed for their primordial scale growth.',
+        viewInhabitants: 'View Inhabitants',
+        technicalDetails: 'Technical Details',
+        rarity: '',
+      },
+      desierto: {
+        name: 'Stellar Desert',
+        habitat: 'Cosmic Radiation, Absolute Cold',
+        description:
+          'Where Void Beasts and Crystal Scorpions meditate beneath the constellations.',
+        dominantLabel: 'Dominant Species:',
+        species: ['Void Beast', 'Sand Mirage'],
+        rarity: '',
+      },
+      searchPlaceholder: 'Search habitat...',
+    },
+    cta: {
+      title: 'Looking for something more specific?',
+      description:
+        'Our master curators can forge a customized habitat according to the mystical needs of your new companion.',
+      consult: 'Consult Alchemist',
+      guide: 'Care Guide',
+    },
+  },
 }

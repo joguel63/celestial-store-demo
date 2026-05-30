@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, Button, Box, Link, IconButton, Tooltip } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
 
 const styles = {
   nav: {
@@ -57,6 +58,7 @@ const styles = {
 
 export const Navbar = () => {
   const { t } = useTranslation()
+  const location = useLocation()
 
   return (
     <AppBar position="fixed" sx={styles.nav}>
@@ -65,10 +67,24 @@ export const Navbar = () => {
           {t('navbar.brand')}
         </Box>
         <Box sx={styles.links}>
-          <Link href="#" underline="none" sx={{ ...styles.link, ...styles.activeLink }}>
+          <Link
+            href="/"
+            underline="none"
+            sx={{
+              ...styles.link,
+              ...(location.pathname === '/' ? styles.activeLink : {}),
+            }}
+          >
             {t('navbar.links.bestiary')}
           </Link>
-          <Link href="#" underline="none" sx={styles.link}>
+          <Link
+            href="/stables"
+            underline="none"
+            sx={{
+              ...styles.link,
+              ...(location.pathname === '/stables' ? styles.activeLink : {}),
+            }}
+          >
             {t('navbar.links.stables')}
           </Link>
           <Link href="#" underline="none" sx={styles.link}>

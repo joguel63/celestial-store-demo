@@ -109,4 +109,73 @@ export const landing = {
     },
     copyright: '© 1242 Era Arcana. Celestial Menagerie - El Archivo del Curador.',
   },
+  stables: {
+    hero: {
+      title: 'Nuestros Establos y Hábitats',
+      description:
+        'Explora los santuarios donde la magia cobra vida. Cada rincón de nuestra colección ha sido forjado para albergar la esencia única de las criaturas más legendarias del reino.',
+    },
+    filters: {
+      all: 'Todos los Reinos',
+      air: 'Elementos de Aire',
+      volcanic: 'Núcleos Volcánicos',
+      jungle: 'Selvas Ancestrales',
+      abyss: 'Abismos Marinos',
+    },
+    habitats: {
+      cumbres: {
+        name: 'Cumbres Celestiales',
+        habitat: 'Altitud Extrema, Aire Raro',
+        description:
+          'Hogar de los Pegasos de Platino y Fénix de Hielo. Las corrientes aquí fluyen con maná puro.',
+        dominantLabel: 'Especies Dominantes:',
+        species: ['Pegaso de Platino', 'Grifo Real'],
+        rarity: 'Mítico',
+      },
+      abismos: {
+        name: 'Abismos del Alma',
+        habitat: 'Presión Abisal, Bioluminiscencia',
+        description:
+          'Donde residen los Hipocampos de Coral y las Hidras de las Sombras. El agua vibra con sabiduría antigua.',
+        dominantLabel: 'Especies Dominantes:',
+        species: ['Hipocampo Dorado', 'Leviatán Menor'],
+        rarity: '',
+      },
+      bosque: {
+        name: 'Bosque Susurrante',
+        habitat: 'Humedad Alta, Magia Terrenal',
+        description:
+          'Santuario para Unicornios Plateados y Kitsunes de Fuego. El suelo canta con cada paso.',
+        dominantLabel: 'Especies Dominantes:',
+        species: ['Unicornio del Alba', 'Draco de Bosque'],
+        rarity: '',
+      },
+      nucleo: {
+        name: 'Núcleo de Magma Áureo',
+        habitat: 'Calor Extremo, Esencia Ígnea',
+        description:
+          'Un ecosistema diseñado para las Salamandras Reales y los Dragones de Sangre Negra. Las paredes de obsidiana mantienen el calor necesario para el crecimiento de sus escamas primordiales.',
+        viewInhabitants: 'Ver Habitantes',
+        technicalDetails: 'Detalles Técnicos',
+        rarity: '',
+      },
+      desierto: {
+        name: 'Desierto Estelar',
+        habitat: 'Radiación Cósmica, Frío Absoluto',
+        description:
+          'Donde las Bestias del Vacío y los Escorpiones de Cristal meditan bajo las constelaciones.',
+        dominantLabel: 'Especies Dominantes:',
+        species: ['Bestia del Vacío', 'Espejismo de Arena'],
+        rarity: '',
+      },
+      searchPlaceholder: 'Buscar hábitat...',
+    },
+    cta: {
+      title: '¿Buscas algo más específico?',
+      description:
+        'Nuestros maestros curadores pueden forjar un hábitat personalizado según las necesidades místicas de tu nuevo compañero.',
+      consult: 'Consultar Alquimista',
+      guide: 'Guía de Cuidados',
+    },
+  },
 }
