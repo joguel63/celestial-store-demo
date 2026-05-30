@@ -178,4 +178,70 @@ export const landing = {
       guide: 'Guía de Cuidados',
     },
   },
+  supplies: {
+    hero: {
+      badge: 'El Archivo del Curador',
+      title: 'Suministros Arcanos',
+      description:
+        'Cada leyenda requiere nutrición precisa y cuidado encantado. Nuestro archivo curado ofrece los elementos más raros recolectados en los confines de los reinos conocidos para mantener a tus compañeros míticos.',
+    },
+    filters: {
+      all: 'Todas las Colecciones',
+      nutrition: 'Nutrición',
+      habitats: 'Hábitats',
+      gear: 'Equipo Encantado',
+      rituals: 'Herramientas Rituales',
+    },
+    products: {
+      phoenixGrain: {
+        name: 'Grano de Ascuas de Fénix',
+        description:
+          'Cosechado de las laderas de ceniza del Monte Ignis, estos granos laten con calor eterno para mantener el plumaje radiante de los espíritus aviares nacidos del fuego.',
+        rarity: 'Mítico',
+        price: '450',
+      },
+      krakenSalt: {
+        name: 'Bloques de Sal de Kraken',
+        description:
+          'Enriquecidos con minerales abisales y algas bioluminiscentes, esenciales para la integridad estructural de behemots oceánicos y leviatanes.',
+        rarity: 'Legendario',
+        price: '320',
+      },
+      groomingKit: {
+        name: 'Kit de Aseo Encantado',
+        description:
+          'Un conjunto de cepillos con mango de plata y aceites cargados de luna diseñados para desenredar crines de polvo estelar y pulir escamas de dragón sin fricción.',
+        rarity: 'Raro',
+        price: '1,200',
+      },
+      astralTether: {
+        name: 'Atadura Astral',
+        description:
+          'Tejida con seda que desafía la gravedad, esta correa permite manejar mascotas etéreas mientras están en fase entre dimensiones.',
+        price: '650',
+      },
+      voidGlass: {
+        name: 'Terrario de Cristal de Vacío',
+        description:
+          'Una unidad de contención forjada con oscuridad solidificada, perfecta para Sombras-Duendes y otras entidades sensibles a los espectros de luz tradicionales.',
+        rarity: 'Mítico',
+        price: '2,800',
+      },
+      manaFlasks: {
+        name: 'Frascos de Maná Cantarín',
+        description:
+          'Cada botella tararea una frecuencia específica que calma a los espíritus agitados durante viajes o tratamientos médicos.',
+        price: '150',
+      },
+    },
+    cta: {
+      title: 'Registro de los Sabios',
+      description:
+        'Únete a nuestro gremio para acceso anticipado a envíos raros y guías exclusivas de cuidado para compañeros legendarios.',
+      placeholder: 'Escribe tu correo...',
+      enlist: 'Alistarse',
+    },
+    buy: 'Comprar',
+    currency: 'GP',
+  },
 }

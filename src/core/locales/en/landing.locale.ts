@@ -178,4 +178,70 @@ export const landing = {
       guide: 'Care Guide',
     },
   },
+  supplies: {
+    hero: {
+      badge: "The Curator's Archive",
+      title: 'Arcane Supplies',
+      description:
+        'Every legend requires precise nourishment and enchanted care. Our curated archive offers the rarest elements gathered from the edges of the known realms to sustain your mythical companions.',
+    },
+    filters: {
+      all: 'All Collections',
+      nutrition: 'Nutrition',
+      habitats: 'Habitats',
+      gear: 'Enchanted Gear',
+      rituals: 'Ritual Tools',
+    },
+    products: {
+      phoenixGrain: {
+        name: 'Phoenix Ember-Grain',
+        description:
+          'Harvested from the ash-slopes of Mount Ignis, these grains pulse with eternal heat to maintain the radiant plumage of fire-born avian spirits.',
+        rarity: 'Mythic',
+        price: '450',
+      },
+      krakenSalt: {
+        name: 'Kraken Salt-Blocks',
+        description:
+          'Enriched with abyssal minerals and bioluminescent algae, essential for the structural integrity of oceanic behemoths and leviathans.',
+        rarity: 'Legendary',
+        price: '320',
+      },
+      groomingKit: {
+        name: 'Enchanted Grooming Kit',
+        description:
+          'A suite of silver-handled brushes and moon-charged oils designed to untangle stardust manes and polish dragon scales without friction.',
+        rarity: 'Rare',
+        price: '1,200',
+      },
+      astralTether: {
+        name: 'Astral Tether',
+        description:
+          'Woven from gravity-defying silk, this leash allows the handling of ethereal pets while they are phased between dimensions.',
+        price: '650',
+      },
+      voidGlass: {
+        name: 'Void-Glass Terrarium',
+        description:
+          'A containment unit forged from solidified darkness, perfect for Shadow-Imps and other entities sensitive to traditional light spectrums.',
+        rarity: 'Mythic',
+        price: '2,800',
+      },
+      manaFlasks: {
+        name: 'Singing Mana-Flasks',
+        description:
+          'Each bottle hums a specific frequency that calms agitated spirits during travel or medical treatments.',
+        price: '150',
+      },
+    },
+    cta: {
+      title: 'Registry of the Wise',
+      description:
+        'Join our guild for early access to rare shipments and exclusive husbandry guides for legendary companions.',
+      placeholder: 'Scribe your email...',
+      enlist: 'Enlist',
+    },
+    buy: 'Buy',
+    currency: 'GP',
+  },
 }
