@@ -244,4 +244,78 @@ export const landing = {
     buy: 'Comprar',
     currency: 'GP',
   },
+  guild: {
+    hero: {
+      title: 'Une tu destino al Gremio',
+      description:
+        'Desde las eras del Primer Pacto, el Gremio de los Sabios ha custodiado los secretos de las criaturas astrales. Conviértete en el guardián de lo imposible y escribe tu nombre en el Gran Archivo.',
+      join: 'Solicitar Ingreso',
+      explore: 'Explorar Edictos',
+    },
+    tiers: {
+      title: 'Rangos de Iniciación',
+      explorer: {
+        name: 'Explorador Novato',
+        description: 'Para aquellos que acaban de despertar su vínculo con lo etéreo.',
+        benefits: ['Acceso al Bestiario Público', 'Mapas de Rastreo Básicos'],
+        cta: 'Comenzar Viaje',
+      },
+      tamer: {
+        name: 'Domador Maestro',
+        badge: 'MÁS ELEGIDO',
+        description: 'Líderes de expediciones que han dominado el arte de la comunión animal.',
+        benefits: [
+          'Descuentos en Suministros Arcanos',
+          'Acceso al Bestiario Oculto',
+          'Monturas de Rango Épico',
+        ],
+        cta: 'Ascender Ahora',
+      },
+      keeper: {
+        name: 'Gran Conservador',
+        description: 'Arquitectos del Gremio, poseedores de las llaves del Santuario Prohibido.',
+        benefits: [
+          'Control del Santuario Prohibido',
+          'Voz en el Cónclave de los Sabios',
+          'Menciones en el Registro de Leyendas',
+        ],
+        cta: 'Reclamar Legado',
+      },
+    },
+    registry: {
+      title: 'Registro de Leyendas',
+      subtitle: 'Aquellos cuyos nombres han sido grabados en las estrellas.',
+      filter: 'Filtrar por Rango',
+      viewAll: 'Ver todo el Registro de Almas',
+      members: {
+        valerius: {
+          name: 'Lord Valerius Thorne',
+          role: 'Custodio del Fénix • Gran Conservador',
+          tags: ['MAGIA DE FUEGO', 'ANCIANO'],
+        },
+        elara: {
+          name: 'Lady Elara Vance',
+          role: 'Sombra del Abismo • Domador Maestro',
+          tags: ['SIGILO', 'ASTROS'],
+        },
+        kaelen: {
+          name: 'Maestro Kaelen',
+          role: 'Buscador de Cumbres • Explorador Novato',
+          tags: ['CARTOGRAFÍA', 'VUELO'],
+        },
+        seraphina: {
+          name: 'Seraphina la Sabia',
+          role: 'Voz del Oráculo • Gran Conservador',
+          tags: ['ADIVINACIÓN', 'ASTRAL'],
+        },
+      },
+    },
+    cta: {
+      title: 'Únete al Pacto',
+      description:
+        'Tu nombre te espera. Entra en el Gremio de los Sabios y comienza tu legado entre las criaturas celestiales.',
+      button: 'Firmar el Pacto',
+      quote: '"El destino no se encuentra, se forja en el gremio."',
+    },
+  },
 }

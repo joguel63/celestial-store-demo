@@ -244,4 +244,79 @@ export const landing = {
     buy: 'Buy',
     currency: 'GP',
   },
+  guild: {
+    hero: {
+      title: 'Bind Your Fate to the Guild',
+      description:
+        'Since the ages of the First Pact, the Guild of Sages has guarded the secrets of astral creatures. Become the guardian of the impossible and write your name in the Great Archive.',
+      join: 'Request Entry',
+      explore: 'Explore Edicts',
+    },
+    tiers: {
+      title: 'Initiation Ranks',
+      explorer: {
+        name: 'Novice Explorer',
+        description: 'For those who have just awakened their bond with the ethereal.',
+        benefits: ['Access to the Public Bestiary', 'Basic Tracking Maps'],
+        cta: 'Begin Journey',
+      },
+      tamer: {
+        name: 'Master Tamer',
+        badge: 'MOST POPULAR',
+        description: 'Expedition leaders who have mastered the art of animal communion.',
+        benefits: [
+          'Arcane Supplies Discounts',
+          'Access to the Hidden Bestiary',
+          'Epic-Rank Mounts',
+        ],
+        cta: 'Ascend Now',
+      },
+      keeper: {
+        name: 'Grand Keeper',
+        description:
+          'Architects of the Guild, holders of the keys to the Forbidden Sanctuary.',
+        benefits: [
+          'Control of the Forbidden Sanctuary',
+          'Voice in the Council of Sages',
+          'Mentions in the Registry of Legends',
+        ],
+        cta: 'Claim Legacy',
+      },
+    },
+    registry: {
+      title: 'Registry of Legends',
+      subtitle: 'Those whose names have been etched into the stars.',
+      filter: 'Filter by Rank',
+      viewAll: 'View Full Soul Registry',
+      members: {
+        valerius: {
+          name: 'Lord Valerius Thorne',
+          role: 'Phoenix Warden • Grand Keeper',
+          tags: ['FIRE MAGIC', 'ELDER'],
+        },
+        elara: {
+          name: 'Lady Elara Vance',
+          role: 'Shadow of the Abyss • Master Tamer',
+          tags: ['STEALTH', 'STARS'],
+        },
+        kaelen: {
+          name: 'Master Kaelen',
+          role: 'Summit Seeker • Novice Explorer',
+          tags: ['CARTOGRAPHY', 'FLIGHT'],
+        },
+        seraphina: {
+          name: 'Seraphina the Wise',
+          role: 'Voice of the Oracle • Grand Keeper',
+          tags: ['DIVINATION', 'ASTRAL'],
+        },
+      },
+    },
+    cta: {
+      title: 'Join the Pact',
+      description:
+        'Your name awaits. Enter the Guild of Sages and begin your legacy among the celestial creatures.',
+      button: 'Sign the Pact',
+      quote: '"Destiny is not found, it is forged within the guild."',
+    },
+  },
 }
