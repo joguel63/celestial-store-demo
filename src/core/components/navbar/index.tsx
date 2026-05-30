@@ -87,7 +87,14 @@ export const Navbar = () => {
           >
             {t('navbar.links.stables')}
           </Link>
-          <Link href="#" underline="none" sx={styles.link}>
+          <Link
+            href="/supplies"
+            underline="none"
+            sx={{
+              ...styles.link,
+              ...(location.pathname === '/supplies' ? styles.activeLink : {}),
+            }}
+          >
             {t('navbar.links.supplies')}
           </Link>
           <Link href="#" underline="none" sx={styles.link}>
