@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from '@/core/layouts/mainLayout'
 import { LandingPage } from '@/modules/landing/pages/landingPage'
 import { StablesPage } from '@/modules/stables/pages/stablesPage'
+import { SuppliesPage } from '@/modules/supplies/pages/suppliesPage'
 
 export const AppRouter = () => (
   <BrowserRouter>
@@ -9,6 +10,7 @@ export const AppRouter = () => (
       <Route element={<MainLayout />}>
         <Route path="/" element={<LandingPage />} />
         <Route path="/stables" element={<StablesPage />} />
+        <Route path="/supplies" element={<SuppliesPage />} />
       </Route>
     </Routes>
   </BrowserRouter>
