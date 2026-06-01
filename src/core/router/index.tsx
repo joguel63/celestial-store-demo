@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from '@/core/layouts/mainLayout'
-import { LandingPage } from '@/modules/landing/pages/landingPage'
-import { StablesPage } from '@/modules/stables/pages/stablesPage'
-import { SuppliesPage } from '@/modules/supplies/pages/suppliesPage'
-import { GuildPage } from '@/modules/guild/pages/guildPage'
+import { LandingModule } from '@/modules/landing'
+import { StablesModule } from '@/modules/stables'
+import { SuppliesModule } from '@/modules/supplies'
+import { GuildModule } from '@/modules/guild'
 
 export const AppRouter = () => (
   <BrowserRouter>
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/stables" element={<StablesPage />} />
-        <Route path="/supplies" element={<SuppliesPage />} />
-        <Route path="/guild" element={<GuildPage />} />
+        <Route path="/" element={<LandingModule />} />
+        <Route path="/stables" element={<StablesModule />} />
+        <Route path="/supplies" element={<SuppliesModule />} />
+        <Route path="/guild" element={<GuildModule />} />
       </Route>
     </Routes>
   </BrowserRouter>

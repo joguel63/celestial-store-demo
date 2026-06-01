@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import phoenixImg from '@/assets/landing/phoenix.png'
 import gryphonImg from '@/assets/landing/gryphon.png'
 import kelpieImg from '@/assets/landing/kelpie.png'
+import { styles } from './styles'
 
 interface CreatureCardProps {
   image: string
@@ -13,67 +14,6 @@ interface CreatureCardProps {
   description: string
 }
 
-const styles = {
-  card: {
-    position: 'relative',
-    bgcolor: 'background.paper',
-    borderTop: '2px solid',
-    borderColor: 'primary.main',
-    p: '1px',
-    transition: 'all 0.3s',
-    '&:hover': {
-      transform: 'translateY(-8px)',
-    },
-  },
-  imageWrap: {
-    aspectRatio: '3/4',
-    overflow: 'hidden',
-    position: 'relative',
-    '& img': {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      transition: 'transform 0.7s',
-    },
-    '&:hover img': {
-      transform: 'scale(1.1)',
-    },
-  },
-  gradient: {
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(to top, var(--bg, #1f2111), transparent)',
-  },
-  body: {
-    p: 3,
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    mb: 2,
-  },
-  name: {
-    fontFamily: '"Playfair Display", serif',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-  },
-  rarity: {
-    fontSize: '0.625rem',
-    textTransform: 'uppercase',
-    letterSpacing: '-0.02em',
-    borderRadius: '999px',
-    px: 1,
-    py: 0.25,
-  },
-  description: {
-    fontSize: '1rem',
-    lineHeight: 1.5,
-    color: 'text.secondary',
-    mb: 3,
-  },
-}
-
 const CreatureCard = ({ image, name, rarity, rarityColor, description }: CreatureCardProps) => {
   const { t } = useTranslation()
 
@@ -81,11 +21,11 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
     <Box sx={styles.card}>
       <Box sx={styles.imageWrap}>
         <Box component="img" src={image} alt={name} />
-        <Box sx={{ ...styles.gradient, '--bg': 'background.paper' } as never} />
+        <Box sx={{ ...styles.gradient, '--bg': 'background.paper' }} />
       </Box>
       <Box sx={styles.body}>
         <Box sx={styles.header}>
-          <Typography sx={styles.name}>{name}</Typography>
+          <Typography variant="h4" sx={styles.name}>{name}</Typography>
           <Chip
             label={rarity}
             size="small"

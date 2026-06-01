@@ -1,26 +1,12 @@
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { SupplyCard } from '../supplyCard'
+import { styles } from './styles'
 import imgPhoenix from '@/assets/supplies/supply-phoenix-grain.png'
 import imgKraken from '@/assets/supplies/supply-kraken-salt.png'
-import imgGrooming from '@/assets/supplies/supply-phoenix-grain.png'
 import imgAstral from '@/assets/supplies/supply-astral-tether.png'
 import imgVoid from '@/assets/supplies/supply-void-glass.png'
 import imgMana from '@/assets/supplies/supply-mana-flasks.png'
-
-const styles = {
-  section: {
-    py: 12,
-    maxWidth: '1280px',
-    mx: 'auto',
-    px: { xs: '20px', md: '64px' },
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' },
-    gap: 3,
-  },
-}
 
 export const SupplyGrid = () => {
   const { t } = useTranslation()
@@ -34,21 +20,24 @@ export const SupplyGrid = () => {
       name: t('supplies.products.phoenixGrain.name'),
       description: t('supplies.products.phoenixGrain.description'),
       price: t('supplies.products.phoenixGrain.price'),
-      rarity: 'Mythic' as const,
+      rarity: 'mythic' as const,
+      rarityLabel: t('supplies.products.phoenixGrain.rarity'),
     },
     {
       image: imgKraken,
       name: t('supplies.products.krakenSalt.name'),
       description: t('supplies.products.krakenSalt.description'),
       price: t('supplies.products.krakenSalt.price'),
-      rarity: 'Legendary' as const,
+      rarity: 'legendary' as const,
+      rarityLabel: t('supplies.products.krakenSalt.rarity'),
     },
     {
-      image: imgGrooming,
+      image: imgMana,
       name: t('supplies.products.groomingKit.name'),
       description: t('supplies.products.groomingKit.description'),
       price: t('supplies.products.groomingKit.price'),
-      rarity: 'Rare' as const,
+      rarity: 'rare' as const,
+      rarityLabel: t('supplies.products.groomingKit.rarity'),
     },
     {
       image: imgAstral,
@@ -61,7 +50,8 @@ export const SupplyGrid = () => {
       name: t('supplies.products.voidGlass.name'),
       description: t('supplies.products.voidGlass.description'),
       price: t('supplies.products.voidGlass.price'),
-      rarity: 'Mythic' as const,
+      rarity: 'mythic' as const,
+      rarityLabel: t('supplies.products.voidGlass.rarity'),
     },
     {
       image: imgMana,
@@ -74,14 +64,15 @@ export const SupplyGrid = () => {
   return (
     <Box component="section" sx={styles.section}>
       <Box sx={styles.grid}>
-        {products.map((product, i) => (
+        {products.map((product) => (
           <SupplyCard
-            key={i}
+            key={product.name}
             image={product.image}
             name={product.name}
             description={product.description}
             price={product.price}
             rarity={product.rarity}
+            rarityLabel={product.rarityLabel}
             buyLabel={buyLabel}
             currencyLabel={currency}
           />

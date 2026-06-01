@@ -1,0 +1,1 @@
+export { SuppliesModule } from './router'

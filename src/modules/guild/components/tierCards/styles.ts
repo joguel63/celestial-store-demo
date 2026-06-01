@@ -90,10 +90,6 @@ export const styles: Styles = {
     mb: 3,
   },
   cardName: {
-    fontFamily: '"Playfair Display", serif',
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    lineHeight: 1.33,
     color: 'primary.main',
     mb: 2,
   },

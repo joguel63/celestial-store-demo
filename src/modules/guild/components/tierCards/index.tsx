@@ -4,6 +4,7 @@ import PetsIcon from '@mui/icons-material/Pets'
 import MenuBookIcon from '@mui/icons-material/MenuBook'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { useTranslation } from 'react-i18next'
+import { getStringArray } from '@/core/utils/getStringArray'
 import { styles } from './styles'
 
 export const TierCards = () => {
@@ -17,14 +18,14 @@ export const TierCards = () => {
         <Box sx={styles.grid}>
           <Box sx={styles.card}>
             <ExploreIcon sx={styles.icon} />
-            <Typography sx={styles.cardName}>
+            <Typography variant="h4" sx={styles.cardName}>
               {t('guild.tiers.explorer.name')}
             </Typography>
             <Typography sx={styles.cardDescription}>
               {t('guild.tiers.explorer.description')}
             </Typography>
             <Box sx={styles.benefitsList}>
-              {(t('guild.tiers.explorer.benefits', { returnObjects: true }) as unknown as string[]).map(
+              {getStringArray(t, 'guild.tiers.explorer.benefits').map(
                 (benefit) => (
                   <Box key={benefit} sx={styles.benefit}>
                     <CheckCircleIcon sx={styles.benefitIcon} />
@@ -38,14 +39,14 @@ export const TierCards = () => {
           <Box sx={styles.featuredCard}>
             <Box sx={styles.badge}>{t('guild.tiers.tamer.badge')}</Box>
             <PetsIcon sx={styles.icon} />
-            <Typography sx={styles.cardName}>
+            <Typography variant="h4" sx={styles.cardName}>
               {t('guild.tiers.tamer.name')}
             </Typography>
             <Typography sx={styles.cardDescription}>
               {t('guild.tiers.tamer.description')}
             </Typography>
             <Box sx={styles.benefitsList}>
-              {(t('guild.tiers.tamer.benefits', { returnObjects: true }) as unknown as string[]).map(
+              {getStringArray(t, 'guild.tiers.tamer.benefits').map(
                 (benefit) => (
                   <Box key={benefit} sx={styles.benefit}>
                     <CheckCircleIcon sx={styles.benefitIcon} />
@@ -60,14 +61,14 @@ export const TierCards = () => {
           </Box>
           <Box sx={styles.card}>
             <MenuBookIcon sx={styles.icon} />
-            <Typography sx={styles.cardName}>
+            <Typography variant="h4" sx={styles.cardName}>
               {t('guild.tiers.keeper.name')}
             </Typography>
             <Typography sx={styles.cardDescription}>
               {t('guild.tiers.keeper.description')}
             </Typography>
             <Box sx={styles.benefitsList}>
-              {(t('guild.tiers.keeper.benefits', { returnObjects: true }) as unknown as string[]).map(
+              {getStringArray(t, 'guild.tiers.keeper.benefits').map(
                 (benefit) => (
                   <Box key={benefit} sx={styles.benefit}>
                     <CheckCircleIcon sx={styles.benefitIcon} />

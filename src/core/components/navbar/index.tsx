@@ -1,60 +1,14 @@
 import { AppBar, Toolbar, Button, Box, Link, IconButton, Tooltip } from '@mui/material'
+import type { SxProps, Theme } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import { useTranslation } from 'react-i18next'
 import { useLocation, Link as RouterLink } from 'react-router-dom'
+import { styles } from './styles'
 
-const styles = {
-  nav: {
-    bgcolor: 'celestial.voidFog',
-    backdropFilter: 'blur(20px)',
-    borderBottom: '1px solid',
-    borderColor: 'celestial.goldVeil',
-    boxShadow: 'none',
-  },
-  toolbar: {
-    maxWidth: '1280px',
-    width: '100%',
-    mx: 'auto',
-    display: 'flex',
-    justifyContent: 'space-between',
-    height: 80,
-    px: { xs: '20px', md: '64px' },
-  },
-  brand: {
-    fontFamily: '"Playfair Display", serif',
-    fontWeight: 700,
-    fontSize: { xs: '1.25rem', md: '2rem' },
-    color: 'primary.main',
-  },
-  links: {
-    display: { xs: 'none', md: 'flex' },
-    gap: 5,
-  },
-  link: {
-    fontFamily: '"Manrope", sans-serif',
-    fontSize: '0.875rem',
-    fontWeight: 600,
-    letterSpacing: '0.1em',
-    color: 'text.secondary',
-    textDecoration: 'none',
-    cursor: 'pointer',
-    '&:hover': {
-      color: 'celestial.teal',
-    },
-  },
-  activeLink: {
-    color: 'primary.main',
-    fontWeight: 700,
-    borderBottom: '2px solid',
-    borderColor: 'primary.main',
-    paddingBottom: '4px',
-  },
-  actions: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 3,
-  },
-}
+const mergeLinkStyles = (isActive: boolean): SxProps<Theme> => ({
+  ...(styles.link as Record<string, unknown>),
+  ...(isActive ? (styles.activeLink as Record<string, unknown>) : {}),
+}) as SxProps<Theme>
 
 export const Navbar = () => {
   const { t } = useTranslation()
@@ -71,10 +25,7 @@ export const Navbar = () => {
             component={RouterLink}
             to="/"
             underline="none"
-            sx={{
-              ...styles.link,
-              ...(location.pathname === '/' ? styles.activeLink : {}),
-            }}
+            sx={mergeLinkStyles(location.pathname === '/')}
           >
             {t('navbar.links.bestiary')}
           </Link>
@@ -82,10 +33,7 @@ export const Navbar = () => {
             component={RouterLink}
             to="/stables"
             underline="none"
-            sx={{
-              ...styles.link,
-              ...(location.pathname === '/stables' ? styles.activeLink : {}),
-            }}
+            sx={mergeLinkStyles(location.pathname === '/stables')}
           >
             {t('navbar.links.stables')}
           </Link>
@@ -93,10 +41,7 @@ export const Navbar = () => {
             component={RouterLink}
             to="/supplies"
             underline="none"
-            sx={{
-              ...styles.link,
-              ...(location.pathname === '/supplies' ? styles.activeLink : {}),
-            }}
+            sx={mergeLinkStyles(location.pathname === '/supplies')}
           >
             {t('navbar.links.supplies')}
           </Link>
@@ -104,10 +49,7 @@ export const Navbar = () => {
             component={RouterLink}
             to="/guild"
             underline="none"
-            sx={{
-              ...styles.link,
-              ...(location.pathname === '/guild' ? styles.activeLink : {}),
-            }}
+            sx={mergeLinkStyles(location.pathname === '/guild')}
           >
             {t('navbar.links.guild')}
           </Link>

@@ -75,9 +75,6 @@ export const styles: Styles = {
     p: 4,
   },
   name: {
-    fontFamily: '"Playfair Display", serif',
-    fontSize: '1.5rem',
-    fontWeight: 600,
     color: 'primary.main',
     mb: 1,
   },
@@ -88,12 +85,7 @@ export const styles: Styles = {
     mb: 2,
       color: 'celestial.teal',
   },
-  habitatText: {
-    fontFamily: '"Manrope", sans-serif',
-    fontSize: '0.875rem',
-    fontWeight: 600,
-    letterSpacing: '0.1em',
-  },
+  habitatText: {},
   description: {
     fontSize: '1rem',
     lineHeight: 1.5,
@@ -108,11 +100,6 @@ export const styles: Styles = {
     pt: 2,
   },
   dominantLabel: {
-    fontFamily: '"Manrope", sans-serif',
-    fontSize: '0.875rem',
-    fontWeight: 600,
-    letterSpacing: '0.1em',
-    textTransform: 'uppercase',
     color: 'celestial.goldWash',
     display: 'block',
     mb: 1,

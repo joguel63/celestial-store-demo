@@ -1,26 +1,13 @@
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { getStringArray } from '@/core/utils/getStringArray'
 import { HabitatCard, FeaturedHabitatCard } from '../habitatCard'
+import { styles } from './styles'
 import imgCumbres from '@/assets/stables/habitat-cumbres.png'
 import imgAbismos from '@/assets/stables/habitat-abismos.png'
+import imgBosque from '@/assets/stables/habitat-bosque.png'
 import imgNucleo from '@/assets/stables/habitat-nucleo-magma.png'
 import imgDesierto from '@/assets/stables/habitat-desierto-estelar.png'
-
-const styles = {
-  section: {
-    py: 12,
-  },
-  container: {
-    maxWidth: '1280px',
-    mx: 'auto',
-    px: { xs: '20px', md: '64px' },
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' },
-    gap: 3,
-  },
-}
 
 export const HabitatGrid = () => {
   const { t } = useTranslation()
@@ -36,7 +23,7 @@ export const HabitatGrid = () => {
             habitatIcon="air"
             description={t('stables.habitats.cumbres.description')}
             dominantLabel={t('stables.habitats.cumbres.dominantLabel')}
-            species={t('stables.habitats.cumbres.species', { returnObjects: true }) as string[]}
+            species={getStringArray(t, 'stables.habitats.cumbres.species')}
             rarity={t('stables.habitats.cumbres.rarity')}
           />
           <HabitatCard
@@ -46,17 +33,17 @@ export const HabitatGrid = () => {
             habitatIcon="water"
             description={t('stables.habitats.abismos.description')}
             dominantLabel={t('stables.habitats.abismos.dominantLabel')}
-            species={t('stables.habitats.abismos.species', { returnObjects: true }) as string[]}
+            species={getStringArray(t, 'stables.habitats.abismos.species')}
             rarity={undefined}
           />
           <HabitatCard
-            image={imgAbismos}
+            image={imgBosque}
             name={t('stables.habitats.bosque.name')}
             habitat={t('stables.habitats.bosque.habitat')}
             habitatIcon="forest"
             description={t('stables.habitats.bosque.description')}
             dominantLabel={t('stables.habitats.bosque.dominantLabel')}
-            species={t('stables.habitats.bosque.species', { returnObjects: true }) as string[]}
+            species={getStringArray(t, 'stables.habitats.bosque.species')}
             rarity={undefined}
           />
           <FeaturedHabitatCard
@@ -75,7 +62,7 @@ export const HabitatGrid = () => {
             habitatIcon="star"
             description={t('stables.habitats.desierto.description')}
             dominantLabel={t('stables.habitats.desierto.dominantLabel')}
-            species={t('stables.habitats.desierto.species', { returnObjects: true }) as string[]}
+            species={getStringArray(t, 'stables.habitats.desierto.species')}
             rarity={undefined}
           />
         </Box>

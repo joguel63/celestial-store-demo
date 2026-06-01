@@ -1,0 +1,1 @@
+export { LandingModule } from './router'

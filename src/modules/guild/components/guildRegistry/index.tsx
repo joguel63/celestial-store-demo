@@ -5,6 +5,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { useTranslation } from 'react-i18next'
+import { getStringArray } from '@/core/utils/getStringArray'
 import { styles } from './styles'
 
 import imgValerius from '@/assets/guild/member-valerius.png'
@@ -36,7 +37,7 @@ const MemberCard = ({ image, name, role, tags, badge, badgeIcon }: MemberProps) 
         </Box>
       ) : null}
     </Box>
-    <Box sx={styles.info}>
+    <Box>
       <Typography sx={styles.memberName}>{name}</Typography>
       <Typography sx={styles.memberRole}>{role}</Typography>
       <Box sx={styles.tags}>
@@ -70,7 +71,7 @@ export const GuildRegistry = () => {
             image={imgValerius}
             name={t('guild.registry.members.valerius.name')}
             role={t('guild.registry.members.valerius.role')}
-            tags={t('guild.registry.members.valerius.tags', { returnObjects: true }) as unknown as string[]}
+            tags={getStringArray(t, 'guild.registry.members.valerius.tags')}
             badge="shimmer"
             badgeIcon={<StarIcon sx={styles.badgeIcon} />}
           />
@@ -78,7 +79,7 @@ export const GuildRegistry = () => {
             image={imgElara}
             name={t('guild.registry.members.elara.name')}
             role={t('guild.registry.members.elara.role')}
-            tags={t('guild.registry.members.elara.tags', { returnObjects: true }) as unknown as string[]}
+            tags={getStringArray(t, 'guild.registry.members.elara.tags')}
             badge="teal"
             badgeIcon={<AutoAwesomeIcon sx={styles.badgeIconTeal} />}
           />
@@ -86,14 +87,14 @@ export const GuildRegistry = () => {
             image={imgKaelen}
             name={t('guild.registry.members.kaelen.name')}
             role={t('guild.registry.members.kaelen.role')}
-            tags={t('guild.registry.members.kaelen.tags', { returnObjects: true }) as unknown as string[]}
+            tags={getStringArray(t, 'guild.registry.members.kaelen.tags')}
             badgeIcon={null}
           />
           <MemberCard
             image={imgSeraphina}
             name={t('guild.registry.members.seraphina.name')}
             role={t('guild.registry.members.seraphina.role')}
-            tags={t('guild.registry.members.seraphina.tags', { returnObjects: true }) as unknown as string[]}
+            tags={getStringArray(t, 'guild.registry.members.seraphina.tags')}
             badge="shimmer"
             badgeIcon={<VisibilityIcon sx={styles.badgeIcon} />}
           />

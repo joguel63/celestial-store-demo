@@ -15,7 +15,6 @@ type Styles = Record<
   | 'badgeTeal'
   | 'badgeIcon'
   | 'badgeIconTeal'
-  | 'info'
   | 'memberName'
   | 'memberRole'
   | 'tags'
@@ -141,7 +140,6 @@ export const styles: Styles = {
     fontSize: 14,
     color: 'celestial.tealAbyss',
   },
-  info: {},
   memberName: {
     fontFamily: '"Playfair Display", serif',
     fontSize: '1.25rem',
