@@ -34,7 +34,7 @@ export const styles: Styles = {
       objectFit: 'cover',
       opacity: 0.4,
     },
-  } as SxProps<Theme>,
+  } ,
   vignette: {
     position: 'absolute',
     inset: 0,
@@ -100,5 +100,5 @@ export const styles: Styles = {
       bgcolor: 'rgba(242, 202, 80, 0.05)',
       borderColor: 'primary.main',
     },
-  } as SxProps<Theme>,
+  } ,
 }

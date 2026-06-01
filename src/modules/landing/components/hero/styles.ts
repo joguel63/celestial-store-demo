@@ -33,7 +33,7 @@ export const styles: Styles = {
       objectFit: 'cover',
       opacity: 0.4,
     },
-  } as SxProps<Theme>,
+  } ,
   stars: {
     position: 'absolute',
     inset: 0,

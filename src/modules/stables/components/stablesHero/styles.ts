@@ -24,7 +24,7 @@ export const styles: Styles = {
       objectFit: 'cover',
       opacity: 0.5,
     },
-  } as SxProps<Theme>,
+  } ,
   gradient: {
     position: 'absolute',
     inset: 0,

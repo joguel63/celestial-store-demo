@@ -83,7 +83,7 @@ export const styles: Styles = {
       objectFit: 'cover',
       borderRadius: '50%',
     },
-  } as SxProps<Theme>,
+  } ,
   authorInfo: {
     textAlign: 'left',
   },

@@ -51,7 +51,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.1)',
     },
-  } as SxProps<Theme>,
+  } ,
   vignette: {
     position: 'absolute',
     inset: 0,
@@ -131,7 +131,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.05)',
     },
-  } as SxProps<Theme>,
+  } ,
   featuredBody: {
     p: { xs: 4, md: 5 },
     display: 'flex',

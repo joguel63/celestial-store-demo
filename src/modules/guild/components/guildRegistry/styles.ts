@@ -75,7 +75,7 @@ export const styles: Styles = {
       borderColor: 'rgba(242, 202, 80, 0.3)',
       bgcolor: 'rgba(19, 20, 7, 0.5)',
     },
-  } as SxProps<Theme>,
+  } ,
   grid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
@@ -93,7 +93,7 @@ export const styles: Styles = {
     '&:hover': {
       borderColor: 'rgba(242, 202, 80, 0.2)',
     },
-  } as SxProps<Theme>,
+  } ,
   avatarWrap: {
     position: 'relative',
     width: 96,
@@ -110,7 +110,7 @@ export const styles: Styles = {
     '&:hover img': {
       filter: 'grayscale(0%)',
     },
-  } as SxProps<Theme>,
+  } ,
   avatarBadge: {
     position: 'absolute',
     bottom: -2,
@@ -189,5 +189,5 @@ export const styles: Styles = {
       textDecoration: 'underline',
       bgcolor: 'transparent',
     },
-  } as SxProps<Theme>,
+  } ,
 }

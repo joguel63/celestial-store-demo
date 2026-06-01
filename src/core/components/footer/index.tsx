@@ -4,6 +4,8 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu'
 import SendIcon from '@mui/icons-material/Send'
 import { useTranslation } from 'react-i18next'
+import { Link as RouterLink } from 'react-router-dom'
+import { ROUTES } from '@/core/enums/routes'
 import { styles } from './styles'
 
 export const Footer = () => {
@@ -34,9 +36,9 @@ export const Footer = () => {
             {t('footer.navigation.title')}
           </Typography>
           <Box component="ul" sx={styles.linkList}>
-            <li><Link underline="none" sx={styles.link}>{t('footer.navigation.stables')}</Link></li>
-            <li><Link underline="none" sx={styles.link}>{t('footer.navigation.supplies')}</Link></li>
-            <li><Link underline="none" sx={styles.link}>{t('footer.navigation.guild')}</Link></li>
+            <li><Link component={RouterLink} to={ROUTES.STABLES} underline="none" sx={styles.link}>{t('footer.navigation.stables')}</Link></li>
+            <li><Link component={RouterLink} to={ROUTES.SUPPLIES} underline="none" sx={styles.link}>{t('footer.navigation.supplies')}</Link></li>
+            <li><Link component={RouterLink} to={ROUTES.GUILD} underline="none" sx={styles.link}>{t('footer.navigation.guild')}</Link></li>
           </Box>
         </Box>
         <Box>

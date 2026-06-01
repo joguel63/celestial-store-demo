@@ -1,1 +1,1 @@
-export { SuppliesModule } from './router'
+export { SuppliesModule, SuppliesModule as default } from './router'

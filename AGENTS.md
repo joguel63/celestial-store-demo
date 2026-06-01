@@ -74,7 +74,7 @@ export const styles: Styles = {
 }
 ```
 
-Para estilos con selectores anidados (`'& img'`, `'&:hover img'`) que escapan del tipado `SxProps<Theme>`, usar `as SxProps<Theme>` en esa propiedad individual.
+Para estilos con selectores anidados (`'& img'`, `'&:hover img'`) que escapan del tipado `SxProps<Theme>`, usar `` en esa propiedad individual.
 
 No usar `as const` en valores de texto — el tipado `SxProps<Theme>` ya estrecha los literales.
 

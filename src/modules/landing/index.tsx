@@ -1,1 +1,1 @@
-export { LandingModule } from './router'
+export { LandingModule, LandingModule as default } from './router'

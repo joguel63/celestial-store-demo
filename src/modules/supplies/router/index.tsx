@@ -1,3 +1,8 @@
+import { Route, Routes } from 'react-router-dom'
 import { SuppliesPage } from '../pages/suppliesPage'
 
-export const SuppliesModule = () => <SuppliesPage />
+export const SuppliesModule = () => (
+  <Routes>
+    <Route index element={<SuppliesPage />} />
+  </Routes>
+)

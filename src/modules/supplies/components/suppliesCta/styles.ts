@@ -81,7 +81,7 @@ export const styles: Styles = {
         },
       },
     },
-  } as SxProps<Theme>,
+  } ,
   button: {
     px: 4,
     py: 2,
@@ -96,5 +96,5 @@ export const styles: Styles = {
     '&:active': {
       transform: 'scale(0.95)',
     },
-  } as SxProps<Theme>,
+  } ,
 }

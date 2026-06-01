@@ -1,1 +1,1 @@
-export { StablesModule } from './router'
+export { StablesModule, StablesModule as default } from './router'

@@ -37,7 +37,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.1)',
     },
-  } as SxProps<Theme>,
+  } ,
   gradient: {
     position: 'absolute',
     inset: 0,

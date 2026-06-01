@@ -32,7 +32,7 @@ export const styles: Styles = {
       borderColor: 'primary.main',
       bgcolor: 'background.paper',
     },
-  } as SxProps<Theme>,
+  } ,
   filterInactive: {
     px: 4,
     py: 1.5,
@@ -51,5 +51,5 @@ export const styles: Styles = {
       color: 'celestial.teal',
       bgcolor: 'transparent',
     },
-  } as SxProps<Theme>,
+  } ,
 }

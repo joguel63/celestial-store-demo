@@ -3,12 +3,13 @@ import type { SxProps, Theme } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import { useTranslation } from 'react-i18next'
 import { useLocation, Link as RouterLink } from 'react-router-dom'
+import { ROUTES } from '@/core/enums/routes'
 import { styles } from './styles'
 
 const mergeLinkStyles = (isActive: boolean): SxProps<Theme> => ({
   ...(styles.link as Record<string, unknown>),
   ...(isActive ? (styles.activeLink as Record<string, unknown>) : {}),
-}) as SxProps<Theme>
+}) 
 
 export const Navbar = () => {
   const { t } = useTranslation()
@@ -23,33 +24,33 @@ export const Navbar = () => {
         <Box sx={styles.links}>
           <Link
             component={RouterLink}
-            to="/"
+            to={ROUTES.HOME}
             underline="none"
-            sx={mergeLinkStyles(location.pathname === '/')}
+            sx={mergeLinkStyles(location.pathname === ROUTES.HOME)}
           >
             {t('navbar.links.bestiary')}
           </Link>
           <Link
             component={RouterLink}
-            to="/stables"
+            to={ROUTES.STABLES}
             underline="none"
-            sx={mergeLinkStyles(location.pathname === '/stables')}
+            sx={mergeLinkStyles(location.pathname === ROUTES.STABLES)}
           >
             {t('navbar.links.stables')}
           </Link>
           <Link
             component={RouterLink}
-            to="/supplies"
+            to={ROUTES.SUPPLIES}
             underline="none"
-            sx={mergeLinkStyles(location.pathname === '/supplies')}
+            sx={mergeLinkStyles(location.pathname === ROUTES.SUPPLIES)}
           >
             {t('navbar.links.supplies')}
           </Link>
           <Link
             component={RouterLink}
-            to="/guild"
+            to={ROUTES.GUILD}
             underline="none"
-            sx={mergeLinkStyles(location.pathname === '/guild')}
+            sx={mergeLinkStyles(location.pathname === ROUTES.GUILD)}
           >
             {t('navbar.links.guild')}
           </Link>

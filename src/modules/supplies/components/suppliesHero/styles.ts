@@ -25,7 +25,7 @@ export const styles: Styles = {
       objectFit: 'cover',
       opacity: 0.5,
     },
-  } as SxProps<Theme>,
+  } ,
   overlay: {
     position: 'absolute',
     inset: 0,
