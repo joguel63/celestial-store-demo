@@ -57,7 +57,7 @@ const styles = {
     fontWeight: 600,
     letterSpacing: '0.15em',
     textTransform: 'uppercase' as const,
-    color: '#79dfd4',
+    color: 'celestial.teal',
   },
   title: {
     fontFamily: '"Playfair Display", serif',

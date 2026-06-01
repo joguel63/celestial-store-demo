@@ -103,7 +103,7 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
           fullWidth
           sx={{
             py: 1.5,
-            borderColor: 'rgba(242, 202, 80, 0.2)',
+            borderColor: 'celestial.goldVeil',
             color: 'primary.main',
             '&:hover': {
               bgcolor: 'primary.main',
@@ -127,7 +127,7 @@ export const FeaturedCreatures = () => {
       image: phoenixImg,
       name: t('featured.creatures.phoenix.name'),
       rarity: t('featured.creatures.phoenix.rarity'),
-      rarityColor: '#79dfd4',
+      rarityColor: 'celestial.teal',
       description: t('featured.creatures.phoenix.description'),
     },
     {
@@ -164,7 +164,7 @@ export const FeaturedCreatures = () => {
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             <Button
               sx={{
-                color: '#79dfd4',
+                color: 'celestial.teal',
                 fontSize: '0.875rem',
                 fontWeight: 600,
                 letterSpacing: '0.1em',

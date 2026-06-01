@@ -106,11 +106,11 @@ export const Hero = () => {
               sx={{
                 px: 5,
                 py: 2,
-                borderColor: 'rgba(242, 202, 80, 0.4)',
+                borderColor: 'celestial.goldFog',
                 color: 'primary.main',
                 '&:hover': {
                   borderColor: 'primary.main',
-                  bgcolor: 'rgba(242, 202, 80, 0.1)',
+                  bgcolor: 'celestial.goldMist',
                 },
               }}
             >

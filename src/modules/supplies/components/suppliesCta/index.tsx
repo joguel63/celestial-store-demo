@@ -6,7 +6,7 @@ const styles = {
     py: { xs: 8, md: 10 },
     px: { xs: '20px', md: '64px' },
     mb: { xs: 8, md: 10 },
-    bgcolor: '#2a2b1b',
+    bgcolor: 'celestial.thicket',
     position: 'relative',
     overflow: 'hidden',
   },
@@ -16,7 +16,7 @@ const styles = {
     right: 0,
     width: '33%',
     height: '100%',
-    background: 'linear-gradient(to left, rgba(121, 223, 212, 0.1), transparent)',
+    background: 'linear-gradient(to left, celestial.tealMist, transparent)',
   },
   container: {
     maxWidth: '1280px',
@@ -60,11 +60,11 @@ const styles = {
       },
       '&:hover fieldset': {
         border: '1px solid',
-        borderColor: '#79dfd4',
+            borderColor: 'celestial.teal',
       },
       '&.Mui-focused fieldset': {
         border: '1px solid',
-        borderColor: '#79dfd4',
+            borderColor: 'celestial.teal',
       },
       '& input': {
         py: 2,

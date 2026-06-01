@@ -5,10 +5,10 @@ import { useLocation, Link as RouterLink } from 'react-router-dom'
 
 const styles = {
   nav: {
-    bgcolor: 'rgba(19, 20, 7, 0.4)',
+    bgcolor: 'celestial.voidFog',
     backdropFilter: 'blur(20px)',
     borderBottom: '1px solid',
-    borderColor: 'rgba(242, 202, 80, 0.2)',
+    borderColor: 'celestial.goldVeil',
     boxShadow: 'none',
   },
   toolbar: {
@@ -39,7 +39,7 @@ const styles = {
     textDecoration: 'none',
     cursor: 'pointer',
     '&:hover': {
-      color: '#79dfd4',
+      color: 'celestial.teal',
     },
   },
   activeLink: {

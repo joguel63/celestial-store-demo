@@ -17,9 +17,9 @@ const styles = {
   filterActive: {
     px: 4,
     py: 1.5,
-    bgcolor: '#1f2111',
+    bgcolor: 'background.paper',
     border: '1px solid',
-    borderColor: 'rgba(242, 202, 80, 0.2)',
+    borderColor: 'celestial.goldVeil',
     color: 'primary.main',
     fontFamily: '"Manrope", sans-serif',
     fontSize: '0.875rem',
@@ -29,7 +29,7 @@ const styles = {
     borderRadius: 0,
     '&:hover': {
       borderColor: 'primary.main',
-      bgcolor: '#1f2111',
+      bgcolor: 'background.paper',
     },
   },
   filterInactive: {
@@ -46,8 +46,8 @@ const styles = {
     textTransform: 'none',
     borderRadius: 0,
     '&:hover': {
-      borderColor: '#79dfd4',
-      color: '#79dfd4',
+      borderColor: 'celestial.teal',
+      color: 'celestial.teal',
       bgcolor: 'transparent',
     },
   },

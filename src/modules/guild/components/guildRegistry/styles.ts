@@ -28,7 +28,7 @@ type Styles = Record<
 export const styles: Styles = {
   section: {
     py: { xs: 12, md: 16 },
-    bgcolor: '#0e0f03',
+    bgcolor: 'celestial.abyss',
   },
   container: {
     maxWidth: '1280px',
@@ -123,7 +123,7 @@ export const styles: Styles = {
     alignItems: 'center',
     justifyContent: 'center',
     border: '2px solid',
-    borderColor: '#131407',
+    borderColor: 'background.default',
   },
   badgeShimmer: {
     background: 'linear-gradient(90deg, #f2ca50, #4DB6AC, #f2ca50)',
@@ -131,15 +131,15 @@ export const styles: Styles = {
     animation: 'shimmer 4s linear infinite',
   },
   badgeTeal: {
-    bgcolor: '#79dfd4',
+    bgcolor: 'celestial.teal',
   },
   badgeIcon: {
     fontSize: 14,
-    color: '#3c2f00',
+    color: 'primary.contrastText',
   },
   badgeIconTeal: {
     fontSize: 14,
-    color: '#003733',
+    color: 'celestial.tealAbyss',
   },
   info: {},
   memberName: {

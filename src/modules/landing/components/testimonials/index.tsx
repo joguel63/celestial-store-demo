@@ -5,7 +5,7 @@ import curatorImg from '@/assets/landing/testimonial-curator.png'
 const styles = {
   section: {
     py: 12,
-    bgcolor: '#0e0f03',
+    bgcolor: 'celestial.abyss',
     position: 'relative',
     overflow: 'hidden',
   },

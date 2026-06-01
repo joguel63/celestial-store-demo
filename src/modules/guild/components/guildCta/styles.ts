@@ -59,7 +59,7 @@ export const styles: Styles = {
     py: 2.5,
     background: 'linear-gradient(90deg, #f2ca50, #4DB6AC, #f2ca50)',
     backgroundSize: '200% auto',
-    color: '#3c2f00',
+    color: 'primary.contrastText',
     fontFamily: '"Manrope", sans-serif',
     fontSize: '0.875rem',
     fontWeight: 700,

@@ -9,7 +9,7 @@ const styles = {
   overlay: {
     position: 'absolute',
     inset: 0,
-    bgcolor: 'rgba(242, 202, 80, 0.05)',
+    bgcolor: 'celestial.goldGlass',
   },
   container: {
     maxWidth: '1280px',
@@ -23,7 +23,7 @@ const styles = {
     mx: 'auto',
     borderTop: '1px solid',
     borderBottom: '1px solid',
-    borderColor: 'rgba(242, 202, 80, 0.2)',
+    borderColor: 'celestial.goldVeil',
     py: 10,
   },
   title: {

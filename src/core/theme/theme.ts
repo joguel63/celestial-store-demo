@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { alpha, createTheme } from '@mui/material/styles'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -11,6 +11,27 @@ declare module '@mui/material/styles' {
       void: string
       parchment: string
       chamber: string
+      abyss: string
+      moss: string
+      thicket: string
+      ember: string
+      bronze: string
+      stone: string
+      tealMid: string
+      tealDeep: string
+      tealAbyss: string
+      goldGlass: string
+      goldMist: string
+      goldVeil: string
+      goldHaze: string
+      goldFog: string
+      goldWash: string
+      tealGlass: string
+      tealMist: string
+      tealGlow: string
+      tealVeil: string
+      tealFog: string
+      voidFog: string
     }
   }
   interface PaletteOptions {
@@ -23,19 +44,69 @@ declare module '@mui/material/styles' {
       void: string
       parchment: string
       chamber: string
+      abyss: string
+      moss: string
+      thicket: string
+      ember: string
+      bronze: string
+      stone: string
+      tealMid: string
+      tealDeep: string
+      tealAbyss: string
+      goldGlass: string
+      goldMist: string
+      goldVeil: string
+      goldHaze: string
+      goldFog: string
+      goldWash: string
+      tealGlass: string
+      tealMist: string
+      tealGlow: string
+      tealVeil: string
+      tealFog: string
+      voidFog: string
     }
   }
 }
 
+const gold = '#f2ca50'
+const goldDim = '#d4af37'
+const teal = '#79dfd4'
+const tealDim = '#4db6ac'
+const deep = '#2e1a47'
+const voidColor = '#131407'
+const textPrimary = '#e4e4cc'
+
 const celestialColors = {
-  gold: '#f2ca50',
-  goldDim: '#d4af37',
-  teal: '#79dfd4',
-  tealDim: '#4db6ac',
-  deep: '#2e1a47',
-  void: '#131407',
+  gold,
+  goldDim,
+  teal,
+  tealDim,
+  deep,
+  void: voidColor,
   parchment: '#f5f5dc',
-  chamber: '#131407',
+  chamber: voidColor,
+  abyss: '#0e0f03',
+  moss: '#343625',
+  thicket: '#2a2b1b',
+  ember: '#241a00',
+  bronze: '#554300',
+  stone: '#99907c',
+  tealMid: '#5bc3b9',
+  tealDeep: '#004e48',
+  tealAbyss: '#003733',
+  goldGlass: alpha(gold, 0.05),
+  goldMist: alpha(gold, 0.1),
+  goldVeil: alpha(gold, 0.2),
+  goldHaze: alpha(gold, 0.3),
+  goldFog: alpha(gold, 0.4),
+  goldWash: alpha(gold, 0.6),
+  tealGlass: alpha(teal, 0.05),
+  tealMist: alpha(teal, 0.1),
+  tealGlow: alpha(tealDim, 0.15),
+  tealVeil: alpha(teal, 0.3),
+  tealFog: alpha(teal, 0.5),
+  voidFog: alpha(voidColor, 0.4),
 }
 
 export const theme = createTheme({
@@ -131,8 +202,8 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: '#131407',
-          color: '#e4e4cc',
+          backgroundColor: voidColor,
+          color: textPrimary,
           overflowX: 'hidden',
         },
       },

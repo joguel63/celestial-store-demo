@@ -64,7 +64,7 @@ export const styles: Styles = {
     px: 1.5,
     py: 0.5,
     background: 'linear-gradient(90deg, #f2ca50, #79dfd4)',
-    color: '#241a00',
+    color: 'celestial.ember',
     fontFamily: '"Manrope", sans-serif',
     fontSize: '0.75rem',
     fontWeight: 700,
@@ -86,7 +86,7 @@ export const styles: Styles = {
     alignItems: 'center',
     gap: 1,
     mb: 2,
-    color: '#79dfd4',
+      color: 'celestial.teal',
   },
   habitatText: {
     fontFamily: '"Manrope", sans-serif',
@@ -113,7 +113,7 @@ export const styles: Styles = {
     fontWeight: 600,
     letterSpacing: '0.1em',
     textTransform: 'uppercase',
-    color: 'rgba(242, 202, 80, 0.6)',
+    color: 'celestial.goldWash',
     display: 'block',
     mb: 1,
   },
@@ -183,7 +183,7 @@ export const styles: Styles = {
     borderRadius: 0,
     '&:hover': {
       bgcolor: 'primary.main',
-      color: '#3c2f00',
+      color: 'primary.contrastText',
     },
   },
   secondaryBtn: {
@@ -196,7 +196,7 @@ export const styles: Styles = {
     alignItems: 'center',
     gap: 1,
     '&:hover': {
-      color: '#79dfd4',
+    color: 'celestial.teal',
       bgcolor: 'transparent',
     },
   },

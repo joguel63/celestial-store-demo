@@ -8,7 +8,7 @@ type Styles = Record<
 export const styles: Styles = {
   section: {
     py: 16,
-    bgcolor: '#131407',
+    bgcolor: 'background.default',
     position: 'relative',
     overflow: 'hidden',
   },
@@ -19,7 +19,7 @@ export const styles: Styles = {
     transform: 'translateX(-50%)',
     width: '800px',
     height: '400px',
-    bgcolor: 'rgba(121, 223, 212, 0.05)',
+    bgcolor: 'celestial.tealGlass',
     borderRadius: '50%',
     filter: 'blur(120px)',
   },
@@ -68,16 +68,16 @@ export const styles: Styles = {
     px: 5,
     py: 2,
     border: '1px solid',
-    borderColor: 'rgba(121, 223, 212, 0.5)',
-    color: '#79dfd4',
+    borderColor: 'celestial.tealFog',
+    color: 'celestial.teal',
     fontSize: '0.875rem',
     fontWeight: 700,
     letterSpacing: '0.15em',
     textTransform: 'uppercase',
     borderRadius: 0,
     '&:hover': {
-      bgcolor: 'rgba(121, 223, 212, 0.1)',
-      borderColor: '#79dfd4',
+      bgcolor: 'celestial.tealMist',
+      borderColor: 'celestial.teal',
     },
   },
 }

@@ -8,7 +8,7 @@ export const styles: Styles = {
     borderTop: '1px solid',
     borderBottom: '1px solid',
     borderColor: 'rgba(242, 202, 80, 0.1)',
-    bgcolor: '#0e0f03',
+    bgcolor: 'celestial.abyss',
   },
   container: {
     maxWidth: '1280px',
@@ -41,7 +41,7 @@ export const styles: Styles = {
     px: 3,
     py: 1,
     border: '1px solid',
-    borderColor: '#4d4635',
+    borderColor: 'divider',
     color: 'text.secondary',
     fontFamily: '"Manrope", sans-serif',
     fontSize: '0.875rem',
@@ -50,8 +50,8 @@ export const styles: Styles = {
     textTransform: 'none',
     borderRadius: 0,
     '&:hover': {
-      borderColor: '#79dfd4',
-      color: '#79dfd4',
+      borderColor: 'celestial.teal',
+      color: 'celestial.teal',
       bgcolor: 'transparent',
     },
   },

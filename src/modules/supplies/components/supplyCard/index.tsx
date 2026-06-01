@@ -3,21 +3,21 @@ import { Box, Typography, Button } from '@mui/material'
 const rarityStyles: Record<string, object> = {
   Mythic: {
     background: 'linear-gradient(90deg, #f2ca50, #79dfd4)',
-    color: '#241a00',
+    color: 'celestial.ember',
   },
   Legendary: {
-    bgcolor: '#5bc3b9',
-    color: '#004e48',
+    bgcolor: 'celestial.tealMid',
+    color: 'celestial.tealDeep',
   },
   Rare: {
-    bgcolor: '#d6bcf4',
-    color: '#3b2754',
+    bgcolor: 'secondary.main',
+    color: 'secondary.contrastText',
   },
 }
 
 const styles = {
   card: {
-    bgcolor: '#1f2111',
+    bgcolor: 'background.paper',
     borderTop: '2px solid',
     borderColor: 'primary.main',
     p: 3,
@@ -37,7 +37,7 @@ const styles = {
     aspectRatio: '4 / 5',
     mb: 3,
     overflow: 'hidden',
-    bgcolor: '#343625',
+    bgcolor: 'celestial.moss',
     position: 'relative',
     '& img': {
       width: '100%',

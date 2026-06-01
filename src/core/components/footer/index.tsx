@@ -7,9 +7,9 @@ import { useTranslation } from 'react-i18next'
 
 const styles = {
   footer: {
-    bgcolor: '#131407',
+    bgcolor: 'background.default',
     borderTop: '1px solid',
-    borderColor: 'rgba(242, 202, 80, 0.1)',
+    borderColor: 'celestial.goldMist',
     py: 8,
     px: { xs: '20px', md: '64px' },
   },
@@ -39,8 +39,8 @@ const styles = {
     gap: 1,
   },
   socialIcon: {
-    color: '#d4af37',
-    '&:hover': { color: '#79dfd4', bgcolor: 'transparent' },
+    color: 'celestial.goldDim',
+    '&:hover': { color: 'celestial.teal', bgcolor: 'transparent' },
   },
   columnTitle: {
     color: 'primary.main',
@@ -62,11 +62,11 @@ const styles = {
     color: 'text.secondary',
     fontSize: '0.875rem',
     textDecoration: 'underline',
-    textDecorationColor: 'rgba(121, 223, 212, 0.3)',
+    textDecorationColor: 'celestial.tealVeil',
     textUnderlineOffset: '4px',
     cursor: 'pointer',
     '&:hover': {
-      color: '#79dfd4',
+      color: 'celestial.teal',
     },
   },
   newsletterDesc: {
@@ -83,20 +83,20 @@ const styles = {
       '& fieldset': { border: 'none' },
       '&:focus-within fieldset': {
         border: '1px solid',
-        borderColor: 'tertiary.main',
+        borderColor: 'celestial.teal',
       },
     },
     '& input': {
       color: 'text.primary',
-      '&::placeholder': { color: '#99907c' },
+      '&::placeholder': { color: 'celestial.stone' },
     },
   },
   sendButton: {
-    bgcolor: '#d4af37',
-    color: '#554300',
+    bgcolor: 'celestial.goldDim',
+    color: 'celestial.bronze',
     borderRadius: 0,
     '&:hover': {
-      bgcolor: '#f2ca50',
+      bgcolor: 'primary.main',
     },
   },
   bottom: {
@@ -105,7 +105,7 @@ const styles = {
     mt: 8,
     pt: 4,
     borderTop: '1px solid',
-    borderColor: 'rgba(242, 202, 80, 0.05)',
+    borderColor: 'celestial.goldGlass',
     textAlign: 'center',
   },
   copyright: {

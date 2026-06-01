@@ -51,10 +51,10 @@ const styles = {
   circle: {
     width: 96,
     height: 96,
-    bgcolor: '#343625',
+    bgcolor: 'celestial.moss',
     borderRadius: '50%',
     border: '1px solid',
-    borderColor: 'rgba(242, 202, 80, 0.2)',
+    borderColor: 'celestial.goldVeil',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

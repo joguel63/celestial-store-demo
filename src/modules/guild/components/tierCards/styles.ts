@@ -143,7 +143,7 @@ export const styles: Styles = {
   primaryBtn: {
     width: '100%',
     py: 1.5,
-    color: '#3c2f00',
+    color: 'primary.contrastText',
     fontWeight: 700,
     fontSize: '0.875rem',
     letterSpacing: '0.1em',
@@ -162,7 +162,7 @@ export const styles: Styles = {
     py: 0.5,
     background: 'linear-gradient(90deg, #f2ca50, #4DB6AC, #f2ca50)',
     backgroundSize: '200% auto',
-    color: '#3c2f00',
+    color: 'primary.contrastText',
     fontFamily: '"Manrope", sans-serif',
     fontSize: '0.625rem',
     fontWeight: 700,
