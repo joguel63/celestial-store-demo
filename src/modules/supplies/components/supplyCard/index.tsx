@@ -43,13 +43,11 @@ export const SupplyCard = ({
   <Box sx={styles.card}>
     <Box sx={styles.imageWrap}>
       <Box component="img" src={image} alt={name} />
-      {rarity ? (
-        <Box sx={{ ...styles.badge, ...RARITY_STYLES[rarity] }}>
-          {rarityLabel}
-        </Box>
-      ) : null}
+      {rarity ? <Box sx={{ ...styles.badge, ...RARITY_STYLES[rarity] }}>{rarityLabel}</Box> : null}
     </Box>
-    <Typography variant="h4" sx={styles.name}>{name}</Typography>
+    <Typography variant="h4" sx={styles.name}>
+      {name}
+    </Typography>
     <Typography sx={styles.description}>{description}</Typography>
     <Box sx={styles.footer}>
       <Typography component="span" variant="h4" sx={styles.price}>

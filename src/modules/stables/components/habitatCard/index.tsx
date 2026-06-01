@@ -43,10 +43,14 @@ export const HabitatCard = ({
       {rarity ? <Box sx={styles.badge}>{rarity}</Box> : null}
     </Box>
     <Box sx={styles.body}>
-      <Typography variant="h4" sx={styles.name}>{name}</Typography>
+      <Typography variant="h4" sx={styles.name}>
+        {name}
+      </Typography>
       <Box sx={styles.habitatRow}>
         {habitatIcons[habitatIcon]}
-        <Typography variant="overline" sx={styles.habitatText}>{habitat}</Typography>
+        <Typography variant="overline" sx={styles.habitatText}>
+          {habitat}
+        </Typography>
       </Box>
       <Typography sx={styles.description}>{description}</Typography>
       <Box sx={styles.divider}>
@@ -94,7 +98,9 @@ export const FeaturedHabitatCard = ({
         <Typography sx={styles.featuredName}>{name}</Typography>
         <Box sx={styles.habitatRow}>
           {habitatIcons[habitatIcon]}
-          <Typography variant="overline" sx={styles.habitatText}>{habitat}</Typography>
+          <Typography variant="overline" sx={styles.habitatText}>
+            {habitat}
+          </Typography>
         </Box>
         <Typography sx={styles.featuredDescription}>{description}</Typography>
         <Box sx={styles.featuredActions}>

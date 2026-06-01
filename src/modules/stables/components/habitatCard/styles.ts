@@ -51,7 +51,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.1)',
     },
-  } ,
+  },
   vignette: {
     position: 'absolute',
     inset: 0,
@@ -83,7 +83,7 @@ export const styles: Styles = {
     alignItems: 'center',
     gap: 1,
     mb: 2,
-      color: 'celestial.teal',
+    color: 'celestial.teal',
   },
   habitatText: {},
   description: {
@@ -131,7 +131,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.05)',
     },
-  } ,
+  },
   featuredBody: {
     p: { xs: 4, md: 5 },
     display: 'flex',
@@ -183,7 +183,7 @@ export const styles: Styles = {
     alignItems: 'center',
     gap: 1,
     '&:hover': {
-    color: 'celestial.teal',
+      color: 'celestial.teal',
       bgcolor: 'transparent',
     },
   },

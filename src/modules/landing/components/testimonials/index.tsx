@@ -21,15 +21,11 @@ export const Testimonials = () => {
         </Typography>
         <Box sx={styles.authorRow}>
           <Box sx={styles.avatarWrap}>
-              <Box component="img" src={curatorImg} alt="" />
+            <Box component="img" src={curatorImg} alt="" />
           </Box>
           <Box sx={styles.authorInfo}>
-            <Typography sx={styles.authorName}>
-              {t('testimonials.author')}
-            </Typography>
-            <Typography sx={styles.authorTitle}>
-              {t('testimonials.title')}
-            </Typography>
+            <Typography sx={styles.authorName}>{t('testimonials.author')}</Typography>
+            <Typography sx={styles.authorTitle}>{t('testimonials.title')}</Typography>
           </Box>
         </Box>
       </Box>

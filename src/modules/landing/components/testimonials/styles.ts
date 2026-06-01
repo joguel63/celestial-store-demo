@@ -83,7 +83,7 @@ export const styles: Styles = {
       objectFit: 'cover',
       borderRadius: '50%',
     },
-  } ,
+  },
   authorInfo: {
     textAlign: 'left',
   },

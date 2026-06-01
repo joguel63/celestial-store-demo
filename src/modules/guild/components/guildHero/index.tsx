@@ -17,9 +17,7 @@ export const GuildHero = () => {
         <Typography variant="h1" sx={styles.title}>
           {t('guild.hero.title')}
         </Typography>
-        <Typography sx={styles.description}>
-          {t('guild.hero.description')}
-        </Typography>
+        <Typography sx={styles.description}>{t('guild.hero.description')}</Typography>
         <Box sx={styles.actions}>
           <Button variant="contained" size="large" sx={styles.primaryBtn}>
             {t('guild.hero.join')}

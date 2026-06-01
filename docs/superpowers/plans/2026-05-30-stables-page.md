@@ -14,24 +14,25 @@
 
 ## File Map
 
-| Action | Path | Responsibility |
-|--------|------|----------------|
-| Modify | `src/modules/landing/components/navbar/index.tsx` | Route-aware active link |
-| Modify | `src/core/router/index.tsx` | Add `/stables` route |
-| Modify | `src/core/locales/es/landing.locale.ts` | Add `stables` i18n keys (es) |
-| Modify | `src/core/locales/en/landing.locale.ts` | Add `stables` i18n keys (en) |
-| Create | `src/modules/stables/pages/stablesPage/index.tsx` | Page composer |
-| Create | `src/modules/stables/components/stablesHero/index.tsx` | Hero section with bg image |
-| Create | `src/modules/stables/components/habitatFilters/index.tsx` | Filter button bar |
-| Create | `src/modules/stables/components/habitatCard/index.tsx` | Standard + featured habitat card |
-| Create | `src/modules/stables/components/habitatGrid/index.tsx` | Grid of habitat cards |
-| Create | `src/modules/stables/components/stablesCta/index.tsx` | Final CTA section |
+| Action | Path                                                      | Responsibility                   |
+| ------ | --------------------------------------------------------- | -------------------------------- |
+| Modify | `src/modules/landing/components/navbar/index.tsx`         | Route-aware active link          |
+| Modify | `src/core/router/index.tsx`                               | Add `/stables` route             |
+| Modify | `src/core/locales/es/landing.locale.ts`                   | Add `stables` i18n keys (es)     |
+| Modify | `src/core/locales/en/landing.locale.ts`                   | Add `stables` i18n keys (en)     |
+| Create | `src/modules/stables/pages/stablesPage/index.tsx`         | Page composer                    |
+| Create | `src/modules/stables/components/stablesHero/index.tsx`    | Hero section with bg image       |
+| Create | `src/modules/stables/components/habitatFilters/index.tsx` | Filter button bar                |
+| Create | `src/modules/stables/components/habitatCard/index.tsx`    | Standard + featured habitat card |
+| Create | `src/modules/stables/components/habitatGrid/index.tsx`    | Grid of habitat cards            |
+| Create | `src/modules/stables/components/stablesCta/index.tsx`     | Final CTA section                |
 
 ---
 
 ### Task 1: Make Navbar Route-Aware
 
 **Files:**
+
 - Modify: `src/modules/landing/components/navbar/index.tsx`
 
 **Context:** Currently the navbar has `activeLink` style hardcoded on "Bestiary". Must use `useLocation()` from react-router-dom to highlight the link matching the current path. Links stay as MUI `<Link>` with `href` for now (only `/` and `/stables` routes exist).
@@ -39,6 +40,7 @@
 - [ ] **Step 1: Add useLocation import**
 
 Add to the top of the file:
+
 ```tsx
 import { useLocation } from 'react-router-dom'
 ```
@@ -46,6 +48,7 @@ import { useLocation } from 'react-router-dom'
 - [ ] **Step 2: Add useLocation hook and path-to-link mapping**
 
 Inside the `Navbar` function component, after `const { t } = useTranslation()`:
+
 ```tsx
 const location = useLocation()
 ```
@@ -53,6 +56,7 @@ const location = useLocation()
 - [ ] **Step 3: Replace hardcoded active link with conditional logic**
 
 Replace the links JSX block. Find:
+
 ```tsx
 <Box sx={styles.links}>
   <Link href="#" underline="none" sx={{ ...styles.link, ...styles.activeLink }}>
@@ -71,6 +75,7 @@ Replace the links JSX block. Find:
 ```
 
 Replace with:
+
 ```tsx
 <Box sx={styles.links}>
   <Link
@@ -119,11 +124,13 @@ git commit -m "feat: make navbar links route-aware with useLocation"
 ### Task 2: Add Stables Route
 
 **Files:**
+
 - Modify: `src/core/router/index.tsx`
 
 - [ ] **Step 1: Import StablesPage**
 
 Add import after the LandingPage import:
+
 ```tsx
 import { StablesPage } from '@/modules/stables/pages/stablesPage'
 ```
@@ -131,11 +138,13 @@ import { StablesPage } from '@/modules/stables/pages/stablesPage'
 - [ ] **Step 2: Add route inside Routes**
 
 Add the new route before the existing landing route:
+
 ```tsx
 <Route path="/stables" element={<StablesPage />} />
 ```
 
 The complete file becomes:
+
 ```tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from '@/core/layouts/mainLayout'
@@ -171,12 +180,14 @@ git commit -m "feat: add /stables route pointing to StablesPage"
 ### Task 3: Add Stables i18n Keys
 
 **Files:**
+
 - Modify: `src/core/locales/es/landing.locale.ts`
 - Modify: `src/core/locales/en/landing.locale.ts`
 
 - [ ] **Step 1: Add stables keys to Spanish locale**
 
 In `src/core/locales/es/landing.locale.ts`, add after the `cta` object (before the final `}`):
+
 ```ts
   stables: {
     hero: {
@@ -252,6 +263,7 @@ In `src/core/locales/es/landing.locale.ts`, add after the `cta` object (before t
 - [ ] **Step 2: Add stables keys to English locale**
 
 In `src/core/locales/en/landing.locale.ts`, add after the `cta` object:
+
 ```ts
   stables: {
     hero: {
@@ -341,6 +353,7 @@ git commit -m "feat: add stables i18n keys (es + en)"
 ### Task 4: Create StablesHero Component
 
 **Files:**
+
 - Create: `src/modules/stables/components/stablesHero/index.tsx`
 
 **Context:** Full-width hero section (614px tall). Background image from `@/assets/stables/hero-stables.png`. Three layers: image, gradient overlay (bottom-to-top: background → transparent), centered title + description. Title uses `display-lg` style (64px Playfair Display, gold). Description in `body-lg`.
@@ -415,9 +428,7 @@ export const StablesHero = () => {
         <Typography variant="h1" sx={styles.title}>
           {t('stables.hero.title')}
         </Typography>
-        <Typography sx={styles.description}>
-          {t('stables.hero.description')}
-        </Typography>
+        <Typography sx={styles.description}>{t('stables.hero.description')}</Typography>
       </Box>
     </Box>
   )
@@ -441,6 +452,7 @@ git commit -m "feat: create StablesHero component with background image"
 ### Task 5: Create HabitatFilters Component
 
 **Files:**
+
 - Create: `src/modules/stables/components/habitatFilters/index.tsx`
 
 **Context:** Horizontal filter bar with 5 buttons. First button ("Todos los Reinos") has gold border + gold text (active). Rest have outline-variant border + on-surface-variant text. On hover: border → teal, text → teal. Background: `surface-container-lowest`. Top/bottom border: `primary/10`.
@@ -540,6 +552,7 @@ git commit -m "feat: create HabitatFilters bar component"
 ### Task 6: Create HabitatCard Component
 
 **Files:**
+
 - Create: `src/modules/stables/components/habitatCard/index.tsx`
 
 **Context:** Two card variants in one file: `HabitatCard` (standard, 1-col) and `FeaturedHabitatCard` (featured, spans 2 cols, horizontal layout). Standard card: image (256px tall) with vignette overlay, optional mythic badge (gold→teal gradient with shimmer), title, icon + habitat tag (teal), description, dominant species list with label. Featured card: horizontal grid with image on left, text + 2 buttons on right.
@@ -861,6 +874,7 @@ git commit -m "feat: create HabitatCard and FeaturedHabitatCard components"
 ### Task 7: Create HabitatGrid Component
 
 **Files:**
+
 - Create: `src/modules/stables/components/habitatGrid/index.tsx`
 
 **Context:** Composes all 5 habitat cards in a responsive 3-column grid (1 col mobile, 2 col tablet, 3 col desktop). The "Núcleo de Magma Áureo" card spans 2 columns on desktop. Images imported from `@/assets/stables/`. Uses i18n keys from `stables.habitats.*`.
@@ -906,7 +920,11 @@ export const HabitatGrid = () => {
             habitatIcon="air"
             description={t('stables.habitats.cumbres.description')}
             dominantLabel={t('stables.habitats.cumbres.dominantLabel')}
-            species={t('stables.habitats.cumbres.species', { returnObjects: true }) as unknown as string[]}
+            species={
+              t('stables.habitats.cumbres.species', {
+                returnObjects: true,
+              }) as unknown as string[]
+            }
             rarity={t('stables.habitats.cumbres.rarity')}
           />
           <HabitatCard
@@ -916,7 +934,11 @@ export const HabitatGrid = () => {
             habitatIcon="water"
             description={t('stables.habitats.abismos.description')}
             dominantLabel={t('stables.habitats.abismos.dominantLabel')}
-            species={t('stables.habitats.abismos.species', { returnObjects: true }) as unknown as string[]}
+            species={
+              t('stables.habitats.abismos.species', {
+                returnObjects: true,
+              }) as unknown as string[]
+            }
             rarity={undefined}
           />
           <HabitatCard
@@ -926,7 +948,11 @@ export const HabitatGrid = () => {
             habitatIcon="forest"
             description={t('stables.habitats.bosque.description')}
             dominantLabel={t('stables.habitats.bosque.dominantLabel')}
-            species={t('stables.habitats.bosque.species', { returnObjects: true }) as unknown as string[]}
+            species={
+              t('stables.habitats.bosque.species', {
+                returnObjects: true,
+              }) as unknown as string[]
+            }
             rarity={undefined}
           />
           <FeaturedHabitatCard
@@ -945,7 +971,11 @@ export const HabitatGrid = () => {
             habitatIcon="star"
             description={t('stables.habitats.desierto.description')}
             dominantLabel={t('stables.habitats.desierto.dominantLabel')}
-            species={t('stables.habitats.desierto.species', { returnObjects: true }) as unknown as string[]}
+            species={
+              t('stables.habitats.desierto.species', {
+                returnObjects: true,
+              }) as unknown as string[]
+            }
             rarity={undefined}
           />
         </Box>
@@ -972,6 +1002,7 @@ git commit -m "feat: create HabitatGrid composing all 5 habitat cards"
 ### Task 8: Create StablesCta Component
 
 **Files:**
+
 - Create: `src/modules/stables/components/stablesCta/index.tsx`
 
 **Context:** Final CTA section with dark background (`surface-dim`), decorative teal glow blob (positioned absolute, blurred), centered heading + description + two buttons. Buttons: primary contained (gold) + outlined (teal border).
@@ -1066,19 +1097,13 @@ export const StablesCta = () => {
     <Box component="section" sx={styles.section}>
       <Box sx={styles.glow} />
       <Box sx={styles.container}>
-        <Typography sx={styles.title}>
-          {t('stables.cta.title')}
-        </Typography>
-        <Typography sx={styles.description}>
-          {t('stables.cta.description')}
-        </Typography>
+        <Typography sx={styles.title}>{t('stables.cta.title')}</Typography>
+        <Typography sx={styles.description}>{t('stables.cta.description')}</Typography>
         <Box sx={styles.actions}>
           <Button variant="contained" size="large" sx={styles.primaryBtn}>
             {t('stables.cta.consult')}
           </Button>
-          <Button sx={styles.ghostBtn}>
-            {t('stables.cta.guide')}
-          </Button>
+          <Button sx={styles.ghostBtn}>{t('stables.cta.guide')}</Button>
         </Box>
       </Box>
     </Box>
@@ -1103,6 +1128,7 @@ git commit -m "feat: create StablesCta section component"
 ### Task 9: Create StablesPage Composer
 
 **Files:**
+
 - Create: `src/modules/stables/pages/stablesPage/index.tsx`
 
 **Context:** Composes all stables section components in a `<main>` wrapper, same pattern as `LandingPage`.
@@ -1167,6 +1193,7 @@ npm run dev
 ```
 
 Navigate to `http://localhost:5173/stables` and verify:
+
 - Navbar shows "Stables" as active (gold underline)
 - Hero section renders with background image
 - Filter buttons display
@@ -1185,6 +1212,7 @@ Only if changes were made during verification.
 ## Self-Review
 
 **Spec coverage:**
+
 - The landing page gets a new navbar and footer so they are shared globally by MainLayout.
 - The navbar is route-aware to avoid inconsistencies between views.
 - The stables page is built pixel-perfect following the Stitch HTML.
@@ -1196,6 +1224,7 @@ Only if changes were made during verification.
 **Placeholder scan:** No TBD, TODO, or "implement later" found. All code is complete.
 
 **Type consistency:**
+
 - `HabitatCardProps` and `FeaturedHabitatCardProps` are defined in Task 6, consumed in Task 7.
 - i18n keys in Task 3 match exactly what Tasks 4-9 use via `t('stables.*')`.
 - Image imports in Task 7 match files in `src/assets/stables/` from the download step.

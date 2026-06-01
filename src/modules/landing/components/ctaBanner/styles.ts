@@ -1,13 +1,7 @@
 import { SxProps, Theme } from '@mui/material'
 
 type Styles = Record<
-  | 'section'
-  | 'overlay'
-  | 'container'
-  | 'inner'
-  | 'title'
-  | 'description'
-  | 'button',
+  'section' | 'overlay' | 'container' | 'inner' | 'title' | 'description' | 'button',
   SxProps<Theme>
 >
 

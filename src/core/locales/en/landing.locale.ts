@@ -89,8 +89,7 @@ export const landing = {
   },
   footer: {
     brand: 'Celestial Menagerie',
-    tagline:
-      'Guarding myths since the First Era. Official suppliers of the Riders Guild.',
+    tagline: 'Guarding myths since the First Era. Official suppliers of the Riders Guild.',
     socialTooltips: {
       network: 'Guild Network',
       scrolls: 'Magic Scrolls',
@@ -114,7 +113,7 @@ export const landing = {
       placeholder: 'Your email...',
       send: 'Send',
     },
-    copyright: '© 1242 Arcane Era. Celestial Menagerie - The Curator\'s Archive.',
+    copyright: "© 1242 Arcane Era. Celestial Menagerie - The Curator's Archive.",
   },
   stables: {
     hero: {
@@ -169,8 +168,7 @@ export const landing = {
       desierto: {
         name: 'Stellar Desert',
         habitat: 'Cosmic Radiation, Absolute Cold',
-        description:
-          'Where Void Beasts and Crystal Scorpions meditate beneath the constellations.',
+        description: 'Where Void Beasts and Crystal Scorpions meditate beneath the constellations.',
         dominantLabel: 'Dominant Species:',
         species: ['Void Beast', 'Sand Mirage'],
         rarity: '',
@@ -280,8 +278,7 @@ export const landing = {
       },
       keeper: {
         name: 'Grand Keeper',
-        description:
-          'Architects of the Guild, holders of the keys to the Forbidden Sanctuary.',
+        description: 'Architects of the Guild, holders of the keys to the Forbidden Sanctuary.',
         benefits: [
           'Control of the Forbidden Sanctuary',
           'Voice in the Council of Sages',

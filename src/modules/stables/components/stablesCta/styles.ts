@@ -1,7 +1,14 @@
 import { SxProps, Theme } from '@mui/material'
 
 type Styles = Record<
-  'section' | 'glow' | 'container' | 'title' | 'description' | 'actions' | 'primaryBtn' | 'ghostBtn',
+  | 'section'
+  | 'glow'
+  | 'container'
+  | 'title'
+  | 'description'
+  | 'actions'
+  | 'primaryBtn'
+  | 'ghostBtn',
   SxProps<Theme>
 >
 

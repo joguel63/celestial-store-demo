@@ -29,8 +29,11 @@ const MemberCard = ({ image, name, role, tags, badge, badgeIcon }: MemberProps) 
       {badge ? (
         <Box
           sx={{
-            ...styles.avatarBadge as Record<string, unknown>,
-            ...(badge === 'shimmer' ? styles.badgeShimmer : styles.badgeTeal) as Record<string, unknown>,
+            ...(styles.avatarBadge as Record<string, unknown>),
+            ...((badge === 'shimmer' ? styles.badgeShimmer : styles.badgeTeal) as Record<
+              string,
+              unknown
+            >),
           }}
         >
           {badgeIcon}

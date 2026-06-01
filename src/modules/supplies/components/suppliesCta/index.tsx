@@ -10,18 +10,11 @@ export const SuppliesCta = () => {
       <Box sx={styles.glow} />
       <Box sx={styles.container}>
         <Box sx={styles.textBlock}>
-          <Typography sx={styles.title}>
-            {t('supplies.cta.title')}
-          </Typography>
-          <Typography sx={styles.description}>
-            {t('supplies.cta.description')}
-          </Typography>
+          <Typography sx={styles.title}>{t('supplies.cta.title')}</Typography>
+          <Typography sx={styles.description}>{t('supplies.cta.description')}</Typography>
         </Box>
         <Box sx={styles.form}>
-          <TextField
-            placeholder={t('supplies.cta.placeholder')}
-            sx={styles.input}
-          />
+          <TextField placeholder={t('supplies.cta.placeholder')} sx={styles.input} />
           <Button variant="contained" sx={styles.button}>
             {t('supplies.cta.enlist')}
           </Button>

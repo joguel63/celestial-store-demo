@@ -1,378 +1,608 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Nuestros Establos | Celestial Menagerie</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nuestros Establos | Celestial Menagerie</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+      .celestial-glow {
+        box-shadow: 0 0 15px 0 rgba(77, 182, 172, 0.15);
+      }
+      .gold-shimmer {
+        background: linear-gradient(90deg, #f2ca50 0%, #79dfd4 50%, #f2ca50 100%);
+        background-size: 200% auto;
+        animation: shimmer 4s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @keyframes shimmer {
+        to {
+          background-position: 200% center;
         }
-        .celestial-glow {
-            box-shadow: 0 0 15px 0 rgba(77, 182, 172, 0.15);
-        }
-        .gold-shimmer {
-            background: linear-gradient(90deg, #f2ca50 0%, #79dfd4 50%, #f2ca50 100%);
-            background-size: 200% auto;
-            animation: shimmer 4s linear infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        @keyframes shimmer {
-            to { background-position: 200% center; }
-        }
-        .vignette-overlay {
-            background: radial-gradient(circle, rgba(26,15,41,0) 0%, rgba(26,15,41,0.8) 100%);
-        }
+      }
+      .vignette-overlay {
+        background: radial-gradient(circle, rgba(26, 15, 41, 0) 0%, rgba(26, 15, 41, 0.8) 100%);
+      }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-container-high": "#2a2b1b",
-                      "on-error-container": "#ffdad6",
-                      "inverse-on-surface": "#303221",
-                      "primary-fixed-dim": "#e9c349",
-                      "inverse-surface": "#e4e4cc",
-                      "secondary-fixed": "#eedbff",
-                      "error-container": "#93000a",
-                      "tertiary-fixed-dim": "#71d7cd",
-                      "surface-container": "#1f2111",
-                      "on-surface": "#e4e4cc",
-                      "on-error": "#690005",
-                      "tertiary-fixed": "#8ef4e9",
-                      "surface-dim": "#131407",
-                      "surface-container-low": "#1b1d0e",
-                      "background": "#131407",
-                      "surface-bright": "#393a29",
-                      "surface": "#131407",
-                      "secondary-fixed-dim": "#d6bcf4",
-                      "on-primary-fixed": "#241a00",
-                      "on-tertiary-fixed": "#00201d",
-                      "on-secondary": "#3b2754",
-                      "on-primary-container": "#554300",
-                      "tertiary-container": "#5bc3b9",
-                      "outline": "#99907c",
-                      "surface-tint": "#e9c349",
-                      "on-background": "#e4e4cc",
-                      "outline-variant": "#4d4635",
-                      "primary": "#f2ca50",
-                      "on-surface-variant": "#d0c5af",
-                      "surface-container-highest": "#343625",
-                      "tertiary": "#79dfd4",
-                      "on-tertiary-fixed-variant": "#00504a",
-                      "error": "#ffb4ab",
-                      "surface-container-lowest": "#0e0f03",
-                      "primary-container": "#d4af37",
-                      "secondary": "#d6bcf4",
-                      "on-secondary-container": "#c4abe1",
-                      "secondary-container": "#523d6c",
-                      "on-tertiary-container": "#004e48",
-                      "on-secondary-fixed-variant": "#523d6c",
-                      "inverse-primary": "#735c00",
-                      "on-primary": "#3c2f00",
-                      "surface-variant": "#343625",
-                      "on-secondary-fixed": "#25113e",
-                      "on-primary-fixed-variant": "#574500",
-                      "on-tertiary": "#003733",
-                      "primary-fixed": "#ffe088"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "margin-mobile": "20px",
-                      "container-max": "1280px",
-                      "gutter": "24px",
-                      "unit": "8px",
-                      "margin-desktop": "64px"
-              },
-              "fontFamily": {
-                      "headline-md": ["Playfair Display"],
-                      "display-lg": ["Playfair Display"],
-                      "body-lg": ["Manrope"],
-                      "body-md": ["Manrope"],
-                      "label-md": ["Manrope"],
-                      "headline-lg-mobile": ["Playfair Display"],
-                      "headline-sm": ["Playfair Display"],
-                      "headline-lg": ["Playfair Display"]
-              },
-              "fontSize": {
-                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}]
-              }
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'surface-container-high': '#2a2b1b',
+              'on-error-container': '#ffdad6',
+              'inverse-on-surface': '#303221',
+              'primary-fixed-dim': '#e9c349',
+              'inverse-surface': '#e4e4cc',
+              'secondary-fixed': '#eedbff',
+              'error-container': '#93000a',
+              'tertiary-fixed-dim': '#71d7cd',
+              'surface-container': '#1f2111',
+              'on-surface': '#e4e4cc',
+              'on-error': '#690005',
+              'tertiary-fixed': '#8ef4e9',
+              'surface-dim': '#131407',
+              'surface-container-low': '#1b1d0e',
+              background: '#131407',
+              'surface-bright': '#393a29',
+              surface: '#131407',
+              'secondary-fixed-dim': '#d6bcf4',
+              'on-primary-fixed': '#241a00',
+              'on-tertiary-fixed': '#00201d',
+              'on-secondary': '#3b2754',
+              'on-primary-container': '#554300',
+              'tertiary-container': '#5bc3b9',
+              outline: '#99907c',
+              'surface-tint': '#e9c349',
+              'on-background': '#e4e4cc',
+              'outline-variant': '#4d4635',
+              primary: '#f2ca50',
+              'on-surface-variant': '#d0c5af',
+              'surface-container-highest': '#343625',
+              tertiary: '#79dfd4',
+              'on-tertiary-fixed-variant': '#00504a',
+              error: '#ffb4ab',
+              'surface-container-lowest': '#0e0f03',
+              'primary-container': '#d4af37',
+              secondary: '#d6bcf4',
+              'on-secondary-container': '#c4abe1',
+              'secondary-container': '#523d6c',
+              'on-tertiary-container': '#004e48',
+              'on-secondary-fixed-variant': '#523d6c',
+              'inverse-primary': '#735c00',
+              'on-primary': '#3c2f00',
+              'surface-variant': '#343625',
+              'on-secondary-fixed': '#25113e',
+              'on-primary-fixed-variant': '#574500',
+              'on-tertiary': '#003733',
+              'primary-fixed': '#ffe088',
+            },
+            borderRadius: {
+              DEFAULT: '0.125rem',
+              lg: '0.25rem',
+              xl: '0.5rem',
+              full: '0.75rem',
+            },
+            spacing: {
+              'margin-mobile': '20px',
+              'container-max': '1280px',
+              gutter: '24px',
+              unit: '8px',
+              'margin-desktop': '64px',
+            },
+            fontFamily: {
+              'headline-md': ['Playfair Display'],
+              'display-lg': ['Playfair Display'],
+              'body-lg': ['Manrope'],
+              'body-md': ['Manrope'],
+              'label-md': ['Manrope'],
+              'headline-lg-mobile': ['Playfair Display'],
+              'headline-sm': ['Playfair Display'],
+              'headline-lg': ['Playfair Display'],
+            },
+            fontSize: {
+              'headline-md': ['32px', { lineHeight: '40px', fontWeight: '600' }],
+              'display-lg': [
+                '64px',
+                {
+                  lineHeight: '72px',
+                  letterSpacing: '-0.02em',
+                  fontWeight: '700',
+                },
+              ],
+              'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+              'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+              'label-md': [
+                '14px',
+                {
+                  lineHeight: '20px',
+                  letterSpacing: '0.1em',
+                  fontWeight: '600',
+                },
+              ],
+              'headline-lg-mobile': ['32px', { lineHeight: '40px', fontWeight: '700' }],
+              'headline-sm': ['24px', { lineHeight: '32px', fontWeight: '600' }],
+              'headline-lg': ['48px', { lineHeight: '56px', fontWeight: '700' }],
             },
           },
-        }
+        },
+      }
     </script>
-</head>
-<body class="bg-background text-on-surface selection:bg-primary/30 selection:text-primary">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-primary/20 shadow-sm h-20">
-<nav class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-full">
-<div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">
-                Celestial Menagerie
+  </head>
+  <body class="bg-background text-on-surface selection:bg-primary/30 selection:text-primary">
+    <!-- TopNavBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl border-b border-primary/20 shadow-sm h-20"
+    >
+      <nav
+        class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-full"
+      >
+        <div class="text-headline-md font-headline-md font-bold text-primary tracking-tight">
+          Celestial Menagerie
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md"
+            href="#"
+            >Bestiary</a
+          >
+          <a
+            class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md"
+            href="#"
+            >Stables</a
+          >
+          <a
+            class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md"
+            href="#"
+            >Supplies</a
+          >
+          <a
+            class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md"
+            href="#"
+            >Guild</a
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <div
+            class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 border border-outline-variant/30"
+          >
+            <span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+            <input
+              class="bg-transparent border-none focus:ring-0 text-label-md font-label-md text-on-surface placeholder:text-on-surface-variant/50 w-32 focus:w-48 transition-all duration-300"
+              placeholder="Buscar hábitat..."
+              type="text"
+            />
+          </div>
+          <button
+            class="bg-primary text-on-primary px-6 py-2 text-label-md font-label-md font-bold uppercase tracking-wider active:scale-95 transition-transform"
+          >
+            Adopt Now
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img
+            class="w-full h-full object-cover"
+            data-alt="A cinematic, ultra-detailed view of a mystical valley under a twilight sky with multiple moons. The landscape features floating islands, bioluminescent flora, and golden wisps of energy swirling in the air. The lighting is deep purple and navy with radiant gold accents, creating an atmosphere of ancient mystery and luxury. The aesthetic follows a high-end, dark-themed mystical modernism style."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDea8Ly3wQukggSxlEnBbmUKhxNXl6MqK4LJKQ0-bTaRnItAgV5Xae-eoft331dNXDdq56D45AnSCKA0JLajQZ7gjhFORFTbNUgj_js5J383ABEX0LXZHnB0S_x-Msy-Rp0GhVU2aJV2XcSQSeHez7fhwpmiELOox9yRqBT0qDgbF9jS_3iEsIdtUSdqrEj7V4PuI1gY5VmuUzjKplG2wYx5BSkUbH2zcdccF6zYK1sPSxsA79YOq1CY91ugS3plYOs5LPrv6kUzSae"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"
+          ></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl px-margin-mobile">
+          <h1 class="text-display-lg font-display-lg text-primary mb-6 drop-shadow-2xl">
+            Nuestros Establos y Hábitats
+          </h1>
+          <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Explora los santuarios donde la magia cobra vida. Cada rincón de nuestra colección ha
+            sido forjado para albergar la esencia única de las criaturas más legendarias del reino.
+          </p>
+        </div>
+      </section>
+      <!-- Filters Section -->
+      <section class="py-12 border-y border-primary/10 bg-surface-container-lowest">
+        <div
+          class="max-w-container-max mx-auto px-margin-desktop flex flex-wrap justify-center gap-4"
+        >
+          <button
+            class="px-6 py-2 border border-primary text-primary font-label-md text-label-md hover:bg-primary/10 transition-colors"
+          >
+            Todos los Reinos
+          </button>
+          <button
+            class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors"
+          >
+            Elementos de Aire
+          </button>
+          <button
+            class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors"
+          >
+            Núcleos Volcánicos
+          </button>
+          <button
+            class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors"
+          >
+            Selvas Ancestrales
+          </button>
+          <button
+            class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors"
+          >
+            Abismos Marinos
+          </button>
+        </div>
+      </section>
+      <!-- Habitat Grid -->
+      <section class="py-24 max-w-container-max mx-auto px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          <!-- Habitat Card 1 -->
+          <div
+            class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="An ethereal mountain peak soaring above a sea of golden clouds. Shimmering ice crystals float in the thin air, reflecting the light of a distant celestial nebula. The scene is bathed in cool teals and radiant golds, conveying a sense of extreme high-altitude serenity and mystical power. The photography style is sharp, cinematic, and otherworldly."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFtpLRilWRf_kgTUQhlzUyt0-PCQyezk7QOwL-z6w_b5uYOtuCR4vC773tguKNO5SR9fwrAI8QHgran2UwYMjJhvia93_5mcsPW7iZLuL_XTSKI_DEyBj0UKlOz7fUgS3OoldmK6SjLCzMKhA6Q6zA7zlOCh4HNwtZ7p6RP_eit_Dj-jTXyaYiFGfVHhb10Ui1ISYD0nLfstKLdYVPwzB_v4WG2J_CL8zk_un-RU48Uh3dCURr7327k4jwuLof3jj2eVUajIhFjRuC"
+              />
+              <div class="absolute inset-0 vignette-overlay"></div>
+              <div class="absolute top-4 right-4">
+                <span
+                  class="px-3 py-1 bg-gradient-to-r from-primary to-tertiary text-on-primary-fixed font-bold text-label-md font-label-md uppercase tracking-widest shimmer"
+                  >Mítico</span
+                >
+              </div>
             </div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md" href="#">Bestiary</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md font-label-md" href="#">Stables</a>
-<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md" href="#">Supplies</a>
-<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 text-label-md font-label-md" href="#">Guild</a>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 border border-outline-variant/30">
-<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-label-md font-label-md text-on-surface placeholder:text-on-surface-variant/50 w-32 focus:w-48 transition-all duration-300" placeholder="Buscar hábitat..." type="text"/>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 text-label-md font-label-md font-bold uppercase tracking-wider active:scale-95 transition-transform">
-                    Adopt Now
-                </button>
-</div>
-</nav>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="A cinematic, ultra-detailed view of a mystical valley under a twilight sky with multiple moons. The landscape features floating islands, bioluminescent flora, and golden wisps of energy swirling in the air. The lighting is deep purple and navy with radiant gold accents, creating an atmosphere of ancient mystery and luxury. The aesthetic follows a high-end, dark-themed mystical modernism style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDea8Ly3wQukggSxlEnBbmUKhxNXl6MqK4LJKQ0-bTaRnItAgV5Xae-eoft331dNXDdq56D45AnSCKA0JLajQZ7gjhFORFTbNUgj_js5J383ABEX0LXZHnB0S_x-Msy-Rp0GhVU2aJV2XcSQSeHez7fhwpmiELOox9yRqBT0qDgbF9jS_3iEsIdtUSdqrEj7V4PuI1gY5VmuUzjKplG2wYx5BSkUbH2zcdccF6zYK1sPSxsA79YOq1CY91ugS3plYOs5LPrv6kUzSae"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
-</div>
-<div class="relative z-10 text-center max-w-3xl px-margin-mobile">
-<h1 class="text-display-lg font-display-lg text-primary mb-6 drop-shadow-2xl">
-                    Nuestros Establos y Hábitats
-                </h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                    Explora los santuarios donde la magia cobra vida. Cada rincón de nuestra colección ha sido forjado para albergar la esencia única de las criaturas más legendarias del reino.
+            <div class="p-8">
+              <h3 class="text-headline-sm font-headline-sm text-primary mb-2">
+                Cumbres Celestiales
+              </h3>
+              <div class="flex items-center gap-2 mb-4 text-tertiary">
+                <span class="material-symbols-outlined text-[18px]">air</span>
+                <span class="text-label-md font-label-md">Altitud Extrema, Aire Raro</span>
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden"
+              >
+                Hogar de los Pegasos de Platino y Fénix de Hielo. Las corrientes aquí fluyen con
+                maná puro.
+              </p>
+              <div class="border-t border-primary/10 pt-4">
+                <span class="text-label-md font-label-md text-primary/60 uppercase block mb-2"
+                  >Especies Dominantes:</span
+                >
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-on-surface text-body-md font-body-md">• Pegaso de Platino</span>
+                  <span class="text-on-surface text-body-md font-body-md">• Grifo Real</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Habitat Card 2 -->
+          <div
+            class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="A deep underwater cave illuminated by neon bioluminescent jellyfish and glowing emerald coral reefs. The water is a deep, dark abyss blue, contrasted with vibrant teal and gold light sources. Ancient ruins are visible in the background, half-buried in sand. The mood is silent, immersive, and dangerously beautiful, capturing the essence of an arcane abyssal depth."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3EnZmg1-3w5FeS6aAAmB_BA4vu3eWC5qt9S71Ycs4WY9BwCTQ7JA75clodDGgFgFEYItM1XDOT6KIKcVxLm8Uhy2WIOaKvWyqDJ5H_O7ypb5CWMtpgQ1z-1X_8_QY-heXcshULqxxjO-F6owt1MVuukoBJcfDC1GqZDmwJ4pajum8doxllnNFv7uqh7u2QITqU1UOoDx1W3OMgUH5LXhA0A06xbZjhgSLfntPcXJu3WcdP-N9YcKZCXdPT2mjyjbBIleVMr7T3hAX"
+              />
+              <div class="absolute inset-0 vignette-overlay"></div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-headline-sm font-headline-sm text-primary mb-2">Abismos del Alma</h3>
+              <div class="flex items-center gap-2 mb-4 text-tertiary">
+                <span class="material-symbols-outlined text-[18px]">water_drop</span>
+                <span class="text-label-md font-label-md">Presión Abisal, Bioluminiscencia</span>
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden"
+              >
+                Donde residen los Hipocampos de Coral y las Hidras de las Sombras. El agua vibra con
+                sabiduría antigua.
+              </p>
+              <div class="border-t border-primary/10 pt-4">
+                <span class="text-label-md font-label-md text-primary/60 uppercase block mb-2"
+                  >Especies Dominantes:</span
+                >
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-on-surface text-body-md font-body-md">• Hipocampo Dorado</span>
+                  <span class="text-on-surface text-body-md font-body-md">• Leviatán Menor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Habitat Card 3 -->
+          <div
+            class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="A lush, dense forest of ancient trees with bark that glows like polished obsidian. Floating spores of light illuminate the forest floor, where oversized magical mushrooms grow. The lighting is low and atmospheric, with golden rays of light breaking through the thick canopy. It is a place of deep magic and eternal growth, styled with a high-end fantasy editorial look."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtNcIGVacmGbEyS2mMim4xrTs0G9pfZYJhP7yF_cRgioEzqE_XhdVZ3WS15-kCGfV-KnJrA1Mh1dxw_VvsWOriLRo4mbFNJ7ZK-urheYcDFMbXEEgXtuzZfVXVfR0-IObDPAr23lcW2p3WXZBJtvZHUtF30ja3vyQi3y_tTJ1zc2GZ2C_xyjjgaIXwGEbVtskvYItphI58MXMMYHymsbHDYyx0jdbPOzFgm5uOkvuQcZUfnIayRDDl__U3p4BgZHalaMYns1SYt02r"
+              />
+              <div class="absolute inset-0 vignette-overlay"></div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-headline-sm font-headline-sm text-primary mb-2">Bosque Susurrante</h3>
+              <div class="flex items-center gap-2 mb-4 text-tertiary">
+                <span class="material-symbols-outlined text-[18px]">park</span>
+                <span class="text-label-md font-label-md">Humedad Alta, Magia Terrenal</span>
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden"
+              >
+                Santuario para Unicornios Plateados y Kitsunes de Fuego. El suelo canta con cada
+                paso.
+              </p>
+              <div class="border-t border-primary/10 pt-4">
+                <span class="text-label-md font-label-md text-primary/60 uppercase block mb-2"
+                  >Especies Dominantes:</span
+                >
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-on-surface text-body-md font-body-md"
+                    >• Unicornio del Alba</span
+                  >
+                  <span class="text-on-surface text-body-md font-body-md">• Draco de Bosque</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Habitat Card 4 -->
+          <div
+            class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500 lg:col-span-2"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="relative h-full min-h-[300px] overflow-hidden">
+                <img
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                  data-alt="A vast volcanic crater filled with molten gold liquid instead of lava. Black obsidian towers rise from the center, connected by bridges of solidified light. The sky is dark and filled with ash particles that glow like tiny embers. The lighting is dominated by an intense internal heat glow from the 'gold' lava, balanced by deep midnight shadows."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXh6Ui5wiynoZTQ9kZC4rjY_XCN4fsvXM92jXOJFD_0RDj8lcIvUgUb-bfBp_WeDdvz-YyQBFV0PU_RGpDp6-nh1WrrESVxVxNgxkaowqqRlygu1YKunzlIbJav1LoCWuJORSfrYYg_OllQ1pvbcq8LMAhu1l1g0z7YeaLLYbx-sezL8rWUfGkGiJ-pMZEuVR6z2oOO1qQNjUtjGNgJUlifmENxEjHhtqgUgzWf8VCFwT9773wJY9_MCr7sO3UWP4NLDZmS-LBvU4P"
+                />
+                <div class="absolute inset-0 vignette-overlay"></div>
+              </div>
+              <div class="p-10 flex flex-col justify-center">
+                <h3 class="text-headline-md font-headline-md text-primary mb-4">
+                  Núcleo de Magma Áureo
+                </h3>
+                <div class="flex items-center gap-2 mb-6 text-tertiary">
+                  <span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+                  <span class="text-label-md font-label-md">Calor Extremo, Esencia Ígnea</span>
+                </div>
+                <p class="text-body-md font-body-md text-on-surface-variant mb-8">
+                  Un ecosistema diseñado para las Salamandras Reales y los Dragones de Sangre Negra.
+                  Las paredes de obsidiana mantienen el calor necesario para el crecimiento de sus
+                  escamas primordiales.
                 </p>
-</div>
-</section>
-<!-- Filters Section -->
-<section class="py-12 border-y border-primary/10 bg-surface-container-lowest">
-<div class="max-w-container-max mx-auto px-margin-desktop flex flex-wrap justify-center gap-4">
-<button class="px-6 py-2 border border-primary text-primary font-label-md text-label-md hover:bg-primary/10 transition-colors">Todos los Reinos</button>
-<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors">Elementos de Aire</button>
-<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors">Núcleos Volcánicos</button>
-<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors">Selvas Ancestrales</button>
-<button class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:border-tertiary hover:text-tertiary transition-colors">Abismos Marinos</button>
-</div>
-</section>
-<!-- Habitat Grid -->
-<section class="py-24 max-w-container-max mx-auto px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Habitat Card 1 -->
-<div class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An ethereal mountain peak soaring above a sea of golden clouds. Shimmering ice crystals float in the thin air, reflecting the light of a distant celestial nebula. The scene is bathed in cool teals and radiant golds, conveying a sense of extreme high-altitude serenity and mystical power. The photography style is sharp, cinematic, and otherworldly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFtpLRilWRf_kgTUQhlzUyt0-PCQyezk7QOwL-z6w_b5uYOtuCR4vC773tguKNO5SR9fwrAI8QHgran2UwYMjJhvia93_5mcsPW7iZLuL_XTSKI_DEyBj0UKlOz7fUgS3OoldmK6SjLCzMKhA6Q6zA7zlOCh4HNwtZ7p6RP_eit_Dj-jTXyaYiFGfVHhb10Ui1ISYD0nLfstKLdYVPwzB_v4WG2J_CL8zk_un-RU48Uh3dCURr7327k4jwuLof3jj2eVUajIhFjRuC"/>
-<div class="absolute inset-0 vignette-overlay"></div>
-<div class="absolute top-4 right-4">
-<span class="px-3 py-1 bg-gradient-to-r from-primary to-tertiary text-on-primary-fixed font-bold text-label-md font-label-md uppercase tracking-widest shimmer">Mítico</span>
-</div>
-</div>
-<div class="p-8">
-<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Cumbres Celestiales</h3>
-<div class="flex items-center gap-2 mb-4 text-tertiary">
-<span class="material-symbols-outlined text-[18px]">air</span>
-<span class="text-label-md font-label-md">Altitud Extrema, Aire Raro</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Hogar de los Pegasos de Platino y Fénix de Hielo. Las corrientes aquí fluyen con maná puro.</p>
-<div class="border-t border-primary/10 pt-4">
-<span class="text-label-md font-label-md text-primary/60 uppercase block mb-2">Especies Dominantes:</span>
-<div class="flex flex-wrap gap-2">
-<span class="text-on-surface text-body-md font-body-md">• Pegaso de Platino</span>
-<span class="text-on-surface text-body-md font-body-md">• Grifo Real</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Habitat Card 2 -->
-<div class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A deep underwater cave illuminated by neon bioluminescent jellyfish and glowing emerald coral reefs. The water is a deep, dark abyss blue, contrasted with vibrant teal and gold light sources. Ancient ruins are visible in the background, half-buried in sand. The mood is silent, immersive, and dangerously beautiful, capturing the essence of an arcane abyssal depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3EnZmg1-3w5FeS6aAAmB_BA4vu3eWC5qt9S71Ycs4WY9BwCTQ7JA75clodDGgFgFEYItM1XDOT6KIKcVxLm8Uhy2WIOaKvWyqDJ5H_O7ypb5CWMtpgQ1z-1X_8_QY-heXcshULqxxjO-F6owt1MVuukoBJcfDC1GqZDmwJ4pajum8doxllnNFv7uqh7u2QITqU1UOoDx1W3OMgUH5LXhA0A06xbZjhgSLfntPcXJu3WcdP-N9YcKZCXdPT2mjyjbBIleVMr7T3hAX"/>
-<div class="absolute inset-0 vignette-overlay"></div>
-</div>
-<div class="p-8">
-<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Abismos del Alma</h3>
-<div class="flex items-center gap-2 mb-4 text-tertiary">
-<span class="material-symbols-outlined text-[18px]">water_drop</span>
-<span class="text-label-md font-label-md">Presión Abisal, Bioluminiscencia</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Donde residen los Hipocampos de Coral y las Hidras de las Sombras. El agua vibra con sabiduría antigua.</p>
-<div class="border-t border-primary/10 pt-4">
-<span class="text-label-md font-label-md text-primary/60 uppercase block mb-2">Especies Dominantes:</span>
-<div class="flex flex-wrap gap-2">
-<span class="text-on-surface text-body-md font-body-md">• Hipocampo Dorado</span>
-<span class="text-on-surface text-body-md font-body-md">• Leviatán Menor</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Habitat Card 3 -->
-<div class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A lush, dense forest of ancient trees with bark that glows like polished obsidian. Floating spores of light illuminate the forest floor, where oversized magical mushrooms grow. The lighting is low and atmospheric, with golden rays of light breaking through the thick canopy. It is a place of deep magic and eternal growth, styled with a high-end fantasy editorial look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtNcIGVacmGbEyS2mMim4xrTs0G9pfZYJhP7yF_cRgioEzqE_XhdVZ3WS15-kCGfV-KnJrA1Mh1dxw_VvsWOriLRo4mbFNJ7ZK-urheYcDFMbXEEgXtuzZfVXVfR0-IObDPAr23lcW2p3WXZBJtvZHUtF30ja3vyQi3y_tTJ1zc2GZ2C_xyjjgaIXwGEbVtskvYItphI58MXMMYHymsbHDYyx0jdbPOzFgm5uOkvuQcZUfnIayRDDl__U3p4BgZHalaMYns1SYt02r"/>
-<div class="absolute inset-0 vignette-overlay"></div>
-</div>
-<div class="p-8">
-<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Bosque Susurrante</h3>
-<div class="flex items-center gap-2 mb-4 text-tertiary">
-<span class="material-symbols-outlined text-[18px]">park</span>
-<span class="text-label-md font-label-md">Humedad Alta, Magia Terrenal</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Santuario para Unicornios Plateados y Kitsunes de Fuego. El suelo canta con cada paso.</p>
-<div class="border-t border-primary/10 pt-4">
-<span class="text-label-md font-label-md text-primary/60 uppercase block mb-2">Especies Dominantes:</span>
-<div class="flex flex-wrap gap-2">
-<span class="text-on-surface text-body-md font-body-md">• Unicornio del Alba</span>
-<span class="text-on-surface text-body-md font-body-md">• Draco de Bosque</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Habitat Card 4 -->
-<div class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500 lg:col-span-2">
-<div class="grid grid-cols-1 md:grid-cols-2">
-<div class="relative h-full min-h-[300px] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A vast volcanic crater filled with molten gold liquid instead of lava. Black obsidian towers rise from the center, connected by bridges of solidified light. The sky is dark and filled with ash particles that glow like tiny embers. The lighting is dominated by an intense internal heat glow from the 'gold' lava, balanced by deep midnight shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXh6Ui5wiynoZTQ9kZC4rjY_XCN4fsvXM92jXOJFD_0RDj8lcIvUgUb-bfBp_WeDdvz-YyQBFV0PU_RGpDp6-nh1WrrESVxVxNgxkaowqqRlygu1YKunzlIbJav1LoCWuJORSfrYYg_OllQ1pvbcq8LMAhu1l1g0z7YeaLLYbx-sezL8rWUfGkGiJ-pMZEuVR6z2oOO1qQNjUtjGNgJUlifmENxEjHhtqgUgzWf8VCFwT9773wJY9_MCr7sO3UWP4NLDZmS-LBvU4P"/>
-<div class="absolute inset-0 vignette-overlay"></div>
-</div>
-<div class="p-10 flex flex-col justify-center">
-<h3 class="text-headline-md font-headline-md text-primary mb-4">Núcleo de Magma Áureo</h3>
-<div class="flex items-center gap-2 mb-6 text-tertiary">
-<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
-<span class="text-label-md font-label-md">Calor Extremo, Esencia Ígnea</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-8">Un ecosistema diseñado para las Salamandras Reales y los Dragones de Sangre Negra. Las paredes de obsidiana mantienen el calor necesario para el crecimiento de sus escamas primordiales.</p>
-<div class="flex gap-4">
-<button class="bg-primary/10 border border-primary text-primary px-6 py-3 font-bold text-label-md font-label-md uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">Ver Habitantes</button>
-<button class="text-on-surface hover:text-tertiary transition-colors flex items-center gap-2">
-<span class="text-label-md font-label-md font-bold uppercase">Detalles Técnicos</span>
-<span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Habitat Card 5 -->
-<div class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500">
-<div class="relative h-64 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A vast desert at midnight with sand dunes made of stardust that glimmers under a massive, low-hanging galaxy. Ethereal, translucent oasis structures appear like mirages in the distance. The color palette is restricted to deep violets, charcoal blacks, and brilliant white points of light, creating a sense of infinite cosmic space and desert solitude." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoozPC4fWv0rWgSQhTdtAFyrJApaSERMQzJKM4tT2KWzULDBmGDA9CCohI-EFWHoE28eD3IffSljulavPpaPAmyV4SM8vLcqMWivjzZXPabLz0VVBZoz6wZGi_AVNGKq_T_g__HJlHFDhmVAG55nO2_qlan2h83rS7I2FdfGO9wIUCA5phTy9nfZ2YAVhugiHvxtQIiyImiPb_ZXpnGLAE3Ue0oqIWnWgSVU6J8sqbcqIi-_0kxKsoE0j3AuqnlMRlJ2VoCL3hw2hy"/>
-<div class="absolute inset-0 vignette-overlay"></div>
-</div>
-<div class="p-8">
-<h3 class="text-headline-sm font-headline-sm text-primary mb-2">Desierto Estelar</h3>
-<div class="flex items-center gap-2 mb-4 text-tertiary">
-<span class="material-symbols-outlined text-[18px]">star</span>
-<span class="text-label-md font-label-md">Radiación Cósmica, Frío Absoluto</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Donde las Bestias del Vacío y los Escorpiones de Cristal meditan bajo las constelaciones.</p>
-<div class="border-t border-primary/10 pt-4">
-<span class="text-label-md font-label-md text-primary/60 uppercase block mb-2">Especies Dominantes:</span>
-<div class="flex flex-wrap gap-2">
-<span class="text-on-surface text-body-md font-body-md">• Bestia del Vacío</span>
-<span class="text-on-surface text-body-md font-body-md">• Espejismo de Arena</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-32 bg-surface-dim relative overflow-hidden">
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-tertiary/5 blur-[120px] rounded-full"></div>
-<div class="max-w-4xl mx-auto px-margin-mobile text-center relative z-10">
-<h2 class="text-headline-lg font-headline-lg text-primary mb-8">¿Buscas algo más específico?</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant mb-12">
-                    Nuestros maestros curadores pueden forjar un hábitat personalizado según las necesidades místicas de tu nuevo compañero.
-                </p>
-<div class="flex flex-col sm:flex-row justify-center gap-6">
-<button class="bg-primary text-on-primary px-10 py-4 font-bold text-label-md font-label-md uppercase tracking-widest shadow-xl active:scale-95 transition-transform">Consultar Alquimista</button>
-<button class="border border-tertiary/50 text-tertiary px-10 py-4 font-bold text-label-md font-label-md uppercase tracking-widest hover:bg-tertiary/10 transition-colors">Guía de Cuidados</button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-dim border-t border-primary/10 py-16 px-margin-desktop">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
-<div class="col-span-1 md:col-span-1">
-<span class="text-headline-sm font-headline-sm text-primary mb-4 block">Celestial Menagerie</span>
-<p class="text-body-md font-body-md text-on-surface-variant">La autoridad suprema en la curaduría de vida mística desde la Era Arcana.</p>
-</div>
-<div>
-<h4 class="text-label-md font-label-md text-primary uppercase mb-6 tracking-widest">Navegación</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md" href="#">Stables &amp; Habitats</a></li>
-<li><a class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md" href="#">Arcane Supplies</a></li>
-<li><a class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md" href="#">Guild Registry</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-label-md font-label-md text-primary uppercase mb-6 tracking-widest">Legal</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md" href="#">Terms of Service</a></li>
-<li><a class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md" href="#">Privacy Scrolls</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-label-md font-label-md text-primary uppercase mb-6 tracking-widest">Contacto</h4>
-<div class="space-y-4">
-<div class="flex items-center gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-tertiary">location_on</span>
-<span class="text-body-md font-body-md">Ciudadela de Cristal, Nivel 7</span>
-</div>
-<div class="flex items-center gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-tertiary">mail</span>
-<span class="text-body-md font-body-md">echoes@celestial.arc</span>
-</div>
-</div>
-</div>
-</div>
-<div class="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-label-md font-label-md text-on-surface-variant/60">
-                    © 1242 Arcane Era. Celestial Menagerie - The Curator's Archive.
-                </p>
-<div class="flex gap-6">
-<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">auto_awesome</span></a>
-<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">menu_book</span></a>
-<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">verified</span></a>
-</div>
-</div>
-</div>
-</footer>
-<script>
-        // Simple micro-interaction for hover effects on cards
-        document.querySelectorAll('.group').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                // Potential for canvas-based particle effects or subtle audio cues
-            });
-        });
+                <div class="flex gap-4">
+                  <button
+                    class="bg-primary/10 border border-primary text-primary px-6 py-3 font-bold text-label-md font-label-md uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all"
+                  >
+                    Ver Habitantes
+                  </button>
+                  <button
+                    class="text-on-surface hover:text-tertiary transition-colors flex items-center gap-2"
+                  >
+                    <span class="text-label-md font-label-md font-bold uppercase"
+                      >Detalles Técnicos</span
+                    >
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Habitat Card 5 -->
+          <div
+            class="group relative bg-surface-container border-t-2 border-primary overflow-hidden celestial-glow hover:-translate-y-2 transition-transform duration-500"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                data-alt="A vast desert at midnight with sand dunes made of stardust that glimmers under a massive, low-hanging galaxy. Ethereal, translucent oasis structures appear like mirages in the distance. The color palette is restricted to deep violets, charcoal blacks, and brilliant white points of light, creating a sense of infinite cosmic space and desert solitude."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoozPC4fWv0rWgSQhTdtAFyrJApaSERMQzJKM4tT2KWzULDBmGDA9CCohI-EFWHoE28eD3IffSljulavPpaPAmyV4SM8vLcqMWivjzZXPabLz0VVBZoz6wZGi_AVNGKq_T_g__HJlHFDhmVAG55nO2_qlan2h83rS7I2FdfGO9wIUCA5phTy9nfZ2YAVhugiHvxtQIiyImiPb_ZXpnGLAE3Ue0oqIWnWgSVU6J8sqbcqIi-_0kxKsoE0j3AuqnlMRlJ2VoCL3hw2hy"
+              />
+              <div class="absolute inset-0 vignette-overlay"></div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-headline-sm font-headline-sm text-primary mb-2">Desierto Estelar</h3>
+              <div class="flex items-center gap-2 mb-4 text-tertiary">
+                <span class="material-symbols-outlined text-[18px]">star</span>
+                <span class="text-label-md font-label-md">Radiación Cósmica, Frío Absoluto</span>
+              </div>
+              <p
+                class="text-body-md font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden"
+              >
+                Donde las Bestias del Vacío y los Escorpiones de Cristal meditan bajo las
+                constelaciones.
+              </p>
+              <div class="border-t border-primary/10 pt-4">
+                <span class="text-label-md font-label-md text-primary/60 uppercase block mb-2"
+                  >Especies Dominantes:</span
+                >
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-on-surface text-body-md font-body-md">• Bestia del Vacío</span>
+                  <span class="text-on-surface text-body-md font-body-md"
+                    >• Espejismo de Arena</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-32 bg-surface-dim relative overflow-hidden">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-tertiary/5 blur-[120px] rounded-full"
+        ></div>
+        <div class="max-w-4xl mx-auto px-margin-mobile text-center relative z-10">
+          <h2 class="text-headline-lg font-headline-lg text-primary mb-8">
+            ¿Buscas algo más específico?
+          </h2>
+          <p class="text-body-lg font-body-lg text-on-surface-variant mb-12">
+            Nuestros maestros curadores pueden forjar un hábitat personalizado según las necesidades
+            místicas de tu nuevo compañero.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <button
+              class="bg-primary text-on-primary px-10 py-4 font-bold text-label-md font-label-md uppercase tracking-widest shadow-xl active:scale-95 transition-transform"
+            >
+              Consultar Alquimista
+            </button>
+            <button
+              class="border border-tertiary/50 text-tertiary px-10 py-4 font-bold text-label-md font-label-md uppercase tracking-widest hover:bg-tertiary/10 transition-colors"
+            >
+              Guía de Cuidados
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-dim border-t border-primary/10 py-16 px-margin-desktop">
+      <div class="max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+          <div class="col-span-1 md:col-span-1">
+            <span class="text-headline-sm font-headline-sm text-primary mb-4 block"
+              >Celestial Menagerie</span
+            >
+            <p class="text-body-md font-body-md text-on-surface-variant">
+              La autoridad suprema en la curaduría de vida mística desde la Era Arcana.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-label-md font-label-md text-primary uppercase mb-6 tracking-widest">
+              Navegación
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md"
+                  href="#"
+                  >Stables &amp; Habitats</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md"
+                  href="#"
+                  >Arcane Supplies</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md"
+                  href="#"
+                  >Guild Registry</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-label-md font-label-md text-primary uppercase mb-6 tracking-widest">
+              Legal
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md"
+                  href="#"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-on-surface-variant hover:text-tertiary underline-offset-4 hover:underline transition-colors text-body-md font-body-md"
+                  href="#"
+                  >Privacy Scrolls</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-label-md font-label-md text-primary uppercase mb-6 tracking-widest">
+              Contacto
+            </h4>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 text-on-surface-variant">
+                <span class="material-symbols-outlined text-tertiary">location_on</span>
+                <span class="text-body-md font-body-md">Ciudadela de Cristal, Nivel 7</span>
+              </div>
+              <div class="flex items-center gap-3 text-on-surface-variant">
+                <span class="material-symbols-outlined text-tertiary">mail</span>
+                <span class="text-body-md font-body-md">echoes@celestial.arc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <p class="text-label-md font-label-md text-on-surface-variant/60">
+            © 1242 Arcane Era. Celestial Menagerie - The Curator's Archive.
+          </p>
+          <div class="flex gap-6">
+            <a class="text-primary hover:scale-110 transition-transform" href="#"
+              ><span class="material-symbols-outlined">auto_awesome</span></a
+            >
+            <a class="text-primary hover:scale-110 transition-transform" href="#"
+              ><span class="material-symbols-outlined">menu_book</span></a
+            >
+            <a class="text-primary hover:scale-110 transition-transform" href="#"
+              ><span class="material-symbols-outlined">verified</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Simple micro-interaction for hover effects on cards
+      document.querySelectorAll('.group').forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          // Potential for canvas-based particle effects or subtle audio cues
+        })
+      })
 
-        // Sticky header transition
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('bg-surface/90');
-                header.classList.remove('bg-surface/40');
-            } else {
-                header.classList.add('bg-surface/40');
-                header.classList.remove('bg-surface/90');
-            }
-        });
+      // Sticky header transition
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('header')
+        if (window.scrollY > 50) {
+          header.classList.add('bg-surface/90')
+          header.classList.remove('bg-surface/40')
+        } else {
+          header.classList.add('bg-surface/40')
+          header.classList.remove('bg-surface/90')
+        }
+      })
     </script>
-</body></html>
+  </body>
+</html>

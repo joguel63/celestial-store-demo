@@ -14,24 +14,25 @@
 
 ## File Map
 
-| Action | Path | Responsibility |
-|--------|------|----------------|
-| Modify | `src/core/components/navbar/index.tsx` | Route-aware active link for `/supplies` |
-| Modify | `src/core/router/index.tsx` | Add `/supplies` route |
-| Modify | `src/core/locales/es/landing.locale.ts` | Add `supplies` i18n keys (es) |
-| Modify | `src/core/locales/en/landing.locale.ts` | Add `supplies` i18n keys (en) |
-| Create | `src/modules/supplies/pages/suppliesPage/index.tsx` | Page composer |
-| Create | `src/modules/supplies/components/suppliesHero/index.tsx` | Hero section with bg image + badge |
-| Create | `src/modules/supplies/components/supplyFilters/index.tsx` | Filter button bar |
-| Create | `src/modules/supplies/components/supplyCard/index.tsx` | Product card with rarity badge |
-| Create | `src/modules/supplies/components/supplyGrid/index.tsx` | Grid of 6 product cards |
-| Create | `src/modules/supplies/components/suppliesCta/index.tsx` | Newsletter CTA with email input |
+| Action | Path                                                      | Responsibility                          |
+| ------ | --------------------------------------------------------- | --------------------------------------- |
+| Modify | `src/core/components/navbar/index.tsx`                    | Route-aware active link for `/supplies` |
+| Modify | `src/core/router/index.tsx`                               | Add `/supplies` route                   |
+| Modify | `src/core/locales/es/landing.locale.ts`                   | Add `supplies` i18n keys (es)           |
+| Modify | `src/core/locales/en/landing.locale.ts`                   | Add `supplies` i18n keys (en)           |
+| Create | `src/modules/supplies/pages/suppliesPage/index.tsx`       | Page composer                           |
+| Create | `src/modules/supplies/components/suppliesHero/index.tsx`  | Hero section with bg image + badge      |
+| Create | `src/modules/supplies/components/supplyFilters/index.tsx` | Filter button bar                       |
+| Create | `src/modules/supplies/components/supplyCard/index.tsx`    | Product card with rarity badge          |
+| Create | `src/modules/supplies/components/supplyGrid/index.tsx`    | Grid of 6 product cards                 |
+| Create | `src/modules/supplies/components/suppliesCta/index.tsx`   | Newsletter CTA with email input         |
 
 ---
 
 ### Task 0: Download Stitch Design Assets
 
 **Files:**
+
 - Download to: `src/assets/supplies/`
 
 **Context:** The Stitch screen `d224b9dddbe94ff2b6ea98ce874e45a3` uses 7 images hosted on Google. Download them before starting implementation.
@@ -83,6 +84,7 @@ git commit -m "feat: add supplies page design assets from Stitch"
 ### Task 1: Make Navbar Route-Aware for Supplies
 
 **Files:**
+
 - Modify: `src/core/components/navbar/index.tsx`
 
 **Context:** The Supplies link currently has `href="#"` with no route-aware logic. Must add `useLocation()` check for `/supplies` path.
@@ -90,6 +92,7 @@ git commit -m "feat: add supplies page design assets from Stitch"
 - [ ] **Step 1: Find the Supplies link in navbar**
 
 Locate the Supplies `<Link>` element (currently around line 90):
+
 ```tsx
 <Link href="#" underline="none" sx={styles.link}>
   {t('navbar.links.supplies')}
@@ -99,6 +102,7 @@ Locate the Supplies `<Link>` element (currently around line 90):
 - [ ] **Step 2: Replace with route-aware link**
 
 Replace that single link line block with:
+
 ```tsx
 <Link
   href="/supplies"
@@ -129,11 +133,13 @@ git commit -m "feat: make navbar Supplies link route-aware for /supplies"
 ### Task 2: Add Supplies Route
 
 **Files:**
+
 - Modify: `src/core/router/index.tsx`
 
 - [ ] **Step 1: Import SuppliesPage**
 
 Add import after the StablesPage import:
+
 ```tsx
 import { SuppliesPage } from '@/modules/supplies/pages/suppliesPage'
 ```
@@ -141,11 +147,13 @@ import { SuppliesPage } from '@/modules/supplies/pages/suppliesPage'
 - [ ] **Step 2: Add route inside Routes**
 
 Add before the existing routes:
+
 ```tsx
 <Route path="/supplies" element={<SuppliesPage />} />
 ```
 
 The complete file becomes:
+
 ```tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MainLayout } from '@/core/layouts/mainLayout'
@@ -183,12 +191,14 @@ git commit -m "feat: add /supplies route pointing to SuppliesPage"
 ### Task 3: Add Supplies i18n Keys
 
 **Files:**
+
 - Modify: `src/core/locales/es/landing.locale.ts`
 - Modify: `src/core/locales/en/landing.locale.ts`
 
 - [ ] **Step 1: Add supplies keys to Spanish locale**
 
 In `src/core/locales/es/landing.locale.ts`, add after the `stables` object (before the final `}`):
+
 ```ts
   supplies: {
     hero: {
@@ -261,6 +271,7 @@ In `src/core/locales/es/landing.locale.ts`, add after the `stables` object (befo
 - [ ] **Step 2: Add supplies keys to English locale**
 
 In `src/core/locales/en/landing.locale.ts`, add after the `stables` object:
+
 ```ts
   supplies: {
     hero: {
@@ -347,6 +358,7 @@ git commit -m "feat: add supplies i18n keys (es + en)"
 ### Task 4: Create SuppliesHero Component
 
 **Files:**
+
 - Create: `src/modules/supplies/components/suppliesHero/index.tsx`
 
 **Context:** Full-viewport hero section. Three layers: background image (50% opacity) + gradient overlay + centered content. Content has a "Curator's Archive" badge pill (tertiary text, primary/30 border), title "Arcane Supplies" (display-lg), and description paragraph. Background uses `hero-supplies.png` with vignette overlay.
@@ -382,8 +394,7 @@ const styles = {
   overlay: {
     position: 'absolute',
     inset: 0,
-    background:
-      'linear-gradient(to bottom, rgba(19,20,7,0.8), rgba(19,20,7,0.6))',
+    background: 'linear-gradient(to bottom, rgba(19,20,7,0.8), rgba(19,20,7,0.6))',
   },
   content: {
     position: 'relative',
@@ -452,9 +463,7 @@ export const SuppliesHero = () => {
         <Typography variant="h1" sx={styles.title}>
           {t('supplies.hero.title')}
         </Typography>
-        <Typography sx={styles.description}>
-          {t('supplies.hero.description')}
-        </Typography>
+        <Typography sx={styles.description}>{t('supplies.hero.description')}</Typography>
       </Box>
     </Box>
   )
@@ -478,6 +487,7 @@ git commit -m "feat: create SuppliesHero component with badge and bg image"
 ### Task 5: Create SupplyFilters Component
 
 **Files:**
+
 - Create: `src/modules/supplies/components/supplyFilters/index.tsx`
 
 **Context:** Horizontal filter bar with 5 buttons. First button ("All Collections") has border + text gold with surface-container bg (active). Rest have transparent bg, outline-variant border, on-surface-variant text. Hover: border → teal, text → teal.
@@ -574,11 +584,13 @@ git commit -m "feat: create SupplyFilters bar component with 5 buttons"
 ### Task 6: Create SupplyCard Component
 
 **Files:**
+
 - Create: `src/modules/supplies/components/supplyCard/index.tsx`
 
 **Context:** Product card with aspect-ratio 4:5 image, vignette overlay, optional rarity badge (Mythic: gold gradient, Legendary: teal, Rare: secondary/purple), product name (gold, headline-sm), description, divider, price with "GP" suffix, and "Buy" button (contained primary).
 
 Badge color variants:
+
 - **Mythic**: `background: 'linear-gradient(90deg, #f2ca50, #79dfd4)'`, text `#241a00`
 - **Legendary**: `bgcolor: '#5bc3b9'`, text `#004e48` (tertiary-container / on-tertiary-container)
 - **Rare**: `bgcolor: '#d6bcf4'`, text `#3b2754` (secondary / on-secondary)
@@ -720,11 +732,7 @@ export const SupplyCard = ({
   <Box sx={styles.card}>
     <Box sx={styles.imageWrap}>
       <Box component="img" src={image} alt={name} />
-      {rarity ? (
-        <Box sx={{ ...styles.badge, ...rarityStyles[rarity] }}>
-          {rarity}
-        </Box>
-      ) : null}
+      {rarity ? <Box sx={{ ...styles.badge, ...rarityStyles[rarity] }}>{rarity}</Box> : null}
     </Box>
     <Typography sx={styles.name}>{name}</Typography>
     <Typography sx={styles.description}>{description}</Typography>
@@ -760,6 +768,7 @@ git commit -m "feat: create SupplyCard component with rarity badge variants"
 ### Task 7: Create SupplyGrid Component
 
 **Files:**
+
 - Create: `src/modules/supplies/components/supplyGrid/index.tsx`
 
 **Context:** Responsive 3-column grid composing all 6 product cards. Images imported from `@/assets/supplies/`. Product data from i18n keys `supplies.products.*`. Rarity badges: Mythic (Phoenix Ember-Grain, Void-Glass Terrarium), Legendary (Kraken Salt-Blocks), Rare (Enchanted Grooming Kit), none (Astral Tether, Singing Mana-Flasks).
@@ -878,6 +887,7 @@ git commit -m "feat: create SupplyGrid composing 6 product cards in 3-col layout
 ### Task 8: Create SuppliesCta Component
 
 **Files:**
+
 - Create: `src/modules/supplies/components/suppliesCta/index.tsx`
 
 **Context:** Newsletter-style CTA section with dark surface-container-high background, teal gradient glow on the right side (positioned absolute, blurred). Left side: title "Registry of the Wise" + description. Right side: email input + "Enlist" button.
@@ -990,18 +1000,11 @@ export const SuppliesCta = () => {
       <Box sx={styles.glow} />
       <Box sx={styles.container}>
         <Box sx={styles.textBlock}>
-          <Typography sx={styles.title}>
-            {t('supplies.cta.title')}
-          </Typography>
-          <Typography sx={styles.description}>
-            {t('supplies.cta.description')}
-          </Typography>
+          <Typography sx={styles.title}>{t('supplies.cta.title')}</Typography>
+          <Typography sx={styles.description}>{t('supplies.cta.description')}</Typography>
         </Box>
         <Box sx={styles.form}>
-          <TextField
-            placeholder={t('supplies.cta.placeholder')}
-            sx={styles.input}
-          />
+          <TextField placeholder={t('supplies.cta.placeholder')} sx={styles.input} />
           <Button variant="contained" sx={styles.button}>
             {t('supplies.cta.enlist')}
           </Button>
@@ -1029,6 +1032,7 @@ git commit -m "feat: create SuppliesCta newsletter section with email input"
 ### Task 9: Create SuppliesPage Composer
 
 **Files:**
+
 - Create: `src/modules/supplies/pages/suppliesPage/index.tsx`
 
 **Context:** Composes all supplies section components in a `<main>` wrapper, same pattern as `LandingPage` and `StablesPage`.
@@ -1093,6 +1097,7 @@ npm run dev
 ```
 
 Navigate to `http://localhost:5173/supplies` and verify:
+
 - Navbar shows "Supplies" as active (gold underline)
 - Hero section renders with badge, title, description, and background image
 - Filter buttons display (All Collections active, rest inactive)
@@ -1110,6 +1115,7 @@ Only if changes were made during verification.
 ## Self-Review
 
 **Spec coverage:**
+
 - Hero with badge, title, description, bg image → Task 4
 - Filter bar with 5 buttons → Task 5
 - 6 product cards in 3-col grid → Tasks 6 + 7
@@ -1123,6 +1129,7 @@ Only if changes were made during verification.
 **Placeholder scan:** No TBD, TODO, or "implement later" found. All code is complete.
 
 **Type consistency:**
+
 - `SupplyCardProps` defined in Task 6, consumed in Task 7
 - i18n keys in Task 3 match exactly what Tasks 4-9 use via `t('supplies.*')`
 - Image imports in Tasks 4 and 7 match files in `src/assets/supplies/` from Task 0

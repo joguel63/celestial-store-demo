@@ -1,42 +1,42 @@
-import type { MouseEvent } from "react";
-import { AppBar, Toolbar, Button, Box, Link, ToggleButton, ToggleButtonGroup } from "@mui/material";
-import type { SxProps, Theme } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { useLocation, Link as RouterLink } from "react-router-dom";
-import { ROUTES } from "@/core/enums/routes";
-import { styles } from "./styles";
+import type { MouseEvent } from 'react'
+import { AppBar, Toolbar, Button, Box, Link, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import type { SxProps, Theme } from '@mui/material'
+import { useTranslation } from 'react-i18next'
+import { useLocation, Link as RouterLink } from 'react-router-dom'
+import { ROUTES } from '@/core/enums/routes'
+import { styles } from './styles'
 
-type SupportedLanguage = "es" | "en";
+type SupportedLanguage = 'es' | 'en'
 
-const languageOptions: SupportedLanguage[] = ["es", "en"];
+const languageOptions: SupportedLanguage[] = ['es', 'en']
 
 const getSupportedLanguage = (language?: string): SupportedLanguage =>
-  language?.startsWith("es") ? "es" : "en";
+  language?.startsWith('es') ? 'es' : 'en'
 
 const mergeLinkStyles = (isActive: boolean): SxProps<Theme> => ({
   ...(styles.link as Record<string, unknown>),
   ...(isActive ? styles.activeLink : {}),
-});
+})
 
 export const Navbar = () => {
-  const { t, i18n } = useTranslation();
-  const location = useLocation();
-  const currentLanguage = getSupportedLanguage(i18n.resolvedLanguage ?? i18n.language);
+  const { t, i18n } = useTranslation()
+  const location = useLocation()
+  const currentLanguage = getSupportedLanguage(i18n.resolvedLanguage ?? i18n.language)
 
   const handleLanguageChange = (
     _event: MouseEvent<HTMLElement>,
     nextLanguage: SupportedLanguage | null,
   ) => {
     if (nextLanguage && nextLanguage !== currentLanguage) {
-      void i18n.changeLanguage(nextLanguage);
+      void i18n.changeLanguage(nextLanguage)
     }
-  };
+  }
 
   return (
     <AppBar position="fixed" sx={styles.nav}>
       <Toolbar sx={styles.toolbar} disableGutters>
         <Box component="span" sx={styles.brand}>
-          {t("navbar.brand")}
+          {t('navbar.brand')}
         </Box>
         <Box sx={styles.links}>
           <Link
@@ -45,7 +45,7 @@ export const Navbar = () => {
             underline="none"
             sx={mergeLinkStyles(location.pathname === ROUTES.HOME)}
           >
-            {t("navbar.links.bestiary")}
+            {t('navbar.links.bestiary')}
           </Link>
           <Link
             component={RouterLink}
@@ -53,7 +53,7 @@ export const Navbar = () => {
             underline="none"
             sx={mergeLinkStyles(location.pathname === ROUTES.STABLES)}
           >
-            {t("navbar.links.stables")}
+            {t('navbar.links.stables')}
           </Link>
           <Link
             component={RouterLink}
@@ -61,7 +61,7 @@ export const Navbar = () => {
             underline="none"
             sx={mergeLinkStyles(location.pathname === ROUTES.SUPPLIES)}
           >
-            {t("navbar.links.supplies")}
+            {t('navbar.links.supplies')}
           </Link>
           <Link
             component={RouterLink}
@@ -69,7 +69,7 @@ export const Navbar = () => {
             underline="none"
             sx={mergeLinkStyles(location.pathname === ROUTES.GUILD)}
           >
-            {t("navbar.links.guild")}
+            {t('navbar.links.guild')}
           </Link>
         </Box>
         <Box sx={styles.actions}>
@@ -79,7 +79,7 @@ export const Navbar = () => {
             onChange={handleLanguageChange}
             size="small"
             sx={styles.languageGroup}
-            aria-label={t("navbar.language.label")}
+            aria-label={t('navbar.language.label')}
           >
             {languageOptions.map((language) => (
               <ToggleButton
@@ -87,7 +87,7 @@ export const Navbar = () => {
                 value={language}
                 sx={styles.languageButton}
                 aria-label={t(
-                  language === "es" ? "navbar.language.spanish" : "navbar.language.english",
+                  language === 'es' ? 'navbar.language.spanish' : 'navbar.language.english',
                 )}
               >
                 {t(`navbar.language.options.${language}`)}
@@ -95,10 +95,10 @@ export const Navbar = () => {
             ))}
           </ToggleButtonGroup>
           <Button variant="contained" size="medium">
-            {t("navbar.adoptNow")}
+            {t('navbar.adoptNow')}
           </Button>
         </Box>
       </Toolbar>
     </AppBar>
-  );
-};
+  )
+}

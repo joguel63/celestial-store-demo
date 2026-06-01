@@ -21,9 +21,7 @@ export const Hero = () => {
               {t('hero.titleHighlight')}
             </Box>
           </Typography>
-          <Typography sx={styles.description}>
-            {t('hero.description')}
-          </Typography>
+          <Typography sx={styles.description}>{t('hero.description')}</Typography>
           <Box sx={styles.buttons}>
             <Button variant="contained" size="large" sx={{ px: 5, py: 2 }}>
               {t('hero.exploreButton')}

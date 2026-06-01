@@ -13,9 +13,7 @@ export const CtaBanner = () => {
           <Typography variant="h1" sx={styles.title}>
             {t('cta.title')}
           </Typography>
-          <Typography sx={styles.description}>
-            {t('cta.description')}
-          </Typography>
+          <Typography sx={styles.description}>{t('cta.description')}</Typography>
           <Button variant="contained" size="large" sx={styles.button}>
             {t('cta.button')}
           </Button>

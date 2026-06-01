@@ -25,14 +25,12 @@ export const TierCards = () => {
               {t('guild.tiers.explorer.description')}
             </Typography>
             <Box sx={styles.benefitsList}>
-              {getStringArray(t, 'guild.tiers.explorer.benefits').map(
-                (benefit) => (
-                  <Box key={benefit} sx={styles.benefit}>
-                    <CheckCircleIcon sx={styles.benefitIcon} />
-                    {benefit}
-                  </Box>
-                )
-              )}
+              {getStringArray(t, 'guild.tiers.explorer.benefits').map((benefit) => (
+                <Box key={benefit} sx={styles.benefit}>
+                  <CheckCircleIcon sx={styles.benefitIcon} />
+                  {benefit}
+                </Box>
+              ))}
             </Box>
             <Button sx={styles.outlineBtn}>{t('guild.tiers.explorer.cta')}</Button>
           </Box>
@@ -46,14 +44,12 @@ export const TierCards = () => {
               {t('guild.tiers.tamer.description')}
             </Typography>
             <Box sx={styles.benefitsList}>
-              {getStringArray(t, 'guild.tiers.tamer.benefits').map(
-                (benefit) => (
-                  <Box key={benefit} sx={styles.benefit}>
-                    <CheckCircleIcon sx={styles.benefitIcon} />
-                    {benefit}
-                  </Box>
-                )
-              )}
+              {getStringArray(t, 'guild.tiers.tamer.benefits').map((benefit) => (
+                <Box key={benefit} sx={styles.benefit}>
+                  <CheckCircleIcon sx={styles.benefitIcon} />
+                  {benefit}
+                </Box>
+              ))}
             </Box>
             <Button variant="contained" sx={styles.primaryBtn}>
               {t('guild.tiers.tamer.cta')}
@@ -68,14 +64,12 @@ export const TierCards = () => {
               {t('guild.tiers.keeper.description')}
             </Typography>
             <Box sx={styles.benefitsList}>
-              {getStringArray(t, 'guild.tiers.keeper.benefits').map(
-                (benefit) => (
-                  <Box key={benefit} sx={styles.benefit}>
-                    <CheckCircleIcon sx={styles.benefitIcon} />
-                    {benefit}
-                  </Box>
-                )
-              )}
+              {getStringArray(t, 'guild.tiers.keeper.benefits').map((benefit) => (
+                <Box key={benefit} sx={styles.benefit}>
+                  <CheckCircleIcon sx={styles.benefitIcon} />
+                  {benefit}
+                </Box>
+              ))}
             </Box>
             <Button sx={styles.outlineBtn}>{t('guild.tiers.keeper.cta')}</Button>
           </Box>

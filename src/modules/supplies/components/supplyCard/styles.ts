@@ -1,7 +1,15 @@
 import { SxProps, Theme } from '@mui/material'
 
 type Styles = Record<
-  'card' | 'imageWrap' | 'badge' | 'name' | 'description' | 'footer' | 'price' | 'gpUnit' | 'buyBtn',
+  | 'card'
+  | 'imageWrap'
+  | 'badge'
+  | 'name'
+  | 'description'
+  | 'footer'
+  | 'price'
+  | 'gpUnit'
+  | 'buyBtn',
   SxProps<Theme>
 >
 
@@ -22,7 +30,7 @@ export const styles: Styles = {
       transform: 'translateY(-8px)',
       boxShadow: '0 12px 24px -10px rgba(242, 202, 80, 0.2)',
     },
-  } ,
+  },
   imageWrap: {
     aspectRatio: '4 / 5',
     mb: 3,
@@ -40,7 +48,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.1)',
     },
-  } ,
+  },
   badge: {
     position: 'absolute',
     top: 16,

@@ -1,14 +1,7 @@
 import { SxProps, Theme } from '@mui/material'
 
 type Styles = Record<
-  | 'card'
-  | 'imageWrap'
-  | 'gradient'
-  | 'body'
-  | 'header'
-  | 'name'
-  | 'rarity'
-  | 'description',
+  'card' | 'imageWrap' | 'gradient' | 'body' | 'header' | 'name' | 'rarity' | 'description',
   SxProps<Theme>
 >
 
@@ -37,7 +30,7 @@ export const styles: Styles = {
     '&:hover img': {
       transform: 'scale(1.1)',
     },
-  } ,
+  },
   gradient: {
     position: 'absolute',
     inset: 0,

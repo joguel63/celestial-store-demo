@@ -1,7 +1,15 @@
 import { SxProps, Theme } from '@mui/material'
 
 type Styles = Record<
-  'section' | 'glow' | 'container' | 'textBlock' | 'title' | 'description' | 'form' | 'input' | 'button',
+  | 'section'
+  | 'glow'
+  | 'container'
+  | 'textBlock'
+  | 'title'
+  | 'description'
+  | 'form'
+  | 'input'
+  | 'button',
   SxProps<Theme>
 >
 
@@ -81,7 +89,7 @@ export const styles: Styles = {
         },
       },
     },
-  } ,
+  },
   button: {
     px: 4,
     py: 2,
@@ -96,5 +104,5 @@ export const styles: Styles = {
     '&:active': {
       transform: 'scale(0.95)',
     },
-  } ,
+  },
 }

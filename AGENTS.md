@@ -6,15 +6,15 @@
 
 ## Stack
 
-| Tecnología | Versión |
-|------------|---------|
-| React | ^18.3 |
-| Vite | ^5.4 |
-| TypeScript | ^5.5 (strict) |
-| MUI | ^6.1 |
-| react-router-dom | ^6.26 |
-| i18next + react-i18next | ^23 / ^15 |
-| Emotion | ^11.13 |
+| Tecnología              | Versión       |
+| ----------------------- | ------------- |
+| React                   | ^18.3         |
+| Vite                    | ^5.4          |
+| TypeScript              | ^5.5 (strict) |
+| MUI                     | ^6.1          |
+| react-router-dom        | ^6.26         |
+| i18next + react-i18next | ^23 / ^15     |
+| Emotion                 | ^11.13        |
 
 ## Arquitectura
 
@@ -116,6 +116,7 @@ El Navbar usa `useLocation()` de react-router-dom para aplicar el estilo `active
 ### Imágenes de Stitch
 
 Todas las imágenes AI-generated descargadas de Stitch tienen resolución máxima **512x512**. Para imágenes de fondo grandes (hero sections, banners):
+
 - Usar `opacity: 0.5` o menor en la imagen para que actúe como textura atmosférica.
 - Combinar con gradientes overlay (`linear-gradient` o `radial-gradient`) para enmascarar bordes.
 - No estirar la imagen a full resolución con `objectFit: 'cover'` sin bajar opacidad — se verá pixelada.
@@ -136,11 +137,11 @@ Todas las imágenes AI-generated descargadas de Stitch tienen resolución máxim
 
 ## Comandos
 
-| Comando | Acción |
-|---------|--------|
-| `npm run dev` | Servidor de desarrollo |
-| `npm run build` | `tsc -b && vite build` |
-| `npm run preview` | Previsualizar build |
+| Comando           | Acción                 |
+| ----------------- | ---------------------- |
+| `npm run dev`     | Servidor de desarrollo |
+| `npm run build`   | `tsc -b && vite build` |
+| `npm run preview` | Previsualizar build    |
 
 ## Flujo de build
 

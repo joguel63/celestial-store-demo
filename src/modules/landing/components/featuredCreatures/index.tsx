@@ -25,7 +25,9 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
       </Box>
       <Box sx={styles.body}>
         <Box sx={styles.header}>
-          <Typography variant="h4" sx={styles.name}>{name}</Typography>
+          <Typography variant="h4" sx={styles.name}>
+            {name}
+          </Typography>
           <Chip
             label={rarity}
             size="small"
@@ -89,12 +91,16 @@ export const FeaturedCreatures = () => {
   return (
     <Box component="section" sx={{ py: 12, bgcolor: 'background.default' }}>
       <Box sx={{ maxWidth: '1280px', mx: 'auto', px: { xs: '20px', md: '64px' } }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mb: 8 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            mb: 8,
+          }}
+        >
           <Box>
-            <Typography
-              variant="overline"
-              sx={{ color: 'primary.main', letterSpacing: '0.2em' }}
-            >
+            <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: '0.2em' }}>
               {t('featured.label')}
             </Typography>
             <Typography variant="h2" sx={{ mt: 1 }}>

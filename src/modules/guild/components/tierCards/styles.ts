@@ -64,7 +64,7 @@ export const styles: Styles = {
     '&:hover': {
       transform: 'translateY(-8px)',
     },
-  } ,
+  },
   featuredCard: {
     bgcolor: 'background.paper',
     borderTop: '2px solid',
@@ -83,7 +83,7 @@ export const styles: Styles = {
     '&:hover': {
       transform: { xs: 'translateY(-8px)', md: 'scale(1.05) translateY(-8px)' },
     },
-  } ,
+  },
   icon: {
     fontSize: 48,
     color: 'primary.main',
@@ -135,7 +135,7 @@ export const styles: Styles = {
     '&:hover': {
       bgcolor: 'rgba(242, 202, 80, 0.2)',
     },
-  } ,
+  },
   primaryBtn: {
     width: '100%',
     py: 1.5,
@@ -149,7 +149,7 @@ export const styles: Styles = {
     '&:hover': {
       boxShadow: '0 0 40px rgba(242, 202, 80, 0.5)',
     },
-  } ,
+  },
   badge: {
     position: 'absolute',
     top: 16,

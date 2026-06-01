@@ -30,18 +30,20 @@ export const AdoptionGuide = () => {
           <Typography variant="h2" sx={styles.title}>
             {t('adoption.title')}
           </Typography>
-          <Typography sx={styles.subtitle}>
-            {t('adoption.description')}
-          </Typography>
+          <Typography sx={styles.subtitle}>{t('adoption.description')}</Typography>
         </Box>
         <Box sx={styles.steps}>
           <Box sx={styles.connector} />
           {steps.map((step) => (
             <Box key={step.number} sx={styles.step}>
               <Box sx={styles.circle}>
-                <Typography variant="h3" sx={styles.stepNumber}>{step.number}</Typography>
+                <Typography variant="h3" sx={styles.stepNumber}>
+                  {step.number}
+                </Typography>
               </Box>
-              <Typography variant="h4" sx={styles.stepTitle}>{step.title}</Typography>
+              <Typography variant="h4" sx={styles.stepTitle}>
+                {step.title}
+              </Typography>
               <Typography sx={styles.stepDescription}>{step.description}</Typography>
             </Box>
           ))}

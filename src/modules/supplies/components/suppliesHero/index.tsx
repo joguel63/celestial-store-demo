@@ -21,9 +21,7 @@ export const SuppliesHero = () => {
         <Typography variant="h1" sx={styles.title}>
           {t('supplies.hero.title')}
         </Typography>
-        <Typography sx={styles.description}>
-          {t('supplies.hero.description')}
-        </Typography>
+        <Typography sx={styles.description}>{t('supplies.hero.description')}</Typography>
       </Box>
     </Box>
   )

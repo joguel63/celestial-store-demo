@@ -74,7 +74,7 @@ export const styles: Styles = {
     '&:active': {
       transform: 'scale(0.95)',
     },
-  } ,
+  },
   quote: {
     fontFamily: '"Playfair Display", serif',
     fontStyle: 'italic',

@@ -25,12 +25,11 @@ export const styles: Styles = {
       objectFit: 'cover',
       opacity: 0.5,
     },
-  } ,
+  },
   overlay: {
     position: 'absolute',
     inset: 0,
-    background:
-      'linear-gradient(to bottom, rgba(19,20,7,0.8), rgba(19,20,7,0.6))',
+    background: 'linear-gradient(to bottom, rgba(19,20,7,0.8), rgba(19,20,7,0.6))',
   },
   content: {
     position: 'relative',
