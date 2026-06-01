@@ -8,8 +8,15 @@ export const landing = {
       guild: 'Gremio',
     },
     adoptNow: 'Adoptar Ahora',
-    search: 'Buscar',
-    searchTooltip: 'Buscar criaturas en el bestiario',
+    language: {
+      label: 'Selector de idioma',
+      spanish: 'Español',
+      english: 'Inglés',
+      options: {
+        es: 'ES',
+        en: 'EN',
+      },
+    },
   },
   hero: {
     titlePart1: 'Adopta la',

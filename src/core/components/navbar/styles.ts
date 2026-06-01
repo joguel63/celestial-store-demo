@@ -1,7 +1,15 @@
 import { SxProps, Theme } from "@mui/material";
 
 type Styles = Record<
-  "nav" | "toolbar" | "brand" | "links" | "link" | "activeLink" | "actions",
+  | "nav"
+  | "toolbar"
+  | "brand"
+  | "links"
+  | "link"
+  | "activeLink"
+  | "actions"
+  | "languageGroup"
+  | "languageButton",
   SxProps<Theme>
 >;
 
@@ -55,5 +63,40 @@ export const styles: Styles = {
     display: "flex",
     alignItems: "center",
     gap: 3,
+  },
+  languageGroup: {
+    height: 32,
+    border: "1px solid",
+    borderColor: "celestial.goldVeil",
+    borderRadius: 0,
+    "& .MuiToggleButtonGroup-grouped": {
+      border: 0,
+      borderRadius: 0,
+      "&:not(:first-of-type)": {
+        borderLeft: "1px solid",
+        borderColor: "celestial.goldVeil",
+      },
+    },
+  },
+  languageButton: {
+    minWidth: 36,
+    px: 1.25,
+    py: 0.5,
+    color: "text.secondary",
+    fontFamily: '"Manrope", sans-serif',
+    fontSize: "0.75rem",
+    fontWeight: 700,
+    letterSpacing: "0.1em",
+    "&:hover": {
+      color: "celestial.teal",
+      bgcolor: "celestial.tealGlass",
+    },
+    "&.Mui-selected": {
+      color: "primary.main",
+      bgcolor: "celestial.goldMist",
+    },
+    "&.Mui-selected:hover": {
+      bgcolor: "celestial.goldVeil",
+    },
   },
 };

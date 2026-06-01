@@ -8,8 +8,15 @@ export const landing = {
       guild: 'Guild',
     },
     adoptNow: 'Adopt Now',
-    search: 'Search',
-    searchTooltip: 'Search creatures in the bestiary',
+    language: {
+      label: 'Language selector',
+      spanish: 'Spanish',
+      english: 'English',
+      options: {
+        es: 'ES',
+        en: 'EN',
+      },
+    },
   },
   hero: {
     titlePart1: 'Adopt the',
