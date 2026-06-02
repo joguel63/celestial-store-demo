@@ -21,3 +21,5 @@ jobs:
       s3-prefix: 'Celestial Menagerie'
       aws-region: 'us-east-1'
       cloudfront-distribution-id: 'E3RZXNMXFR7F5L'
+    secrets:
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
