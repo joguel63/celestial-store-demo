@@ -9,6 +9,10 @@ const StablesModule = lazy(() => import('@/modules/stables'))
 const SuppliesModule = lazy(() => import('@/modules/supplies'))
 const GuildModule = lazy(() => import('@/modules/guild'))
 
+const routerBasename = import.meta.env.BASE_URL === '/'
+  ? undefined
+  : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 const PageFallback = () => (
   <Box
     sx={{
@@ -24,7 +28,7 @@ const PageFallback = () => (
 )
 
 export const AppRouter = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={routerBasename}>
     <Routes>
       <Route element={<MainLayout />}>
         <Route
