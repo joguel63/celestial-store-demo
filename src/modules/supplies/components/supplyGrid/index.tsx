@@ -2,11 +2,11 @@ import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { SupplyCard } from '../supplyCard'
 import { styles } from './styles'
-import imgPhoenix from '@/assets/supplies/supply-phoenix-grain.png'
-import imgKraken from '@/assets/supplies/supply-kraken-salt.png'
-import imgAstral from '@/assets/supplies/supply-astral-tether.png'
-import imgVoid from '@/assets/supplies/supply-void-glass.png'
-import imgMana from '@/assets/supplies/supply-mana-flasks.png'
+import imgPhoenix from '@/assets/supplies/supply-phoenix-grain.webp'
+import imgKraken from '@/assets/supplies/supply-kraken-salt.webp'
+import imgAstral from '@/assets/supplies/supply-astral-tether.webp'
+import imgVoid from '@/assets/supplies/supply-void-glass.webp'
+import imgMana from '@/assets/supplies/supply-mana-flasks.webp'
 
 export const SupplyGrid = () => {
   const { t } = useTranslation()

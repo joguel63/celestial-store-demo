@@ -8,10 +8,10 @@ import { useTranslation } from 'react-i18next'
 import { getStringArray } from '@/core/utils/getStringArray'
 import { styles } from './styles'
 
-import imgValerius from '@/assets/guild/member-valerius.png'
-import imgElara from '@/assets/guild/member-elara.png'
-import imgKaelen from '@/assets/guild/member-kaelen.png'
-import imgSeraphina from '@/assets/guild/member-seraphina.png'
+import imgValerius from '@/assets/guild/member-valerius.webp'
+import imgElara from '@/assets/guild/member-elara.webp'
+import imgKaelen from '@/assets/guild/member-kaelen.webp'
+import imgSeraphina from '@/assets/guild/member-seraphina.webp'
 
 interface MemberProps {
   image: string
@@ -25,7 +25,7 @@ interface MemberProps {
 const MemberCard = ({ image, name, role, tags, badge, badgeIcon }: MemberProps) => (
   <Box sx={styles.card}>
     <Box sx={styles.avatarWrap}>
-      <Box component="img" src={image} alt={name} />
+      <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
       {badge ? (
         <Box
           sx={{

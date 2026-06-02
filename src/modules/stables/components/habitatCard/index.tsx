@@ -38,7 +38,7 @@ export const HabitatCard = ({
 }: HabitatCardProps) => (
   <Box sx={styles.card}>
     <Box sx={styles.imageWrap}>
-      <Box component="img" src={image} alt={name} />
+      <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
       <Box sx={styles.vignette} />
       {rarity ? <Box sx={styles.badge}>{rarity}</Box> : null}
     </Box>
@@ -91,7 +91,7 @@ export const FeaturedHabitatCard = ({
   <Box sx={{ ...styles.card, gridColumn: { lg: 'span 2' } }}>
     <Box sx={styles.featuredGrid}>
       <Box sx={styles.featuredImage}>
-        <Box component="img" src={image} alt={name} />
+        <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
         <Box sx={styles.vignette} />
       </Box>
       <Box sx={styles.featuredBody}>

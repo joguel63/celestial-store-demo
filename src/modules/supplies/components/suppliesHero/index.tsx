@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import heroBg from '@/assets/supplies/hero-supplies.png'
+import heroBg from '@/assets/supplies/hero-supplies.webp'
 import { styles } from './styles'
 
 export const SuppliesHero = () => {
@@ -9,7 +9,7 @@ export const SuppliesHero = () => {
   return (
     <Box component="section" sx={styles.section}>
       <Box sx={styles.bgImage}>
-        <Box component="img" src={heroBg} alt="" />
+        <Box component="img" src={heroBg} alt="" fetchPriority="high" decoding="async" />
         <Box sx={styles.overlay} />
       </Box>
       <Box sx={styles.content}>

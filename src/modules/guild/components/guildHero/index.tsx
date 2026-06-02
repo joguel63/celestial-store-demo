@@ -1,7 +1,7 @@
 import { Box, Typography, Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { styles } from './styles'
-import heroBg from '@/assets/guild/hero-guild.png'
+import heroBg from '@/assets/guild/hero-guild.webp'
 
 export const GuildHero = () => {
   const { t } = useTranslation()
@@ -9,7 +9,7 @@ export const GuildHero = () => {
   return (
     <Box component="section" sx={styles.section}>
       <Box sx={styles.bgLayer}>
-        <Box component="img" src={heroBg} alt="" />
+        <Box component="img" src={heroBg} alt="" fetchPriority="high" decoding="async" />
         <Box sx={styles.vignette} />
         <Box sx={styles.gradient} />
       </Box>

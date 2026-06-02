@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import curatorImg from '@/assets/landing/testimonial-curator.png'
+import curatorImg from '@/assets/landing/testimonial-curator.webp'
 import { styles } from './styles'
 
 export const Testimonials = () => {
@@ -21,7 +21,7 @@ export const Testimonials = () => {
         </Typography>
         <Box sx={styles.authorRow}>
           <Box sx={styles.avatarWrap}>
-            <Box component="img" src={curatorImg} alt="" />
+            <Box component="img" src={curatorImg} alt="" loading="lazy" decoding="async" />
           </Box>
           <Box sx={styles.authorInfo}>
             <Typography sx={styles.authorName}>{t('testimonials.author')}</Typography>

@@ -1,9 +1,9 @@
 import { Box, Typography, Button, Chip } from '@mui/material'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { useTranslation } from 'react-i18next'
-import phoenixImg from '@/assets/landing/phoenix.png'
-import gryphonImg from '@/assets/landing/gryphon.png'
-import kelpieImg from '@/assets/landing/kelpie.png'
+import phoenixImg from '@/assets/landing/phoenix.webp'
+import gryphonImg from '@/assets/landing/gryphon.webp'
+import kelpieImg from '@/assets/landing/kelpie.webp'
 import { styles } from './styles'
 
 interface CreatureCardProps {
@@ -20,7 +20,7 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
   return (
     <Box sx={styles.card}>
       <Box sx={styles.imageWrap}>
-        <Box component="img" src={image} alt={name} />
+        <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
         <Box sx={{ ...styles.gradient, '--bg': 'background.paper' }} />
       </Box>
       <Box sx={styles.body}>

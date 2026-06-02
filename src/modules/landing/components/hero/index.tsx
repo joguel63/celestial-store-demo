@@ -1,6 +1,6 @@
 import { Box, Typography, Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import heroBg from '@/assets/landing/hero-nebula.png'
+import heroBg from '@/assets/landing/hero-nebula.webp'
 import { styles } from './styles'
 
 export const Hero = () => {
@@ -9,7 +9,7 @@ export const Hero = () => {
   return (
     <Box component="header" sx={styles.section}>
       <Box sx={styles.bgImage}>
-        <Box component="img" src={heroBg} alt="" />
+        <Box component="img" src={heroBg} alt="" fetchPriority="high" decoding="async" />
         <Box sx={styles.vignette} />
       </Box>
       <Box sx={styles.stars} />

@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { getStringArray } from '@/core/utils/getStringArray'
 import { HabitatCard, FeaturedHabitatCard } from '../habitatCard'
 import { styles } from './styles'
-import imgCumbres from '@/assets/stables/habitat-cumbres.png'
-import imgAbismos from '@/assets/stables/habitat-abismos.png'
-import imgBosque from '@/assets/stables/habitat-bosque.png'
-import imgNucleo from '@/assets/stables/habitat-nucleo-magma.png'
-import imgDesierto from '@/assets/stables/habitat-desierto-estelar.png'
+import imgCumbres from '@/assets/stables/habitat-cumbres.webp'
+import imgAbismos from '@/assets/stables/habitat-abismos.webp'
+import imgBosque from '@/assets/stables/habitat-bosque.webp'
+import imgNucleo from '@/assets/stables/habitat-nucleo-magma.webp'
+import imgDesierto from '@/assets/stables/habitat-desierto-estelar.webp'
 
 export const HabitatGrid = () => {
   const { t } = useTranslation()
