@@ -40,7 +40,7 @@ export const styles: Styles = {
   },
   imageWrap: {
     position: 'relative',
-    height: 256,
+    aspectRatio: '1 / 1',
     overflow: 'hidden',
     '& img': {
       width: '100%',
@@ -119,8 +119,7 @@ export const styles: Styles = {
   },
   featuredImage: {
     position: 'relative',
-    height: { xs: 256, md: '100%' },
-    minHeight: 300,
+    aspectRatio: '1 / 1',
     overflow: 'hidden',
     '& img': {
       width: '100%',
