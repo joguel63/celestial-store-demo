@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   deploy:
-    uses: joguel63/github-actions-templates/.github/workflows/deploy-s3-cloudfront.yml@v1
+    uses: joguel63/github-actions-templates/.github/workflows/deploy-s3-cloudfront.yml
     with:
       node-version: '20'
       package-manager: 'yarn'
