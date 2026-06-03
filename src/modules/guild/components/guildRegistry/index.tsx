@@ -25,7 +25,7 @@ interface MemberProps {
 const MemberCard = ({ image, name, role, tags, badge, badgeIcon }: MemberProps) => (
   <Box sx={styles.card}>
     <Box sx={styles.avatarWrap}>
-      <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
+      <Box component="img" src={image} alt={name} loading="lazy" decoding="async" fetchPriority="low" />
       {badge ? (
         <Box
           sx={{

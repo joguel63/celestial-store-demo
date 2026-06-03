@@ -20,7 +20,7 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
   return (
     <Box sx={styles.card}>
       <Box sx={styles.imageWrap}>
-        <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
+        <Box component="img" src={image} alt={name} loading="lazy" decoding="async" fetchPriority="low" />
         <Box sx={{ ...styles.gradient, '--bg': 'background.paper' }} />
       </Box>
       <Box sx={styles.body}>

@@ -9,7 +9,7 @@ export const GuildHero = () => {
   return (
     <Box component="section" sx={styles.section}>
       <Box sx={styles.bgLayer}>
-        <Box component="img" src={heroBg} alt="" decoding="async" />
+        <Box component="img" src={heroBg} alt="" decoding="async" loading="eager" fetchPriority="high" width={512} height={512} />
         <Box sx={styles.vignette} />
         <Box sx={styles.gradient} />
       </Box>

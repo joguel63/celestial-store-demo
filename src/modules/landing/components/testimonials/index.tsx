@@ -21,7 +21,7 @@ export const Testimonials = () => {
         </Typography>
         <Box sx={styles.authorRow}>
           <Box sx={styles.avatarWrap}>
-            <Box component="img" src={curatorImg} alt="" loading="lazy" decoding="async" />
+            <Box component="img" src={curatorImg} alt="" loading="lazy" decoding="async" fetchPriority="low" />
           </Box>
           <Box sx={styles.authorInfo}>
             <Typography sx={styles.authorName}>{t('testimonials.author')}</Typography>
