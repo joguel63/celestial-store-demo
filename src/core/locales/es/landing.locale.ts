@@ -9,6 +9,10 @@ export const landing = {
     },
     ariaLabel: 'Navegación principal',
     adoptNow: 'Adoptar Ahora',
+    menu: {
+      open: 'Abrir menú',
+      close: 'Cerrar menú',
+    },
     language: {
       label: 'Selector de idioma',
       spanish: 'Español',

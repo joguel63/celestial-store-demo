@@ -9,7 +9,7 @@ export const Hero = () => {
   return (
     <Box component="header" sx={styles.section}>
       <Box sx={styles.bgImage}>
-        <Box component="img" src={heroBg} alt="" fetchPriority="high" decoding="async" />
+        <Box component="img" src={heroBg} alt="" decoding="async" />
         <Box sx={styles.vignette} />
       </Box>
       <Box sx={styles.stars} />

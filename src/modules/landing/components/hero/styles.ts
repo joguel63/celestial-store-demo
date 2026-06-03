@@ -80,7 +80,7 @@ export const styles: Styles = {
     lineHeight: 1.56,
     color: 'text.secondary',
     mb: 5,
-    maxWidth: '512px',
+    maxWidth: { xs: '100%', md: '512px' },
   },
   buttons: {
     display: 'flex',

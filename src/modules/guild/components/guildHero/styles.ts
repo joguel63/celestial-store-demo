@@ -72,7 +72,7 @@ export const styles: Styles = {
   },
   actions: {
     display: 'flex',
-    flexDirection: { xs: 'column', sm: 'row' },
+    flexDirection: { xs: 'column', md: 'row' },
     justifyContent: 'center',
     gap: 3,
   },

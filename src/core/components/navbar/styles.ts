@@ -9,7 +9,9 @@ type Styles = Record<
   | 'activeLink'
   | 'actions'
   | 'languageGroup'
-  | 'languageButton',
+  | 'languageButton'
+  | 'hamburger'
+  | 'drawer',
   SxProps<Theme>
 >
 
@@ -97,6 +99,20 @@ export const styles: Styles = {
     },
     '&.Mui-selected:hover': {
       bgcolor: 'celestial.goldVeil',
+    },
+  },
+  hamburger: {
+    display: { xs: 'inline-flex', md: 'none' },
+    color: 'primary.main',
+  },
+  drawer: {
+    '& .MuiDrawer-paper': {
+      width: 280,
+      bgcolor: 'background.paper',
+      borderLeft: '1px solid',
+      borderColor: 'celestial.goldVeil',
+      pt: 2,
+      px: 3,
     },
   },
 }
