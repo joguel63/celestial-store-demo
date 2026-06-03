@@ -43,7 +43,7 @@ export const HabitatCard = ({
       {rarity ? <Box sx={styles.badge}>{rarity}</Box> : null}
     </Box>
     <Box sx={styles.body}>
-      <Typography variant="h4" sx={styles.name}>
+      <Typography variant="h3" sx={styles.name}>
         {name}
       </Typography>
       <Box sx={styles.habitatRow}>

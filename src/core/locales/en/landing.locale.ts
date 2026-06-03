@@ -7,6 +7,7 @@ export const landing = {
       supplies: 'Supplies',
       guild: 'Guild',
     },
+    ariaLabel: 'Main navigation',
     adoptNow: 'Adopt Now',
     language: {
       label: 'Language selector',
@@ -322,5 +323,8 @@ export const landing = {
       button: 'Sign the Pact',
       quote: '"Destiny is not found, it is forged within the guild."',
     },
+  },
+  a11y: {
+    skipToContent: 'Skip to main content',
   },
 }

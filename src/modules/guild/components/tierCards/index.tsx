@@ -13,12 +13,12 @@ export const TierCards = () => {
   return (
     <Box component="section" sx={styles.section}>
       <Box sx={styles.container}>
-        <Typography sx={styles.title}>{t('guild.tiers.title')}</Typography>
+        <Typography variant="h2" sx={styles.title}>{t('guild.tiers.title')}</Typography>
         <Box sx={styles.divider} />
         <Box sx={styles.grid}>
           <Box sx={styles.card}>
             <ExploreIcon sx={styles.icon} />
-            <Typography variant="h4" sx={styles.cardName}>
+            <Typography variant="h3" sx={styles.cardName}>
               {t('guild.tiers.explorer.name')}
             </Typography>
             <Typography sx={styles.cardDescription}>
@@ -37,7 +37,7 @@ export const TierCards = () => {
           <Box sx={styles.featuredCard}>
             <Box sx={styles.badge}>{t('guild.tiers.tamer.badge')}</Box>
             <PetsIcon sx={styles.icon} />
-            <Typography variant="h4" sx={styles.cardName}>
+            <Typography variant="h3" sx={styles.cardName}>
               {t('guild.tiers.tamer.name')}
             </Typography>
             <Typography sx={styles.cardDescription}>
@@ -57,7 +57,7 @@ export const TierCards = () => {
           </Box>
           <Box sx={styles.card}>
             <MenuBookIcon sx={styles.icon} />
-            <Typography variant="h4" sx={styles.cardName}>
+            <Typography variant="h3" sx={styles.cardName}>
               {t('guild.tiers.keeper.name')}
             </Typography>
             <Typography sx={styles.cardDescription}>

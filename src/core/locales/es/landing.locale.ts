@@ -7,6 +7,7 @@ export const landing = {
       supplies: 'Suministros',
       guild: 'Gremio',
     },
+    ariaLabel: 'Navegación principal',
     adoptNow: 'Adoptar Ahora',
     language: {
       label: 'Selector de idioma',
@@ -324,5 +325,8 @@ export const landing = {
       button: 'Firmar el Pacto',
       quote: '"El destino no se encuentra, se forja en el gremio."',
     },
+  },
+  a11y: {
+    skipToContent: 'Saltar al contenido principal',
   },
 }

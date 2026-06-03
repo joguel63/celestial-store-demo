@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Box, CircularProgress } from '@mui/material'
 import { MainLayout } from '@/core/layouts/mainLayout'
+import { ScrollToTop } from '@/core/components/scrollToTop'
 import { ROUTES } from '@/core/enums/routes'
 
 const LandingModule = lazy(() => import('@/modules/landing'))
@@ -29,6 +30,7 @@ const PageFallback = () => (
 
 export const AppRouter = () => (
   <BrowserRouter basename={routerBasename}>
+    <ScrollToTop />
     <Routes>
       <Route element={<MainLayout />}>
         <Route

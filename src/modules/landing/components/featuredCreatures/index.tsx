@@ -25,7 +25,7 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
       </Box>
       <Box sx={styles.body}>
         <Box sx={styles.header}>
-          <Typography variant="h4" sx={styles.name}>
+          <Typography variant="h3" sx={styles.name}>
             {name}
           </Typography>
           <Chip

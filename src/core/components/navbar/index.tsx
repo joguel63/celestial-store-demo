@@ -33,7 +33,7 @@ export const Navbar = () => {
   }
 
   return (
-    <AppBar position="fixed" sx={styles.nav}>
+    <AppBar position="fixed" sx={styles.nav} component="nav" aria-label={t('navbar.ariaLabel')}>
       <Toolbar sx={styles.toolbar} disableGutters>
         <Box component="span" sx={styles.brand}>
           {t('navbar.brand')}

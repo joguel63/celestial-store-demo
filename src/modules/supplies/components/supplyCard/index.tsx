@@ -45,7 +45,7 @@ export const SupplyCard = ({
       <Box component="img" src={image} alt={name} loading="lazy" decoding="async" />
       {rarity ? <Box sx={{ ...styles.badge, ...RARITY_STYLES[rarity] }}>{rarityLabel}</Box> : null}
     </Box>
-    <Typography variant="h4" sx={styles.name}>
+    <Typography variant="h3" sx={styles.name}>
       {name}
     </Typography>
     <Typography sx={styles.description}>{description}</Typography>

@@ -10,7 +10,7 @@ export const CtaBanner = () => {
       <Box sx={styles.overlay} />
       <Box sx={styles.container}>
         <Box sx={styles.inner}>
-          <Typography variant="h1" sx={styles.title}>
+          <Typography variant="h2" sx={styles.title}>
             {t('cta.title')}
           </Typography>
           <Typography sx={styles.description}>{t('cta.description')}</Typography>
