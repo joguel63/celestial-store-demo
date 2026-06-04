@@ -7,8 +7,9 @@ type Styles = Record<
 
 export const styles: Styles = {
   section: {
-    py: 16,
+    py: { xs: 12, md: 16 },
     position: 'relative',
+    bgcolor: '#1b1d0e',
   },
   overlay: {
     position: 'absolute',
@@ -28,18 +29,18 @@ export const styles: Styles = {
     borderTop: '1px solid',
     borderBottom: '1px solid',
     borderColor: 'celestial.goldVeil',
-    py: 10,
+    py: { xs: 8, md: 10 },
   },
   title: {
     fontFamily: '"Playfair Display", serif',
-    fontSize: { xs: '2rem', md: '4rem' },
+    fontSize: { xs: '3rem', md: '4rem' },
     fontWeight: 700,
     lineHeight: { xs: 1.25, md: 1.125 },
     letterSpacing: '-0.02em',
     mb: 4,
   },
   description: {
-    fontSize: '1.125rem',
+    fontSize: { xs: '1rem', md: '1.125rem' },
     lineHeight: 1.56,
     color: 'text.secondary',
     mb: 6,
@@ -47,8 +48,10 @@ export const styles: Styles = {
     mx: 'auto',
   },
   button: {
-    px: 6,
+    px: { xs: 4, md: 6 },
     py: 2.5,
+    width: { xs: '100%', md: 'auto' },
+    maxWidth: { xs: '320px', md: 'none' },
     fontSize: '1.125rem',
     letterSpacing: '0.2em',
     boxShadow: '0 0 30px rgba(242, 202, 80, 0.3)',

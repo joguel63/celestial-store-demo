@@ -20,7 +20,7 @@ const CreatureCard = ({ image, name, rarity, rarityColor, description }: Creatur
   return (
     <Box sx={styles.card}>
       <Box sx={styles.imageWrap}>
-        <Box component="img" src={image} alt={name} loading="lazy" decoding="async" fetchPriority="low" />
+        <Box component="img" src={image} alt={name} loading="lazy" decoding="async" {...{ fetchpriority: 'low' }} />
         <Box sx={{ ...styles.gradient, '--bg': 'background.paper' }} />
       </Box>
       <Box sx={styles.body}>
@@ -89,14 +89,16 @@ export const FeaturedCreatures = () => {
   ]
 
   return (
-    <Box component="section" sx={{ py: 12, bgcolor: 'background.default' }}>
+    <Box component="section" sx={{ py: { xs: 10, md: 12 }, bgcolor: 'background.default' }}>
       <Box sx={{ maxWidth: '1280px', mx: 'auto', px: { xs: '20px', md: '64px' } }}>
         <Box
           sx={{
             display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
             justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            mb: 8,
+            alignItems: { xs: 'flex-start', md: 'flex-end' },
+            gap: { xs: 2, md: 0 },
+            mb: { xs: 6, md: 8 },
           }}
         >
           <Box>
@@ -107,7 +109,7 @@ export const FeaturedCreatures = () => {
               {t('featured.title')}
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Box>
             <Button
               sx={{
                 color: 'celestial.teal',
@@ -127,7 +129,7 @@ export const FeaturedCreatures = () => {
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-            gap: 3,
+            gap: { xs: 4, md: 3 },
           }}
         >
           {creatures.map((creature) => (

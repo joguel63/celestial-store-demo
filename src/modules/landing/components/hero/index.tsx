@@ -9,7 +9,16 @@ export const Hero = () => {
   return (
     <Box component="header" sx={styles.section}>
       <Box sx={styles.bgImage}>
-        <Box component="img" src={heroBg} alt="" decoding="async" loading="eager" fetchPriority="high" width={512} height={512} />
+        <Box
+          component="img"
+          src={heroBg}
+          alt=""
+          decoding="async"
+          loading="eager"
+          width={512}
+          height={512}
+          {...{ fetchpriority: 'high' }}
+        />
         <Box sx={styles.vignette} />
       </Box>
       <Box sx={styles.stars} />
@@ -23,7 +32,11 @@ export const Hero = () => {
           </Typography>
           <Typography sx={styles.description}>{t('hero.description')}</Typography>
           <Box sx={styles.buttons}>
-            <Button variant="contained" size="large" sx={{ px: 5, py: 2 }}>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ px: 5, py: 2.5, width: { xs: '100%', md: 'auto' } }}
+            >
               {t('hero.exploreButton')}
             </Button>
             <Button
@@ -31,7 +44,8 @@ export const Hero = () => {
               size="large"
               sx={{
                 px: 5,
-                py: 2,
+                py: 2.5,
+                width: { xs: '100%', md: 'auto' },
                 borderColor: 'celestial.goldFog',
                 color: 'primary.main',
                 '&:hover': {

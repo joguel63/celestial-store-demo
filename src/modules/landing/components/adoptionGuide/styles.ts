@@ -18,7 +18,7 @@ type Styles = Record<
 
 export const styles: Styles = {
   section: {
-    py: 12,
+    py: { xs: 10, md: 12 },
     bgcolor: 'background.default',
   },
   container: {
@@ -28,7 +28,8 @@ export const styles: Styles = {
   },
   header: {
     textAlign: 'center',
-    mb: 10,
+    mb: { xs: 8, md: 10 },
+    px: { xs: 2, md: 0 },
   },
   title: {
     fontFamily: '"Playfair Display", serif',
@@ -45,7 +46,7 @@ export const styles: Styles = {
   steps: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-    gap: 6,
+    gap: { xs: 8, md: 6 },
     position: 'relative',
   },
   connector: {
@@ -64,10 +65,10 @@ export const styles: Styles = {
     textAlign: 'center',
   },
   circle: {
-    width: 96,
-    height: 96,
-    bgcolor: 'celestial.moss',
-    borderRadius: '50%',
+    width: { xs: 80, md: 96 },
+    height: { xs: 80, md: 96 },
+    bgcolor: 'celestial.thicket',
+    borderRadius: 0,
     border: '1px solid',
     borderColor: 'celestial.goldVeil',
     display: 'flex',

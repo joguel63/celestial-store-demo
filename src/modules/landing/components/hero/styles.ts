@@ -20,7 +20,8 @@ export const styles: Styles = {
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
-    pt: '80px',
+    pt: { xs: '96px', md: '80px' },
+    pb: { xs: 6, md: 0 },
     overflow: 'hidden',
   },
   bgImage: {
@@ -58,6 +59,8 @@ export const styles: Styles = {
   },
   textWrap: {
     maxWidth: '672px',
+    mx: { xs: 'auto', md: 0 },
+    textAlign: { xs: 'center', md: 'left' },
   },
   title: {
     fontFamily: '"Playfair Display", serif',
@@ -80,11 +83,14 @@ export const styles: Styles = {
     lineHeight: 1.56,
     color: 'text.secondary',
     mb: 5,
-    maxWidth: { xs: '100%', md: '512px' },
+    maxWidth: '512px',
+    mx: { xs: 'auto', md: 0 },
   },
   buttons: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexDirection: { xs: 'column', md: 'row' },
     gap: 2,
+    maxWidth: { xs: '384px', md: 'none' },
+    mx: { xs: 'auto', md: 0 },
   },
 }
