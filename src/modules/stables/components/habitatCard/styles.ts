@@ -116,10 +116,12 @@ export const styles: Styles = {
   featuredGrid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+    height: '100%',
   },
   featuredImage: {
     position: 'relative',
-    aspectRatio: '1 / 1',
+    aspectRatio: { xs: '1 / 1', md: 'auto' },
+    height: { md: '100%' },
     overflow: 'hidden',
     '& img': {
       width: '100%',
@@ -152,7 +154,7 @@ export const styles: Styles = {
     mb: 4,
   },
   featuredActions: {
-    display: 'flex',
+    display: { xs: 'none', sm: 'flex' },
     gap: 2,
   },
   primaryBtn: {
